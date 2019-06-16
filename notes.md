@@ -15,3 +15,7 @@ Options:
 
 1. Feed the now weighted levels in a neurel network
 2. Use new weights in already used algorithm
+
+### Sources
+1. https://medium.com/datadriveninvestor/generating-human-faces-with-keras-3ccd54c17f16
+2. https://github.com/platonovsimeon/dcgan-facegenerator/blob/master/face_generator.py

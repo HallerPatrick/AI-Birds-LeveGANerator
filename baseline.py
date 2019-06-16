@@ -996,14 +996,14 @@ def write_level_xml(complete_locations, selected_other, final_pig_positions, fin
 
     f = open("gen/level-%s.xml" % current_level, "w")
 
-    f.write('<?xml version="1.0" encoding="utf-16"?>\n')
+    f.write('<?xml version="1.0" encoding="utf-8"?>\n')
     f.write('<Level width ="2">\n')
-    f.write('<Camera x="0" y="2" minWidth="20" maxWidth="30">\n')
+    f.write('<Camera x="0" y="2" minWidth="20" maxWidth="30" />\n')
     f.write('<Birds>\n')
     for i in range(number_birds):   # bird type is chosen using probability table
         f.write('<Bird type="%s"/>\n' % bird_names[str(choose_item(bird_probabilities))])
     f.write('</Birds>\n')
-    f.write('<Slingshot x="-8" y="-2.5">\n')
+    f.write('<Slingshot x="-8" y="-2.5" />\n')
     f.write('<GameObjects>\n')
 
     for i in complete_locations:
