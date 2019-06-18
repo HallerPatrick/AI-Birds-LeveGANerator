@@ -1,19 +1,19 @@
-20
+250
 wood RectMedium,wood SquareTiny,ice CircleSmall
 8,10
 30
 
-20
+250
 stone SquareHole,wood SquareHole,ice SquareHole
 5,8
 30
 
-20
+250
 wood Triangle,stone Circle
 1,2
 30
 
-20
+250
 
 3,3
 30

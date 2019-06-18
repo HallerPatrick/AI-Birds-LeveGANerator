@@ -5,6 +5,10 @@ from math import sqrt, ceil
 from copy import deepcopy
 import itertools
 
+import sys
+
+sys.setrecursionlimit(2000)
+
 # blocks number and size
 blocks = {'1':[0.84,0.84], '2':[0.85,0.43], '3':[0.43,0.85], '4':[0.43,0.43],
           '5':[0.22,0.22], '6':[0.43,0.22], '7':[0.22,0.43], '8':[0.85,0.22],
@@ -994,7 +998,7 @@ def add_TNT(potential_positions):
 
 def write_level_xml(complete_locations, selected_other, final_pig_positions, final_TNT_positions, final_platforms, number_birds, current_level, restricted_combinations):
 
-    f = open("gen/level-%s.xml" % current_level, "w")
+    f = open("gen/3level-%s.xml" % current_level, "w")
 
     f.write('<?xml version="1.0" encoding="utf-8"?>\n')
     f.write('<Level width ="2">\n')

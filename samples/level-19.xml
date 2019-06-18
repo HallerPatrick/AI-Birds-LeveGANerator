@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level width ="2">
+<Camera x="0" y="2" minWidth="20" maxWidth="30" />
+<Birds>
+<Bird type="BirdRed"/>
+<Bird type="BirdRed"/>
+<Bird type="BirdYellow"/>
+<Bird type="BirdBlack"/>
+<Bird type="BirdBlue"/>
+<Bird type="BirdBlack"/>
+</Birds>
+<Slingshot x="-8" y="-2.5" />
+<GameObjects>
+<Block type="SquareHole" material="wood" x="-2.3434265099" y="-3.08" rotation="0" />
+<Block type="SquareHole" material="wood" x="-0.8834265099" y="-3.08" rotation="0" />
+<Block type="RectMedium" material="stone" x="-1.6134265099" y="-2.55" rotation="0" />
+<Block type="RectSmall" material="ice" x="-1.6134265098601093" y="-2.33" rotation="0" />
+<Block type="RectBig" material="stone" x="1.0264596434" y="-3.39" rotation="0" />
+<Block type="RectBig" material="stone" x="1.0264596434" y="-3.17" rotation="0" />
+<Block type="SquareSmall" material="wood" x="0.2964596434" y="-2.845" rotation="0" />
+<Block type="SquareSmall" material="ice" x="1.0264596434" y="-2.845" rotation="0" />
+<Block type="SquareSmall" material="ice" x="1.7564596434" y="-2.845" rotation="0" />
+<Block type="RectMedium" material="stone" x="1.0264596434" y="-2.52" rotation="0" />
+<Block type="RectMedium" material="stone" x="1.0264596433712763" y="-2.3" rotation="0" />
+<Block type="RectFat" material="stone" x="3.1333521883" y="-3.285" rotation="0" />
+<Block type="RectFat" material="stone" x="4.9733521883" y="-3.285" rotation="0" />
+<Block type="RectBig" material="ice" x="4.0533521883" y="-2.96" rotation="0" />
+<Block type="RectBig" material="ice" x="4.0533521883" y="-2.74" rotation="0" />
+<Block type="RectBig" material="wood" x="4.0533521883" y="-2.52" rotation="0" />
+<Block type="SquareHole" material="stone" x="3.4533521883" y="-1.99" rotation="0" />
+<Block type="SquareHole" material="wood" x="4.6533521883" y="-1.99" rotation="0" />
+<Block type="SquareTiny" material="stone" x="3.4533521883" y="-1.46" rotation="0" />
+<Block type="SquareTiny" material="stone" x="4.6533521883" y="-1.46" rotation="0" />
+<Block type="RectFat" material="wood" x="6.543466035" y="-3.075" rotation="90" />
+<Block type="RectFat" material="stone" x="7.413466035" y="-3.075" rotation="90" />
+<Block type="RectFat" material="stone" x="8.283466035" y="-3.075" rotation="90" />
+<Block type="RectFat" material="wood" x="6.0769624489" y="2.3429780988" rotation="0" />
+<Block type="RectFat" material="ice" x="7.5369624489" y="2.3429780988" rotation="0" />
+<Block type="RectMedium" material="stone" x="6.806962448874625" y="2.6679780988" rotation="0" />
+<Block type="CircleSmall" material="stone" x="6.2469624489" y="3.0029780988" rotation="0" />
+<Block type="TriangleHole" material="wood" x="7.413466035" y="-2.24" rotation="0" />
+<Block type="CircleSmall" material="wood" x="6.543466035" y="-2.425" rotation="0" />
+<Block type="CircleSmall" material="wood" x="7.3669624489" y="3.0029780988" rotation="0" />
+<Block type="CircleSmall" material="wood" x="-1.3300931765" y="-1.995" rotation="0" />
+<Pig type="BasicSmall" material="" x="-1.6134265099" y="-3.25" rotation="0" />
+<Pig type="BasicSmall" material="" x="-1.8967598432" y="-1.97" rotation="0" />
+<Pig type="BasicSmall" material="" x="1.5864596434" y="-1.94" rotation="0" />
+<Pig type="BasicSmall" material="" x="1.0264596434" y="-1.94" rotation="0" />
+<Pig type="BasicSmall" material="" x="0.4664596434" y="-1.94" rotation="0" />
+<Pig type="BasicSmall" material="" x="3.4533521883" y="-1.1" rotation="0" />
+<Pig type="BasicSmall" material="" x="8.283466035" y="-2.4" rotation="0" />
+<Pig type="BasicSmall" material="" x="6.8069624489" y="3.0279780988" rotation="0" />
+<Platform type="Platform" material="" x="5.876962448874625" y="1.8179780987896348" />
+<Platform type="Platform" material="" x="6.496962448874625" y="1.8179780987896348" />
+<Platform type="Platform" material="" x="7.116962448874625" y="1.8179780987896348" />
+<Platform type="Platform" material="" x="7.736962448874625" y="1.8179780987896348" />
+<TNT type="" material="" x="4.6533521883" y="-1.1" rotation="0" />
+</GameObjects>
+</Level>

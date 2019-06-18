@@ -6,7 +6,7 @@ from xml_parser import parse_xml
 # FROM: XML (-9.99999, -9.99999), (9.99999, 9.99999)
 # TO: PIL X: (0, 0) Y: (Pixel_max_x, Pixel_max_y)
 
-IMG_DIM = (512, 256)
+IMG_DIM = (842, 482)
 XML_DIM = (10, 10)
 
 PIG_SIZE = 0.5
@@ -43,11 +43,11 @@ def scale_to_size(x, y, scale_x, scale_y):
 
 def main():
 
-    for path in os.listdir("gen"):
+    for path in os.listdir("samples"):
         print(path)
-        data = parse_xml("gen/" + path)
+        data = parse_xml("samples/" + path)
 
-        img = Image.new('RGB', (512, 256))
+        img = Image.new('RGB', IMG_DIM)
         d = ImageDraw.Draw(img)
 
         for block in data["block"]:
