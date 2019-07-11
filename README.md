@@ -4,9 +4,13 @@ This repo contains all work done by Samet & Patrick for the bachelor projeckt SM
 
 The general approach is, to use generate new levels for the game "Angry Birds" based on the algorithm GAN, instead of a more precedual approach.
 
+## Usage
+
+Please use the tasks provided in `.vscode/tasks.json`
+
 ## Project Structure
 
-`/nn` Contains relevant data for the GAN algorithm 
+`/nn` Contains relevant data for the GAN algorithm
 
 `/baseline` holds the base line procedual level generator provided by the AI Birds competition
 
