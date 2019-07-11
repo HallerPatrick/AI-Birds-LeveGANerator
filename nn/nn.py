@@ -1,3 +1,6 @@
+
+import os
+
 #Import everything that is needed from Keras library.
 from keras.layers import Input, Reshape, Dropout, Dense, Flatten, BatchNormalization, Activation, ZeroPadding2D
 from keras.layers.advanced_activations import LeakyReLU
@@ -251,4 +254,7 @@ class FaceGenerator:
 if __name__ == '__main__':
     facegenerator = FaceGenerator(64,64,3)
     facegenerator.train(datafolder="out",epochs=4000, batch_size=32, save_images_interval=100)
+    if not os.path.isdir("saved_models"):
+        os.mkdir("saved/models")
+
     facegenerator.generate_single_image("saved_models/facegenerator.h5","test.png")

@@ -7,6 +7,16 @@
             "label": "gen",
             "type": "shell",
             "command": "python3 xml_writer.py"
+        },
+        {
+            "label": "nn",
+            "type": "shell",
+            "command": "python3 nn/nn.py"
+        },
+        {
+            "label": "raw level generator",
+            "type": "shell",
+            "command": "python3 builder.py"
         }
     ]
 }
