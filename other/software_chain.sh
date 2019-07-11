@@ -12,4 +12,4 @@ echo 'digraph G {
     Physics_Test[style=filled fillcolor="#fc9520"];
     Naive_Agent_Test[style=filled fillcolor="#fc9520"];
     {Physics_Test Naive_Agent_Test}->NN [label="feed result back"];
-}' | dot -Tpng >../chain.png
+}' | dot -Tpng > chain.png

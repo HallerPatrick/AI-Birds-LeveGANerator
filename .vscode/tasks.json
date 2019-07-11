@@ -17,6 +17,11 @@
             "label": "raw level generator",
             "type": "shell",
             "command": "python3 builder.py"
+        },
+        {
+            "label": "Generate project structure image",
+            "type": "shell",
+            "command": "bash other/software_chain.sh"
         }
     ]
 }
