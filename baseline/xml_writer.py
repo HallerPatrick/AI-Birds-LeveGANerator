@@ -25,8 +25,8 @@ class XmlWriter:
         slingshot.set("x", "-8")
         slingshot.set("y", "-2,5")
 
-    def add_game_objects(self, blocks, pigs, platform):
-        game_objects = ET.SubElement(self.root, "GameObjects")
+    def add_game_objects(self):
+        self.game_objects = ET.SubElement(self.root, "GameObjects")
 
     def add_blocks(self, blocks):
         blocks_eleme = ET.SubElement(self.root, "GameObjects")

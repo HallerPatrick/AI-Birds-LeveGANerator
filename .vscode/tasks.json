@@ -41,6 +41,15 @@
             },
             "command": "python3 conture_detector.py",
             "problemMatcher": []
+        },
+        {
+            "label": "Xml Generator",
+            "type": "shell",
+            "options": {
+                "cwd": "./xml_generator"
+            },
+            "command": "python3 xml_generator.py",
+            "problemMatcher": []
         }
     ]
 }

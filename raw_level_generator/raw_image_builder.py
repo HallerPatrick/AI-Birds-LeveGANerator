@@ -1,7 +1,6 @@
 from PIL import Image, ImageDraw
 import os
-from xml_parser import parse_xml
-
+import raw_level_generator.xml_parser
 
 # FROM: XML (-9.99999, -9.99999), (9.99999, 9.99999)
 # TO: PIL X: (0, 0) Y: (Pixel_max_x, Pixel_max_y)
@@ -53,6 +52,20 @@ def convert_coord(x, y):
         y_value = (IMG_DIM[1] / 2) + (y / XML_DIM[1] * (IMG_DIM[1] / 2))
     else:
         y_value = (IMG_DIM[1] / 2) - ((abs(y) / XML_DIM[1]) * (IMG_DIM[1] / 2))
+
+    return x_value, y_value
+
+def convert_coord_back(x, y):
+    if x > 0:
+        #         MIDDLE POINT X-Axis + relational length * absolute length
+        x_value = (XML_DIM[0] / 2) + (x / IMG_DIM[0] * (XML_DIM[0] / 2))
+    else:
+        x_value = (XML_DIM[0] / 2) - ((abs(x) / IMG_DIM[0]) * (XML_DIM[0] / 2))
+
+    if y > 0:
+        y_value = (XML_DIM[1] / 2) + (y / IMG_DIM[1] * (XML_DIM[1] / 2))
+    else:
+        y_value = (XML_DIM[1] / 2) - ((abs(y) / IMG_DIM[1]) * (XML_DIM[1] / 2))
 
     return x_value, y_value
 
