@@ -11,17 +11,36 @@
         {
             "label": "nn",
             "type": "shell",
-            "command": "python3 nn/nn.py"
+            "options": {
+                "cwd": "./nn"
+            },
+            "command": "python3 nn.py",
+            "problemMatcher": []
         },
         {
             "label": "raw level generator",
             "type": "shell",
-            "command": "python3 builder.py"
+            "options": {
+                "cwd": "./raw_level_generator"
+            },
+            "command": "python3 raw_image_builder.py"
         },
         {
             "label": "Generate project structure image",
             "type": "shell",
-            "command": "bash other/software_chain.sh"
+            "options": {
+                "cwd": "./other"
+            },
+            "command": "bash software_chain.sh"
+        },
+        {
+            "label": "Conture detector",
+            "type": "shell",
+            "options": {
+                "cwd": "./conture_detector"
+            },
+            "command": "python3 conture_detector.py",
+            "problemMatcher": []
         }
     ]
 }

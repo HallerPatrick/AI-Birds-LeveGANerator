@@ -75,52 +75,98 @@ def scale_to_size(x, y, scale_x, scale_y):
     return x_0, y_0, x_1, y_1
 
 
+def build_block_image(data, path):
+
+    img = Image.new('RGB', IMG_DIM)
+    d = ImageDraw.Draw(img)
+
+    for block in data["block"]:
+        if block.type in block_names:
+            sizex = blocks[block_names[block.type]][0]
+            sizey = blocks[block_names[block.type]][1]
+        else:
+            sizex = additional_object_sizes[additional_objects[block.type]]
+            sizey = additional_object_sizes[additional_objects[block.type]]
+
+        co1 = convert_coord(float(block.x) + (sizex * 0.3),
+                            float(block.y) + (sizex * 0.3))
+        co2 = convert_coord(float(block.x) - (sizey * 0.3),
+                            float(block.y) - (sizey * 0.3))
+
+        d.rectangle([co1, co2], fill=PLATFORM_COLOR)
+
+    img.save("out/block/" + path + ".png")
+
+
+def build_pig_image(data, path):
+
+    img = Image.new('RGB', IMG_DIM)
+    d = ImageDraw.Draw(img)
+
+    for pig in data["pig"]:
+        co1 = convert_coord(float(pig.x) + 0.5, float(pig.y) + 0.5)
+        co2 = convert_coord(float(pig.x) - 0.5, float(pig.y) - 0.5)
+        # co2 = scale_to_size(co[0], co[1], PIG_SIZE, PIG_SIZE)
+        d.rectangle([co1, co2], fill=PLATFORM_COLOR)
+
+    img.save("out/pig/" + path + ".png")
+
+
+def build_tnt_image(data, path):
+
+    img = Image.new('RGB', IMG_DIM)
+    d = ImageDraw.Draw(img)
+
+    for tnt in data["tnt"]:
+        co1 = convert_coord(float(tnt.x) + (PIG_SIZE * 0.3),
+                            float(tnt.y) + (PIG_SIZE * 0.3))
+        co2 = convert_coord(float(tnt.x) - (PIG_SIZE * 0.3),
+                            float(tnt.y) - (PIG_SIZE * 0.3))
+        d.rectangle([co1, co2], fill=PLATFORM_COLOR)
+
+    img.save("out/tnt/" + path + ".png")
+
+
+def build_platform_image(data, path):
+    img = Image.new('RGB', IMG_DIM)
+    d = ImageDraw.Draw(img)
+    for platform in data["platform"]:
+        co1 = convert_coord(float(
+            platform.x) + (PLATFORM_SIZE * 0.3), float(platform.y) + (PLATFORM_SIZE * 0.3))
+        co2 = convert_coord(float(
+            platform.x) - (PLATFORM_SIZE * 0.3), float(platform.y) - (PLATFORM_SIZE * 0.3))
+        d.rectangle([co1, co2], fill=PLATFORM_COLOR)
+
+    img.save("out/platform/" + path + ".png")
+
+
 def main():
 
-    for path in os.listdir("samples"):
-        print(path)
-        data = parse_xml("samples/" + path)
+    sample_folder = "../baseline/samples/"
 
-        img = Image.new('RGB', IMG_DIM)
-        d = ImageDraw.Draw(img)
+    if not os.path.exists("out"):
+        os.makedirs("out")
 
-        for block in data["block"]:
-            if block.type in block_names:
-                sizex = blocks[block_names[block.type]][0]
-                sizey = blocks[block_names[block.type]][1]
-            else:
-                sizex = additional_object_sizes[additional_objects[block.type]]
-                sizey = additional_object_sizes[additional_objects[block.type]]
+    if not os.path.exists("out/pig"):
+        os.makedirs("out/pig")
 
-            co1 = convert_coord(float(block.x) + (sizex * 0.3),
-                                float(block.y) + (sizex * 0.3))
-            co2 = convert_coord(float(block.x) - (sizey * 0.3),
-                                float(block.y) - (sizey * 0.3))
+    if not os.path.exists("out/platform"):
+        os.makedirs("out/platform")
 
-            d.rectangle([co1, co2], fill=BLOCK_COLOR, outline=(0, 0, 255, 1))
+    if not os.path.exists("out/tnt"):
+        os.makedirs("out/tnt")
 
-        for pig in data["pig"]:
-            co1 = convert_coord(float(pig.x) + 0.5, float(pig.y) + 0.5)
-            co2 = convert_coord(float(pig.x) - 0.5, float(pig.y) - 0.5)
-            # co2 = scale_to_size(co[0], co[1], PIG_SIZE, PIG_SIZE)
-            d.rectangle([co1, co2], fill=(255, 105, 180, 1))
+    if not os.path.exists("out/block"):
+        os.makedirs("out/block")
 
-        for platform in data["platform"]:
-            co1 = convert_coord(float(
-                platform.x) + (PLATFORM_SIZE * 0.3), float(platform.y) + (PLATFORM_SIZE * 0.3))
-            co2 = convert_coord(float(
-                platform.x) - (PLATFORM_SIZE * 0.3), float(platform.y) - (PLATFORM_SIZE * 0.3))
-            d.rectangle([co1, co2], fill=PLATFORM_COLOR,
-                        outline=(0, 0, 255, 1))
+    for path in os.listdir(sample_folder):
+        data = parse_xml(sample_folder + path)
 
-        for tnt in data["tnt"]:
-            co1 = convert_coord(float(tnt.x) + (PIG_SIZE * 0.3),
-                                float(tnt.y) + (PIG_SIZE * 0.3))
-            co2 = convert_coord(float(tnt.x) - (PIG_SIZE * 0.3),
-                                float(tnt.y) - (PIG_SIZE * 0.3))
-            d.rectangle([co1, co2], fill=TNT_COLOR, outline=(0, 0, 255, 1))
-
-        img.save("out/" + path + ".png")
+        # Build four different images
+        build_pig_image(data, path)
+        build_block_image(data, path)
+        build_platform_image(data, path)
+        build_tnt_image(data, path)
 
 
 if __name__ == '__main__':

@@ -32,3 +32,11 @@ can become very blurry.
 ![alt text](images/blurry_attempts.png "Blurry Images")
 
 Another approach is to divide the image processing process into different images, where the game objects are not inferring with each other.
+
+## 15. July 2019
+
+### Multple image approach
+
+The new approach is to divide the raw level image into different images. For blocks, pigs, tnt and platforms. With 3 distinct subsets, we the generated images with GAN will be much more clear and precise (pixel wise).
+
+The downside is probably, that the objects are not alligned with each other. For this, a selection process what images "fit" together is needed.
