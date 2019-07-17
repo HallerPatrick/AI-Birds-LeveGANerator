@@ -1,24 +1,20 @@
-import xml, json
-from pprint import pprint
-from json_writer import JsonWriter
+import json
+import xmltodict
+import pprint
+
+sample_xml = "baseline/samples/1level-04.xml"
 
 def parse_xml(filename):
+    with open(sample_xml) as f:
+        xmlString  = f.read()
 
-    with open(filename) as f:
-        xml_file = xml.load(f)
-    
-    world = xml_file["world"]
+    jsonString = json.dumps(xmltodict.parse(xmlString))
 
-    # TODO: implement here
-
-    construct_json(world_infos, filename)
-
-def construct_json(world_infos, filename):
-    json_writer = JsonWriter("baseline/sample.json")
+    with open("sample1.json", 'w') as f:
+        f.write(jsonString)
 
 def main():
-    sample_xml = "baseline/xmls/sample.xml"
-    parse_xml(samle_xml)
+    parse_xml(sample_xml)
 
 if __name__ == "__main__":
     main()
