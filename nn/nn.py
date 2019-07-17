@@ -20,7 +20,6 @@ from tqdm import tqdm
 # os library is needed for extracting filenames from the dataset folder.
 import os
 
-
 class FaceGenerator:
     # RGB-images: 3-channels, grayscale: 1-channel, RGBA-images: 4-channels
     def __init__(self, image_width, image_height, channels, game_object):
@@ -246,7 +245,7 @@ class FaceGenerator:
                     generated_images[image_count, :], cmap='spring')
                 axis[row, column].axis('off')
                 image_count += 1
-        figure.savefig("models/" + self.game_object +
+        figure.savefig("generated_images/" + self.game_object +
                        "/generated_%d.png" % epoch)
         plt.close()
 
@@ -263,12 +262,11 @@ class FaceGenerator:
         image = Image.fromarray(generated_image, "RGB")
         image.save(image_save_path)
 
-
-if __name__ == '__main__':
+def run_all():
     for game_object in ["block", "pig", "platform", "tnt"]:
         facegenerator = FaceGenerator(64, 64, 3, game_object)
-        #facegenerator.train(datafolder="../raw_level_generator/out/" +
-        #                    game_object, epochs=4000 , batch_size=32, save_images_interval=100)
+        facegenerator.train(datafolder="../raw_level_generator/out/" +
+                            game_object, epochs=4000 , batch_size=32, save_images_interval=100)
 
         if not os.path.isdir("saved_models"):
             os.makedirs("saved_models")
@@ -289,3 +287,17 @@ if __name__ == '__main__':
 
         facegenerator.generate_single_image(
             "models/" + game_object + "_generator.h5", "test.png")
+
+def run_single():
+    facegenerator = FaceGenerator(64, 64, 3, "pig")
+    facegenerator.train(datafolder="../raw_level_generator/out/" +
+                        "pig", epochs=1000 , batch_size=32, save_images_interval=100)
+
+    if not os.path.isdir("saved_models"):
+        os.makedirs("saved_models")
+
+    facegenerator.generate_single_image(
+        "models/" + "pig" + "_generator.h5", "test.png")
+
+if __name__ == '__main__':
+    run_single()
