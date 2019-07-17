@@ -4,6 +4,24 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Xml Writer",
+            "type": "shell",
+            "options": {
+                "cwd": "./baseline"
+            },
+            "command": "python3 xml_writer.py",
+            "problemMatcher": []
+        },
+        {
+            "label": "Json to Xml Parser",
+            "type": "shell",
+            "options": {
+                "cwd": "./baseline"
+            },
+            "command": "python3 jsontoxml_parser.py",
+            "problemMatcher": []
+        },
+        {
             "label": "gen",
             "type": "shell",
             "command": "python3 xml_writer.py"
@@ -50,14 +68,6 @@
             },
             "command": "python3 xml_generator.py",
             "problemMatcher": []
-        },
-        {
-            "label": "Main xml Generator",
-            "type": "shell",
-            "options": {
-                "cwd": "./xml_generator"
-            },
-            "command": "python3 __main__.py"
         }
     ]
 }

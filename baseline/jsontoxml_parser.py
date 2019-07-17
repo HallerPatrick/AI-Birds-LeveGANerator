@@ -1,11 +1,22 @@
-import json, xml
+import os
+import sys
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(CURRENT_DIR))
+
+import json
+import xml
 from pprint import pprint
 from xml_writer import XmlWriter
+
+from raw_level_generator.xml_parser import Platform, Pig, Block, TNT
 
 
 bird_names = {
     "BIRD_RED": "BirdRed",
-    "BIRD_YELLOW": "BirdYellow"
+    "BIRD_YELLOW": "BirdYellow",
+    "BIRD_BLACK": "BirdBlack",
+
 }
 
 gameobjects_names = {
@@ -38,12 +49,6 @@ def parse_json(filename):
 
     world = json_file["world"]
 
-    # world holds all blocks and birds
-    bird_counts = json_file["counts"]["birds"]
-    # block_counts = json_file["counts"]["blocks"]
-    # pig_counts = json_file["counts"]["block"]
-    # platform_counts = json_file["counts"]["block"]
-
     # Collect all birds
     birds = []
     # Collect all blocks
@@ -53,65 +58,71 @@ def parse_json(filename):
     # Collect all platforms
     platforms = []
 
-    # birds
     for key in world.keys():
+
+        # birds
         if key.startswith("bird"):
             bird_info = world[key]
             birds.append(bird_names[bird_info["id"]])
 
-    assert len(birds) == bird_counts
-
-    # blocks
-    for key in world.keys():
+        # blocks
         if key.startswith("block"):
-            block_type = world[key]
-            block_material = world[key]
-            blocks.append(gameobjects_names[block_type["id"]])
-            blocks.append(material_names[block_material["id"]])
-         
-    # assert len(blocks) == block_counts
 
-    # pigs
-    for key in world.keys():
-        if key.startswith("pig"):
-            pig_info = world[key]
-            pigs.append(gameobjects_names[pig_info["id"]])
-    
-    # assert len(pigs) == pig_counts
+            block_tag = world[key]
 
-    # platforms
-    for key in world.keys():
-        if key.startswith("platform"):
-            platform_info = world[key]
-            platforms.append(gameobjects_names[platform_info["id"]])
-        
-    # assert len(platforms) == platform_counts
+            block_id = str(block_tag["id"])
+
+            ### PIGS ###
+            if block_id.startswith("PIG"):
+                p_type = gameobjects_names[str(block_tag["id"])]
+                p_material = material_names[str(block_tag["id"])]
+                p_x = str(block_tag["x"])
+                p_y = str(block_tag["y"])
+                p_rotation = str(block_tag["angle"])
+                pig = Pig(p_type, p_material, p_x, p_y, p_rotation)
+                pigs.append(pig)
+
+            ###
+            elif block_id in gameobjects_names or block_id in material_names:
+                b_type = gameobjects_names[str(block_tag["id"])]
+                b_material = material_names[str(block_tag["id"])]
+                b_x = str(block_tag["x"])
+                b_y = str(block_tag["y"])
+                b_rotation = ""
+                if "rotation" in block_tag:
+                    b_rotation = str(block_tag["rotation"])
+                block = Block(b_type, b_material, b_x, b_y, b_rotation)
+                blocks.append(block)
+
+            else:
+                print(block_id)
 
     world_infos = {
         "birds": birds,
         "blocks": blocks,
-        "pigs": pigs,
-        "platforms": platforms
+        "pigs": pigs
     }
 
     construct_xml(world_infos, filename)
 
 
 def construct_xml(world_infos, filename):
-    xml_writer = XmlWriter("baseline/xmls/sample.xml")
+    xml_writer = XmlWriter("sample.xml")
 
     xml_writer.add_header()
-    xml_writer.add_birds(world_infos["birds"])
     xml_writer.add_slingshot()
-    # TODO: Add gameobjects
-    xml_writer.add_blocks(world_infos["blocks"])
-    # xml_writer.add_pigs(world_infos["pigs"])
-    # xml_writer.add_platforms(world_infos["platforms"])
+
+    xml_writer.add_birds(world_infos["birds"])
+
+    xml_writer.add_game_objects()
+    xml_writer.add_pig_objects(world_infos["pigs"])
+    xml_writer.add_block_objects(world_infos["blocks"])
+
     xml_writer.write()
 
 
 def main():
-    sample_json = "baseline/sample.json"
+    sample_json = "sample.json"
     parse_json(sample_json)
 
 

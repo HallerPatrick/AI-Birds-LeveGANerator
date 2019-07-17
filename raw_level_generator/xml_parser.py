@@ -1,11 +1,39 @@
 import xml.etree.ElementTree as ET
 from collections import namedtuple
 from pprint import pprint
+from dataclasses import dataclass
 
-Block = namedtuple("Block", ["type", "material", "x", "y", "rotation"])
-Pig = namedtuple("Pig", ["type", "material", "x", "y", "rotation"])
-Platform = namedtuple("Platform", ["type", "material", "x", "y"])
-TNT = namedtuple("TNT", ["type", "material", "x", "y", "rotation"])
+@dataclass
+class Block:
+    type: str
+    material: str
+    x: str
+    y: str
+    rotation: str
+
+@dataclass
+class Platform:
+    type: str
+    material: str
+    x: str
+    y: str
+    rotation: str
+
+@dataclass
+class TNT:
+    type: str
+    material: str
+    x: str
+    y: str
+    rotation: str
+
+@dataclass
+class Pig:
+    type: str
+    material: str
+    x: str
+    y: str
+    rotation: str
 
 
 def parse_xml(filename):

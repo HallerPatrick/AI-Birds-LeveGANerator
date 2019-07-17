@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf8'?>
+<Level width="2">
+    <GameObjects />
+    <Camera maxWidth="30" minWidth="20" x="0" y="2" />
+    <Slingshot x="-8" y="-2,5" />
+    <Birds>
+        <Bird type="BirdRed" />
+        <Bird type="BirdRed" />
+        <Bird type="BirdRed" />
+    </Birds>
+    <GameObjects>
+        <Pig type="BasicSmall" x="54.169" y="-13.88" />
+        <Block type="RectSmall" x="54.301" y="-23.605" />
+        <Block type="RectFat" x="50.304" y="-6.748" />
+        <Block type="RectFat" x="57.463" y="-6.749" />
+        <Block type="RectFat" x="53.941" y="-11.222" />
+        <Block type="RectFat" x="52.182" y="-15.696" />
+        <Block type="RectFat" x="55.996" y="-15.696" />
+        <Block type="RectSmall" x="54.158" y="-20.17" />
+        <Block type="RectSmall" x="53.921" y="-3.317" />
+        <Block type="RectSmall" x="53.933" y="-8.342" />
+        <Block type="RectMedium" x="52.58" y="-5.822" />
+        <Block type="RectMedium" x="55.35" y="-5.83" />
+        <Block type="CircleSmall" x="49.509" y="-1.3" />
+        <Block type="CircleSmall" x="58.208" y="-1.316" />
+        <Block type="SquareSmall" x="54.26" y="-21.602" />
+        <Block type="RectSmall" x="54.023" y="-12.291" />
+        <Block type="RectSmall" x="45.78" y="-3.658" />
+        <Block type="RectSmall" x="61.852" y="-3.658" />
+    </GameObjects>
+</Level>
