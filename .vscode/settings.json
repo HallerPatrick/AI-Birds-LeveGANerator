@@ -1,0 +1,11 @@
+{
+    // Inluding CUDA dlls for running the nn on GPU
+    "terminal.integrated.env.windows": {
+        "PATH": "C:\\Python37;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.0\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.0\\extras\\CUPTI\\libx64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.0\\include;C:\\tools\\cuda\\bin;C:\\Program Files\\cudnn-10.0\\cuda\\bin;${env.PATH}",
+        "PYTHONPATH": "C:\\Python37"
+    },
+    "git.ignoreLimitWarning": true,
+    "python.linting.pylintArgs":[
+        "--extension-pkg-whitelist=cv2"
+    ]
+}
