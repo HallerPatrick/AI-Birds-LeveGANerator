@@ -267,8 +267,8 @@ class FaceGenerator:
 if __name__ == '__main__':
     for game_object in ["block", "pig", "platform", "tnt"]:
         facegenerator = FaceGenerator(64, 64, 3, game_object)
-        #facegenerator.train(datafolder="../raw_level_generator/out/" +
-        #                    game_object, epochs=4000 , batch_size=32, save_images_interval=100)
+        facegenerator.train(datafolder="../raw_level_generator/out/" +
+                            game_object, epochs=4000 , batch_size=32, save_images_interval=100)
 
         if not os.path.isdir("saved_models"):
             os.makedirs("saved_models")
