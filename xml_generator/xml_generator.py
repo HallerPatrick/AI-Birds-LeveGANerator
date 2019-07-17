@@ -31,15 +31,6 @@ def build_objects_from_centroids(centroids, game_object):
 
     return objects
 
-def add_platform_objects(self, platforms):
-    for platform in platforms:
-        platform_object = ET.SubElement(self.game_objects, "Platform")
-        platform_object.set("type", platform.type)
-        platform_object.set("x", platform.x)
-        platform_object.set("y", platform.y)
-
-xml_writer.XmlWriter.add_platform_objects = add_platform_objects
-
 def main():
 
     filename = "centroids.json"

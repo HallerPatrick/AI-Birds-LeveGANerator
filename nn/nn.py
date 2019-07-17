@@ -227,7 +227,7 @@ class FaceGenerator:
 
         # Save the model for a later use
         self.generator.save(
-            "saved_models/" + self.game_object + "_generator.h5")
+            "models/" + self.game_object + "_generator.h5")
 
     def save_images(self, epoch):
         # Save 25 generated images for demonstration purposes using matplotlib.pyplot.
@@ -246,7 +246,7 @@ class FaceGenerator:
                     generated_images[image_count, :], cmap='spring')
                 axis[row, column].axis('off')
                 image_count += 1
-        figure.savefig("generated_images/" + self.game_object +
+        figure.savefig("models/" + self.game_object +
                        "/generated_%d.png" % epoch)
         plt.close()
 
@@ -267,8 +267,8 @@ class FaceGenerator:
 if __name__ == '__main__':
     for game_object in ["block", "pig", "platform", "tnt"]:
         facegenerator = FaceGenerator(64, 64, 3, game_object)
-        facegenerator.train(datafolder="../raw_level_generator/out/" +
-                            game_object, epochs=4000 , batch_size=32, save_images_interval=100)
+        #facegenerator.train(datafolder="../raw_level_generator/out/" +
+        #                    game_object, epochs=4000 , batch_size=32, save_images_interval=100)
 
         if not os.path.isdir("saved_models"):
             os.makedirs("saved_models")
@@ -288,4 +288,4 @@ if __name__ == '__main__':
         """
 
         facegenerator.generate_single_image(
-            "saved_models/" + game_object + "_generator.h5", "test.png")
+            "models/" + game_object + "_generator.h5", "test.png")
