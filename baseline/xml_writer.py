@@ -29,10 +29,15 @@ class XmlWriter:
         self.game_objects = ET.SubElement(self.root, "GameObjects")
 
     def add_blocks(self, blocks):
-        blocks_eleme = ET.SubElement(self.root, "GameObjects")
+        game_objects = ET.SubElement(self.root, "GameObjects")
         for block in blocks:
-            blocks_eleme = ET.SubElement(blocks_eleme, "Block")
+            blocks_eleme = ET.SubElement(game_objects, "Block")
             blocks_eleme.set("type", block)
+        for material in blocks:
+            blocks_eleme.set("material", material)
+            blocks_eleme.set("x", block)
+            blocks_eleme.set("y", block)
+            blocks_eleme.set("rotation", block)
 
     def add_pigs(self, pigs):
         pigs_eleme = ET.SubElement(self.root, "GameObjects")
