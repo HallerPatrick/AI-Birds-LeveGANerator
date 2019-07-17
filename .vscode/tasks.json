@@ -36,6 +36,15 @@
             "problemMatcher": []
         },
         {
+            "label": "nn win",
+            "type": "shell",
+            "options": {
+                "cwd": "./nn"
+            },
+            "command": "python nn.py",
+            "problemMatcher": []
+        },
+        {
             "label": "raw level generator",
             "type": "shell",
             "options": {
