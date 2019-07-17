@@ -19,6 +19,17 @@ gameobjects_names = {
     "PIG_BASIC_SMALL": "BasicSmall",
 }
 
+material_names = {
+    "WOOD_BLOCK_8X1": "wood",
+    "WOOD_BLOCK_4X1": "wood",
+    "WOOD_BLOCK_2X1": "wood",
+    "ICE_BLOCK_4X1": "ice",
+    "MISC_ESTRADE_9X3": "",
+    "STONE_BLOCK_2X2": "stone",
+    "STONE_BLOCK_2X1": "stone",
+    "PIG_BASIC_SMALL": "stone",
+}
+
 
 def parse_json(filename):
 
@@ -29,7 +40,7 @@ def parse_json(filename):
 
     # world holds all blocks and birds
     bird_counts = json_file["counts"]["birds"]
-    block_counts = json_file["counts"]["blocks"]
+    # block_counts = json_file["counts"]["blocks"]
     # pig_counts = json_file["counts"]["block"]
     # platform_counts = json_file["counts"]["block"]
 
@@ -53,10 +64,12 @@ def parse_json(filename):
     # blocks
     for key in world.keys():
         if key.startswith("block"):
-            block_info = world[key]
-            blocks.append(gameobjects_names[block_info["id"]])
-    
-    assert len(blocks) == block_counts
+            block_type = world[key]
+            block_material = world[key]
+            blocks.append(gameobjects_names[block_type["id"]])
+            blocks.append(material_names[block_material["id"]])
+         
+    # assert len(blocks) == block_counts
 
     # pigs
     for key in world.keys():
