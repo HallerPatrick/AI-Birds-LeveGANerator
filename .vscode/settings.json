@@ -7,5 +7,7 @@
     "git.ignoreLimitWarning": true,
     "python.linting.pylintArgs":[
         "--extension-pkg-whitelist=cv2"
-    ]
+    ],
+    "liveshare.allowGuestDebugControl": true,
+    "liveshare.allowGuestTaskControl": true
 }
