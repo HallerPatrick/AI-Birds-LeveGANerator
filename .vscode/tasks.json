@@ -50,6 +50,14 @@
             },
             "command": "python3 xml_generator.py",
             "problemMatcher": []
+        },
+        {
+            "label": "Main xml Generator",
+            "type": "shell",
+            "options": {
+                "cwd": "./xml_generator"
+            },
+            "command": "python3 __main__.py"
         }
     ]
 }
