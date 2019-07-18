@@ -20,9 +20,10 @@ import os
 
 class FaceGenerator:
     # RGB-images: 3-channels, grayscale: 1-channel, RGBA-images: 4-channels
-    def __init__(self, image_width, image_height, channels):
+    def __init__(self, image_width, image_height, channels, game_object):
         self.image_width = image_width
         self.image_height = image_height
+        self.game_object = game_object
 
         self.channels = channels
 
@@ -257,10 +258,22 @@ class FaceGenerator:
         image = Image.fromarray(generated_image, "RGB")
         image.save(image_save_path)
 
-
-if __name__ == '__main__':
-    facegenerator = FaceGenerator(128, 128, 3)
-    facegenerator.train(datafolder="samples", epochs=4000,
+def run_single():
+    game_object = "pig"
+    facegenerator = FaceGenerator(128, 128, 3, game_object)
+    facegenerator.train(datafolder="samples/pig", epochs=1000,
                         batch_size=32, save_images_interval=100)
     facegenerator.generate_single_image(
-        "saved_models/facegenerator.h5", "test.png")
+        "saved_models/" + "pig_generator.h5", "test.png")
+
+def run_all():    
+    for game_object in ["pig", "platform", "block", "tnt"]:
+        facegenerator = FaceGenerator(128, 128, 3, game_object)
+        facegenerator.train(datafolder="samples/" + game_object, epochs=4000,
+                            batch_size=32, save_images_interval=100)
+        facegenerator.generate_single_image(
+            "saved_models/" + game_object + "_generator.h5", "test.png")
+
+if __name__ == '__main__':
+    run_single()
+    
