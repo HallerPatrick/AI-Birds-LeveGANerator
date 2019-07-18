@@ -1,16 +1,17 @@
 from PIL import Image, ImageDraw
 import os
-import raw_level_generator.xml_parser
+from xml_parser import parse_xml
 
 # FROM: XML (-9.99999, -9.99999), (9.99999, 9.99999)
 # TO: PIL X: (0, 0) Y: (Pixel_max_x, Pixel_max_y)
 
-IMG_DIM = (842, 482)
+IMG_DIM = (256, 128)
 XML_DIM = (10, 10)
 
 PIG_SIZE = 0.5
 
 # Colors
+
 PIG_COLOR = (255, 105, 180, 1)  # pink
 BLOCK_COLOR = (0, 255, 0, 1)  # grenn
 PLATFORM_COLOR = (255, 255, 255, 1)  # white

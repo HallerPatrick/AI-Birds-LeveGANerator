@@ -109,11 +109,12 @@ class FaceGenerator:
         model.add(BatchNormalization(momentum=0.8))
         model.add(Activation("relu"))
 
-        model.add(UpSampling2D())
+        model.add(UpSampling2D((4, 4)))
         model.add(Conv2D(128, kernel_size=3, padding="same"))
         model.add(BatchNormalization(momentum=0.8))
         model.add(Activation("relu"))
 
+        model.add(UpSampling2D((4, 2)))
         model.add(UpSampling2D())
         model.add(Conv2D(128, kernel_size=3, padding="same"))
         model.add(BatchNormalization(momentum=0.8))
@@ -265,8 +266,8 @@ class FaceGenerator:
 def run_all():
     for game_object in ["block", "pig", "platform", "tnt"]:
         facegenerator = FaceGenerator(64, 64, 3, game_object)
-        facegenerator.train(datafolder="../raw_level_generator/out/" +
-                            game_object, epochs=4000 , batch_size=32, save_images_interval=100)
+        facegenerator.train(datafolder="samples" +
+                            game_object, epochs=4000, batch_size=32, save_images_interval=100)
 
         if not os.path.isdir("saved_models"):
             os.makedirs("saved_models")
@@ -289,9 +290,8 @@ def run_all():
             "models/" + game_object + "_generator.h5", "test.png")
 
 def run_single():
-    facegenerator = FaceGenerator(64, 64, 3, "pig")
-    facegenerator.train(datafolder="../raw_level_generator/out/" +
-                        "pig", epochs=1000 , batch_size=32, save_images_interval=100)
+    facegenerator = FaceGenerator(256, 128, 3, "pig")
+    facegenerator.train(datafolder="./samples/", epochs=1000 , batch_size=32, save_images_interval=100)
 
     if not os.path.isdir("saved_models"):
         os.makedirs("saved_models")

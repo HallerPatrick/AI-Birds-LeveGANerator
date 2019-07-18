@@ -4,6 +4,14 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "exp nn",
+            "type": "shell",
+            "command": "python exp_nn.py",
+            "options": {
+                "cwd": "./nn"
+            },
+        },
+        {
             "label": "Xml Writer",
             "type": "shell",
             "options": {
@@ -50,7 +58,7 @@
             "options": {
                 "cwd": "./raw_level_generator"
             },
-            "command": "python3 raw_image_builder.py"
+            "command": "python raw_image_builder.py"
         },
         {
             "label": "Generate project structure image",

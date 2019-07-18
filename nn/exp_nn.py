@@ -1,4 +1,4 @@
-#!/usr/bin/env python3s
+#!/usr/bin/env python3
 # coding: utf-8
 
 import os
@@ -8,7 +8,11 @@ from PIL import Image
 from tqdm import tqdm
 import numpy as np
 
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
+import tensorflow as tf
 from keras.layers import Input, Reshape, Dropout, Dense, Flatten, BatchNormalization, Activation, ZeroPadding2D
 from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.convolutional import UpSampling2D, Conv2D
@@ -19,7 +23,7 @@ from keras.optimizers import Adam
 # Sample image(s) with following specs:
 # PNG image data, 842 x 482, 8-bit/color RGB, non-interlaced
 img = "samples"
-IMAGE_SHAPE = (842, 482, 3)
+IMAGE_SHAPE = (512, 256, 3)
 random_noise_dimension = 100
 
 
@@ -70,7 +74,9 @@ validity = model(input_image)
 
 discriminator = Model(input_image, validity)
 optimizer = Adam(0.0002, 0.5)
-discriminator.compile(loss="binary_crossentropy", optimizer=optimizer)
+
+with tf.device('/gpu:0'):
+    discriminator.compile(loss="binary_crossentropy", optimizer=optimizer)
 
 # Build generator
 
@@ -134,7 +140,8 @@ discriminator.trainable = False
 validity = discriminator(generated_image)
 
 combined = Model(random_input, validity)
-combined.compile(loss="binary_crossentropy", optimizer=optimizer)
+with tf.device('/gpu:0'):
+    combined.compile(loss="binary_crossentropy", optimizer=optimizer)
 
 
 
@@ -199,8 +206,9 @@ for epoch in range(2):
     print("%d [Discriminator loss: %f, acc.: %.2f%%] [Generator loss: %f]" % (
         epoch, discriminator_loss[0], 100*discriminator_loss[1], generator_loss))
 
-    if epoch % save_images_interval == 0:
-        save_images(epoch)
+
+    #if epoch % save_images_interval == 0:
+    #    save_images(epoch)
 
 
 

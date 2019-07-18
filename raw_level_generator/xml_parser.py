@@ -17,7 +17,7 @@ class Platform:
     material: str
     x: str
     y: str
-    rotation: str
+    # rotation: str
 
 @dataclass
 class TNT:
