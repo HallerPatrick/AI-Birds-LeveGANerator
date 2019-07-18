@@ -35,21 +35,21 @@
             "command": "python3 xml_writer.py"
         },
         {
-            "label": "nn",
+            "label": "train",
             "type": "shell",
             "options": {
                 "cwd": "./nn"
             },
-            "command": "python3 nn.py",
+            "command": "python3 train.py",
             "problemMatcher": []
         },
         {
-            "label": "nn win",
+            "label": "train win",
             "type": "shell",
             "options": {
                 "cwd": "./nn"
             },
-            "command": "python nn.py",
+            "command": "python train.py",
             "problemMatcher": []
         },
         {
@@ -85,6 +85,14 @@
             },
             "command": "python3 xml_generator.py",
             "problemMatcher": []
+        },
+        {
+            "label": "Predict",
+            "type": "shell",
+            "options": {
+                "cwd": "./nn"
+            },
+            "command": "python predict.py",
         }
     ]
 }
