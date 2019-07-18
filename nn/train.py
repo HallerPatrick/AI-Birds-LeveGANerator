@@ -222,9 +222,10 @@ class FaceGenerator:
             if epoch % save_images_interval == 0:
                 self.save_images(epoch)
 
+            self.generator.save_weights("saved_models/" + self.game_object + "_weights.h5")
         # Save the model for a later use
         self.generator.save("saved_models/" + self.game_object + "_generator.h5")
-        self.generator.save_weights("saved_models/" + self.game_object + "_weights.h5")
+        
 
     def save_images(self, epoch):
         # Save 25 generated images for demonstration purposes using matplotlib.pyplot.

@@ -3,10 +3,12 @@ from keras.models import load_model
 from PIL import Image
 
 
-model = load_model("saved_models/facegenerator.h5")
+model = load_model("saved_models/pig_generator.h5", compile=False)
+model.load_weights("saved_models/pig_weights.h5")
+
 random_noise_dimension = 100
 noise = np.random.normal(0, 1, (1, random_noise_dimension))
-generated_image = model.predict(noise)
+generated_image = model.predict(noise, verbose=1)
 # Normalized (-1 to 1) pixel values to the real (0 to 256) pixel values.
 generated_image = (generated_image+1)*127.5
 print(generated_image)

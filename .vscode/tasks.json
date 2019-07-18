@@ -93,6 +93,23 @@
                 "cwd": "./nn"
             },
             "command": "python predict.py",
-        }
+        },
+        {
+            "label": "Gan TF",
+            "type": "shell",
+            "options": {
+                "cwd": "./nn/tf"
+            },
+            "command": "python run.py",
+        },
+        {
+            "label": "Gan 2",
+            "type": "shell",
+            "options": {
+                "cwd": "./nn/tf"
+            },
+            "command": "python gan2.py --mode=train",
+        },
+        
     ]
 }
