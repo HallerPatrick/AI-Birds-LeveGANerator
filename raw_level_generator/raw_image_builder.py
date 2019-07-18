@@ -5,7 +5,7 @@ from xml_parser import parse_xml
 # FROM: XML (-9.99999, -9.99999), (9.99999, 9.99999)
 # TO: PIL X: (0, 0) Y: (Pixel_max_x, Pixel_max_y)
 
-IMG_DIM = (256, 128)
+IMG_DIM = (128, 128)
 XML_DIM = (10, 10)
 
 PIG_SIZE = 0.5

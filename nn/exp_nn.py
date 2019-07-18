@@ -1,214 +1,190 @@
-#!/usr/bin/env python3
-# coding: utf-8
+from __future__ import print_function, division
 
 import os
-# PIL for opening,resizing and saving images
-from PIL import Image
-# tqdm for a progress bar when loading the dataset
 from tqdm import tqdm
-import numpy as np
+from PIL import Image
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
-os.environ["CUDA_VISIBLE_DEVICES"] = ""
-
-import tensorflow as tf
-from keras.layers import Input, Reshape, Dropout, Dense, Flatten, BatchNormalization, Activation, ZeroPadding2D
+from keras.datasets import mnist
+from keras.layers import Input, Dense, Reshape, Flatten, Dropout
+from keras.layers import BatchNormalization, Activation, ZeroPadding2D
 from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.convolutional import UpSampling2D, Conv2D
-from keras.models import Sequential, Model, load_model
+from keras.models import Sequential, Model
 from keras.optimizers import Adam
 
+import matplotlib.pyplot as plt
 
-# Sample image(s) with following specs:
-# PNG image data, 842 x 482, 8-bit/color RGB, non-interlaced
-img = "samples"
-IMAGE_SHAPE = (512, 256, 3)
-random_noise_dimension = 100
+import sys
 
+import numpy as np
 
-# Build discriminator
-# Discriminator attempts to classify real and generated images
+class GAN():
+    def __init__(self):
+        self.img_rows = 28
+        self.img_cols = 28
+        self.channels = 1
+        self.img_shape = (self.img_rows, self.img_cols, self.channels)
+        self.latent_dim = 100
 
-model = Sequential()
-model.add(Conv2D(32, kernel_size=3, strides=2, input_shape=(512, 256, 3), padding="same"))
+        optimizer = Adam(0.0002, 0.5)
 
-# Leaky relu is similar to usual relu. If x < 0 then f(x) = x * alpha, otherwise f(x) = x.
-model.add(LeakyReLU(alpha=0.2))
-# Dropout blocks some connections randomly. This help the model to generalize better.
-# 0.25 means that every connection has a 25% chance of being blocked.
-model.add(Dropout(0.25))
-model.add(Conv2D(64, kernel_size=3, strides=2, padding="same"))
-# Zero padding adds additional rows and columns to the image. Those rows and columns are made of zeros.
-model.add(ZeroPadding2D(padding=((0, 1), (0, 1))))
-model.add(BatchNormalization(momentum=0.8))
-model.add(LeakyReLU(alpha=0.2))
+        # Build and compile the discriminator
+        self.discriminator = self.build_discriminator()
+        self.discriminator.compile(loss='binary_crossentropy',
+            optimizer=optimizer,
+            metrics=['accuracy'])
 
-model.add(Dropout(0.25))
-model.add(Conv2D(128, kernel_size=3, strides=2, padding="same"))
-model.add(BatchNormalization(momentum=0.8))
-model.add(LeakyReLU(alpha=0.2))
+        # Build the generator
+        self.generator = self.build_generator()
 
-model.add(Dropout(0.25))
-model.add(Conv2D(256, kernel_size=3, strides=1, padding="same"))
-model.add(BatchNormalization(momentum=0.8))
-model.add(LeakyReLU(alpha=0.2))
+        # The generator takes noise as input and generates imgs
+        z = Input(shape=(self.latent_dim,))
+        img = self.generator(z)
 
-model.add(Dropout(0.25))
-model.add(Conv2D(512, kernel_size=3, strides=1, padding="same"))
-model.add(BatchNormalization(momentum=0.8))
-model.add(LeakyReLU(alpha=0.2))
+        # For the combined model we will only train the generator
+        self.discriminator.trainable = False
 
-model.add(Dropout(0.25))
-# Flatten layer flattens the output of the previous layer to a single dimension.
-model.add(Flatten())
-# Outputs a value between 0 and 1 that predicts whether image is real or generated. 0 = generated, 1 = real.
-model.add(Dense(1, activation='sigmoid'))
+        # The discriminator takes generated images as input and determines validity
+        validity = self.discriminator(img)
 
-model.summary()
-
-input_image = Input(shape=IMAGE_SHAPE)
-
-# Model output given an image.
-validity = model(input_image)
-
-discriminator = Model(input_image, validity)
-optimizer = Adam(0.0002, 0.5)
-
-with tf.device('/gpu:0'):
-    discriminator.compile(loss="binary_crossentropy", optimizer=optimizer)
-
-# Build generator
-
-model = Sequential()
-
-model.add(Dense(512*8*8, activation="relu",
-                input_dim=random_noise_dimension))
-model.add(Reshape((8, 8, 512)))
-
-# Four layers of upsampling, convolution, batch normalization and activation.
-# 1. Upsampling: Input data is repeated. Default is (2,2). In that case a 4x4x256 array becomes an 8x8x256 array.
-# 2. Convolution: If you are not familiar, you should watch this video: https://www.youtube.com/watch?v=FTr3n7uBIuE
-# 3. Normalization normalizes outputs from convolution.
-# 4. Relu activation:  f(x) = max(0,x). If x < 0, then f(x) = 0.
-
-model.add(UpSampling2D())
-model.add(Conv2D(256, kernel_size=3, padding="same"))
-model.add(BatchNormalization(momentum=0.8))
-model.add(Activation("relu"))
-
-model.add(UpSampling2D())
-model.add(Conv2D(256, kernel_size=3, padding="same"))
-model.add(BatchNormalization(momentum=0.8))
-model.add(Activation("relu"))
-
-model.add(UpSampling2D((4, 2)))
-# model.add(Conv2D(128, kernel_size=3, padding="same"))
-# model.add(BatchNormalization(momentum=0.8))
-# model.add(Activation("relu"))
-
-model.add(UpSampling2D((2, 2)))
-model.add(UpSampling2D((2, 2)))
-model.add(Conv2D(128, kernel_size=3, padding="same"))
-model.add(BatchNormalization(momentum=0.8))
-model.add(Activation("relu"))
-
-#model.add(Reshape((421, 241, 64)))
-
-# Last convolutional layer outputs as many featuremaps as channels in the final image.
-model.add(Conv2D(3, kernel_size=3, padding="same"))
-# tanh maps everything to a range between -1 and 1.
-model.add(Activation("tanh"))
-
-# show the summary of the model architecture
-model.summary()
-
-# Placeholder for the random noise input
-input = Input(shape=(random_noise_dimension,))
-# Model output
-generated_image = model(input)
-
-# Change the model type from Sequential to Model (functional API) More at: https://keras.io/models/model/.
-generator = Model(input, generated_image)
+        # The combined model  (stacked generator and discriminator)
+        # Trains the generator to fool the discriminator
+        self.combined = Model(z, validity)
+        self.combined.compile(loss='binary_crossentropy', optimizer=optimizer)
 
 
-random_input = Input(shape=(random_noise_dimension,))
+    def build_generator(self):
 
-generated_image = generator(random_input)
-discriminator.trainable = False
+        model = Sequential()
 
-validity = discriminator(generated_image)
+        model.add(Dense(256, input_dim=self.latent_dim))
+        model.add(LeakyReLU(alpha=0.2))
+        model.add(BatchNormalization(momentum=0.8))
+        model.add(Dense(512))
+        model.add(LeakyReLU(alpha=0.2))
+        model.add(BatchNormalization(momentum=0.8))
+        model.add(Dense(1024))
+        model.add(LeakyReLU(alpha=0.2))
+        model.add(BatchNormalization(momentum=0.8))
+        model.add(Dense(np.prod(self.img_shape), activation='tanh'))
+        model.add(Reshape(self.img_shape))
 
-combined = Model(random_input, validity)
-with tf.device('/gpu:0'):
-    combined.compile(loss="binary_crossentropy", optimizer=optimizer)
+        model.summary()
 
+        noise = Input(shape=(self.latent_dim,))
+        img = model(noise)
 
+        return Model(noise, img)
 
-def get_training_data(datafolder):
-    print("Loading training data...")
+    def build_discriminator(self):
 
-    training_data = []
-    # Finds all files in datafolder
-    filenames = os.listdir(datafolder)
-    for filename in tqdm(filenames):
-        # Combines folder name and file name.
-        path = os.path.join(datafolder, filename)
-        # Opens an image as an Image object.
-        image = Image.open(path)
-        # Resizes to a desired size.
-        image = image.resize(
-            (IMAGE_SHAPE[0], IMAGE_SHAPE[1]), Image.ANTIALIAS)
-        # Creates an array of pixel values from the image.
-        pixel_array = np.asarray(image)
+        model = Sequential()
 
-        training_data.append(pixel_array)
+        model.add(Flatten(input_shape=self.img_shape))
+        model.add(Dense(512))
+        model.add(LeakyReLU(alpha=0.2))
+        model.add(Dense(256))
+        model.add(LeakyReLU(alpha=0.2))
+        model.add(Dense(1, activation='sigmoid'))
+        model.summary()
 
+        img = Input(shape=self.img_shape)
+        validity = model(img)
 
-    # training_data is converted to a numpy array
-    training_data = np.reshape(training_data, (-1, *IMAGE_SHAPE))
-    return training_data
+        return Model(img, validity)
 
+    def train(self, epochs, batch_size=128, sample_interval=50):
 
-training_data = get_training_data(img)
-training_data = training_data / 127.5 - 1.
+        # Load the dataset
+        #(X_train, _), (_, _) = mnist.load_data()
 
-# Two arrays of labels. Labels for real images: [1,1,1 ... 1,1,1], labels for generated images: [0,0,0 ... 0,0,0]
-labels_for_real_images = np.ones((32, 1))
-labels_for_generated_images = np.zeros((32, 1))
-    
+        X_train = self.get_training_data("samples2")
 
-for epoch in range(2):
-    # Select a random half of images
-    indices = np.random.randint(0, training_data.shape[0], 32)
-    real_images = training_data[indices]
+        # Rescale -1 to 1
+        X_train = X_train / 127.5 - 1.
+        X_train = np.expand_dims(X_train, axis=3)
 
-    
-    # Generate random noise for a whole batch.
-    random_noise = np.random.normal(
-        0, 1, (32, random_noise_dimension))
-    # Generate a batch of new images.
-    
-    generated_images = generator.predict(random_noise)
-    
-    # Train the discriminator on real images.
-    discriminator_loss_real = discriminator.train_on_batch(
-        real_images, labels_for_real_images)
-    # Train the discriminator on generated images.
-    discriminator_loss_generated = discriminator.train_on_batch(
-        generated_images, labels_for_generated_images)
-    # Calculate the average discriminator loss.
-    discriminator_loss = 0.5 *         np.add(discriminator_loss_real, discriminator_loss_generated)
+        # Adversarial ground truths
+        valid = np.ones((batch_size, 1))
+        fake = np.zeros((batch_size, 1))
 
-    # Train the generator using the combined model. Generator tries to trick discriminator into mistaking generated images as real.
-    generator_loss = combined.train_on_batch(
-        random_noise, labels_for_real_images)
-    print("%d [Discriminator loss: %f, acc.: %.2f%%] [Generator loss: %f]" % (
-        epoch, discriminator_loss[0], 100*discriminator_loss[1], generator_loss))
+        for epoch in range(epochs):
 
+            # ---------------------
+            #  Train Discriminator
+            # ---------------------
 
-    #if epoch % save_images_interval == 0:
-    #    save_images(epoch)
+            # Select a random batch of images
+            idx = np.random.randint(0, X_train.shape[0], batch_size)
+            imgs = X_train[idx]
 
+            noise = np.random.normal(0, 1, (batch_size, self.latent_dim))
 
+            # Generate a batch of new images
+            gen_imgs = self.generator.predict(noise)
 
+            # Train the discriminator
+            d_loss_real = self.discriminator.train_on_batch(imgs, valid)
+            d_loss_fake = self.discriminator.train_on_batch(gen_imgs, fake)
+            d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
+
+            # ---------------------
+            #  Train Generator
+            # ---------------------
+
+            noise = np.random.normal(0, 1, (batch_size, self.latent_dim))
+
+            # Train the generator (to have the discriminator label samples as valid)
+            g_loss = self.combined.train_on_batch(noise, valid)
+
+            # Plot the progress
+            print ("%d [D loss: %f, acc.: %.2f%%] [G loss: %f]" % (epoch, d_loss[0], 100*d_loss[1], g_loss))
+
+            # If at save interval => save generated image samples
+            if epoch % sample_interval == 0:
+                self.sample_images(epoch)
+
+    def sample_images(self, epoch):
+        r, c = 5, 5
+        noise = np.random.normal(0, 1, (r * c, self.latent_dim))
+        gen_imgs = self.generator.predict(noise)
+
+        # Rescale images 0 - 1
+        gen_imgs = 0.5 * gen_imgs + 0.5
+
+        fig, axs = plt.subplots(r, c)
+        cnt = 0
+        for i in range(r):
+            for j in range(c):
+                axs[i,j].imshow(gen_imgs[cnt, :,:,0], cmap='gray')
+                axs[i,j].axis('off')
+                cnt += 1
+        fig.savefig("images/%d.png" % epoch)
+        plt.close()
+
+    def get_training_data(self, datafolder):
+        print("Loading training data...")
+
+        training_data = []
+        # Finds all files in datafolder
+        filenames = os.listdir(datafolder)
+        for filename in tqdm(filenames):
+            # Combines folder name and file name.
+            path = os.path.join(datafolder, filename)
+            # Opens an image as an Image object.
+            image = Image.open(path)
+            # Resizes to a desired size.
+            #image = image.resize((self.image_width, self.image_height), Image.ANTIALIAS)
+            # Creates an array of pixel values from the image.
+            pixel_array = np.asarray(image)
+
+            training_data.append(pixel_array)
+
+        # training_data is converted to a numpy array
+        training_data = np.reshape(
+            training_data, (-1, 128, 64, 3))
+        return training_data
+
+if __name__ == '__main__':
+    gan = GAN()
+    gan.train(epochs=30000, batch_size=32, sample_interval=200)

@@ -1,6 +1,3 @@
-
-import os
-
 # Import everything that is needed from Keras library.
 from keras.layers import Input, Reshape, Dropout, Dense, Flatten, BatchNormalization, Activation, ZeroPadding2D
 from keras.layers.advanced_activations import LeakyReLU
@@ -20,10 +17,10 @@ from tqdm import tqdm
 # os library is needed for extracting filenames from the dataset folder.
 import os
 
+
 class FaceGenerator:
     # RGB-images: 3-channels, grayscale: 1-channel, RGBA-images: 4-channels
-    def __init__(self, image_width, image_height, channels, game_object):
-        self.game_object = game_object
+    def __init__(self, image_width, image_height, channels):
         self.image_width = image_width
         self.image_height = image_height
 
@@ -109,13 +106,12 @@ class FaceGenerator:
         model.add(BatchNormalization(momentum=0.8))
         model.add(Activation("relu"))
 
-        model.add(UpSampling2D((4, 4)))
+        model.add(UpSampling2D())
         model.add(Conv2D(128, kernel_size=3, padding="same"))
         model.add(BatchNormalization(momentum=0.8))
         model.add(Activation("relu"))
 
-        model.add(UpSampling2D((4, 2)))
-        model.add(UpSampling2D())
+        model.add(UpSampling2D((4, 4)))
         model.add(Conv2D(128, kernel_size=3, padding="same"))
         model.add(BatchNormalization(momentum=0.8))
         model.add(Activation("relu"))
@@ -226,8 +222,7 @@ class FaceGenerator:
                 self.save_images(epoch)
 
         # Save the model for a later use
-        self.generator.save(
-            "models/" + self.game_object + "_generator.h5")
+        self.generator.save("saved_models/facegenerator.h5")
 
     def save_images(self, epoch):
         # Save 25 generated images for demonstration purposes using matplotlib.pyplot.
@@ -246,8 +241,7 @@ class FaceGenerator:
                     generated_images[image_count, :], cmap='spring')
                 axis[row, column].axis('off')
                 image_count += 1
-        figure.savefig("generated_images/" + self.game_object +
-                       "/generated_%d.png" % epoch)
+        figure.savefig("generated_images/generated_%d.png" % epoch)
         plt.close()
 
     def generate_single_image(self, model_path, image_save_path):
@@ -263,41 +257,10 @@ class FaceGenerator:
         image = Image.fromarray(generated_image, "RGB")
         image.save(image_save_path)
 
-def run_all():
-    for game_object in ["block", "pig", "platform", "tnt"]:
-        facegenerator = FaceGenerator(64, 64, 3, game_object)
-        facegenerator.train(datafolder="samples" +
-                            game_object, epochs=4000, batch_size=32, save_images_interval=100)
-
-        if not os.path.isdir("saved_models"):
-            os.makedirs("saved_models")
-
-        """  
-        if not os.path.exists("saved_models/pig"):
-            os.makedirs("saved_models")
-
-        if not os.path.exists("saved_models/platform"):
-            os.makedirs("saved_models/platform")
-
-        if not os.path.exists("saved_models/tnt"):
-            os.makedirs("saved_models/tnt")
-
-        if not os.path.exists("saved_models/block"):
-            os.makedirs("saved_models/block")
-        """
-
-        facegenerator.generate_single_image(
-            "models/" + game_object + "_generator.h5", "test.png")
-
-def run_single():
-    facegenerator = FaceGenerator(256, 128, 3, "pig")
-    facegenerator.train(datafolder="./samples/", epochs=1000 , batch_size=32, save_images_interval=100)
-
-    if not os.path.isdir("saved_models"):
-        os.makedirs("saved_models")
-
-    facegenerator.generate_single_image(
-        "models/" + "pig" + "_generator.h5", "test.png")
 
 if __name__ == '__main__':
-    run_single()
+    facegenerator = FaceGenerator(128, 128, 3)
+    facegenerator.train(datafolder="samples", epochs=4000,
+                        batch_size=32, save_images_interval=100)
+    facegenerator.generate_single_image(
+        "saved_models/facegenerator.h5", "test.png")

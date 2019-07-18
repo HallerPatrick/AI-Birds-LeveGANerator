@@ -31,6 +31,7 @@ def build_objects_from_centroids(centroids, game_object):
 
     return objects
 
+
 def main():
 
     filename = "centroids.json"
