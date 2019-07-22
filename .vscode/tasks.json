@@ -9,7 +9,7 @@
             "command": "python exp_nn.py",
             "options": {
                 "cwd": "./nn"
-            },
+            }
         },
         {
             "label": "Xml Writer",
@@ -58,7 +58,10 @@
             "options": {
                 "cwd": "./raw_level_generator"
             },
-            "command": "python raw_image_builder.py"
+            "command": "python raw_image_builder.py",
+            "problemMatcher": [
+                "$vsls"
+            ]
         },
         {
             "label": "Generate project structure image",
@@ -83,7 +86,7 @@
             "options": {
                 "cwd": "./xml_generator"
             },
-            "command": "python3 xml_generator.py",
+            "command": "python __main__.py",
             "problemMatcher": []
         },
         {
@@ -92,7 +95,7 @@
             "options": {
                 "cwd": "./nn"
             },
-            "command": "python predict.py",
+            "command": "python predict.py"
         },
         {
             "label": "Gan TF",
@@ -100,7 +103,7 @@
             "options": {
                 "cwd": "./nn/tf"
             },
-            "command": "python run.py",
+            "command": "python run.py"
         },
         {
             "label": "Gan 2",
@@ -108,8 +111,7 @@
             "options": {
                 "cwd": "./nn/tf"
             },
-            "command": "python gan2.py --mode=train",
-        },
-        
+            "command": "python gan2.py --mode=train --batch_size=32"
+        }
     ]
 }

@@ -1,6 +1,7 @@
 from keras.models import load_model
 import numpy as np
 from PIL import Image
+import matplotlib.pyplot as plt
 
 def generate_single_image(model_path, image_save_path, random_noise_dimension=100):
     noise = np.random.normal(0, 1, (1, random_noise_dimension))
@@ -15,3 +16,24 @@ def generate_single_image(model_path, image_save_path, random_noise_dimension=10
     image = Image.fromarray(generated_image, "RGB")
     image.save("tmp/" + image_save_path)
     return "tmp/" + image_save_path
+
+def generate_25_images(generator_model, folder_path):
+    rows, columns = 5, 5
+    noise = np.random.normal(
+        0, 1, (rows * columns, 100))
+
+    generator = load_model(generator_model)
+    generator.compile(loss="binary_crossentropy", optimizer="SGD")
+
+    generated_images = generator.predict(noise)
+
+    generated_images = 0.5 * generated_images + 0.5
+
+    image_count = 0
+
+    for _ in range(rows):
+        for _ in range(columns):
+            img = generated_images[image_count, :]
+            plt.imsave(folder_path + '/' + '{}.png'.format(image_count), img, cmap="binary")
+            image_count += 1
+

@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 from baseline import xml_writer
 from raw_level_generator.xml_parser import Platform
 from raw_level_generator.raw_image_builder import convert_coord_back
-# from conture_detector.conture_detector import 
+
 
 def read_centroids_from_file(file_name):
     with open(file_name) as f:

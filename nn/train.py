@@ -3,7 +3,7 @@ from keras.layers import Input, Reshape, Dropout, Dense, Flatten, BatchNormaliza
 from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.convolutional import UpSampling2D, Conv2D
 from keras.models import Sequential, Model, load_model
-from keras.optimizers import Adam
+from keras.optimizers import Adam, SGD
 
 # matplotlib will help with displaying the results
 import matplotlib.pyplot as plt
@@ -222,10 +222,9 @@ class FaceGenerator:
             if epoch % save_images_interval == 0:
                 self.save_images(epoch)
 
-            self.generator.save_weights("saved_models/" + self.game_object + "_weights.h5")
         # Save the model for a later use
-        self.generator.save("saved_models/" + self.game_object + "_generator.h5")
-        
+        self.generator.save(
+            "saved_models/" + self.game_object + "_generator.h5")
 
     def save_images(self, epoch):
         # Save 25 generated images for demonstration purposes using matplotlib.pyplot.
@@ -260,23 +259,39 @@ class FaceGenerator:
         image = Image.fromarray(generated_image, "RGB")
         image.save(image_save_path)
 
-def run_single():
-    game_object = "pig"
-    facegenerator = FaceGenerator(128, 128, 3, game_object)
-    facegenerator.train(datafolder="samples/pig", epochs=1000,
-                        batch_size=32, save_images_interval=100)
-    
-    facegenerator.generate_single_image(
-        "saved_models/" + "pig_generator.h5", "test.png")
 
-def run_all():    
+def save_images(generator_model, folder_path):
+    # Save 25 generated images for demonstration purposes using matplotlib.pyplot.
+
+    rows, columns = 5, 5
+    noise = np.random.normal(
+        0, 1, (rows * columns, 100))
+
+    generator = load_model("saved_models/facegenerator.h5")
+    generator.compile(loss="binary_crossentropy", optimizer="SGD")
+
+    generated_images = generator.predict(noise)
+
+    generated_images = 0.5 * generated_images + 0.5
+
+    image_count = 0
+
+    for _ in range(rows):
+        for _ in range(columns):
+            img = generated_images[image_count, :]
+            plt.imsave('test1.png', img, cmap="binary")
+            image_count += 1
+
+
+def run_all():
     for game_object in ["pig", "platform", "block", "tnt"]:
+        epochs = 2000 if game_object == "tnt" else 4000
         facegenerator = FaceGenerator(128, 128, 3, game_object)
-        facegenerator.train(datafolder="samples/" + game_object, epochs=4000,
+        facegenerator.train(datafolder="samples/" + game_object, epochs=epochs,
                             batch_size=32, save_images_interval=100)
         facegenerator.generate_single_image(
             "saved_models/" + game_object + "_generator.h5", "test.png")
 
+
 if __name__ == '__main__':
-    run_single()
-    
+    run_all()

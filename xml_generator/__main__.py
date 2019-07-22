@@ -12,7 +12,7 @@ SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 
 from utils import Parameters
-from nn.img_generator import generate_single_image
+from nn.img_generator import generate_single_image, generate_25_images
 from conture_detector.conture_detector import conture_detector
 
 # Amount of image that shall be generated for each game object (4)
@@ -26,9 +26,22 @@ models = {
     "tnt": "nn/models/tnt_generator.h5"
 }
 
+# Build for every object 25 images
+IMG_BATCH_SIZE = 25
 
+GEN_PATH = "gen"
+PIG_IMG_PATH = "gen/pig"
+BLOCK_IMG_PATH = "gen/block"
+TNT_IMG_PATH = "gen/tnt"
+PLATFORM_IMG_PATH = "gen/platform"
 
 def get_object_centroids():
+
+    generate_25_images(models["pig"], PIG_IMG_PATH)
+    generate_25_images(models["block"], BLOCK_IMG_PATH)
+    generate_25_images(models["tnt"], TNT_IMG_PATH)
+    generate_25_images(models["platform"], PLATFORM_IMG_PATH)
+
     
     for i in range(IMG_BATCH_SIZE):
         # Preload every model
@@ -39,16 +52,31 @@ def get_object_centroids():
 
         print(conture_detector(pig_img_path))
 
+def setup_path():
+    
+    if not os.path.exists("gen"):
+        os.mkdir("gen")
 
+    if not os.path.exists("gen/pig"):
+        os.mkdir("gen/pig")
 
+    if not os.path.exists("gen/block"):
+        os.mkdir("gen/block")
+
+    if not os.path.exists("gen/platform"):
+        os.mkdir("gen/pig")
+
+    if not os.path.exists("gen/tnt"):
+        os.mkdir("gen/pig")
+    
 
 def main():
-    
+
     parser = argparse.ArgumentParser()
-    parser.add_argument("-f", "--parameters_file", help="Parameters file wiht constraints is passed", default="parameters.txt")
+    parser.add_argument("-f", "--parameters_file", required=True, help="Parameters file wiht constraints is passed", default="parameters.txt")
     args = parser.parse_args()
 
-
+    setup_path()
 
     parameters = Parameters.parameters_from_file(args.parameters_file)
 
