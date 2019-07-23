@@ -20,10 +20,10 @@ IMG_BATCH_SIZE = 30
 
 # Paths to the trained models for all game objects
 models = {
-    "pig": "nn/models/pig_generator.h5",
-    "block": "nn/models/block_generator.h5",
-    "platform": "nn/models/platform_generator.h5",
-    "tnt": "nn/models/tnt_generator.h5"
+    "pig": "../nn/models/pig_generator.h5",
+    "block": "../nn/models/block_generator.h5",
+    "platform": "../nn/models/platform_generator.h5",
+    "tnt": "../nn/models/tnt_generator.h5"
 }
 
 # Build for every object 25 images
@@ -42,16 +42,6 @@ def get_object_centroids():
     generate_25_images(models["tnt"], TNT_IMG_PATH)
     generate_25_images(models["platform"], PLATFORM_IMG_PATH)
 
-    
-    for i in range(IMG_BATCH_SIZE):
-        # Preload every model
-        pig_img_path = generate_single_image(models["pig"], "pig.png")
-        block_img_path = generate_single_image(models["block"], "block.png")
-        platform_img_path = generate_single_image(models["platform"], "platform.png")
-        tnt_img_path = generate_single_image(models["tnt"], "tnt.png")
-
-        print(conture_detector(pig_img_path))
-
 def setup_path():
     
     if not os.path.exists("gen"):
@@ -64,10 +54,10 @@ def setup_path():
         os.mkdir("gen/block")
 
     if not os.path.exists("gen/platform"):
-        os.mkdir("gen/pig")
+        os.mkdir("gen/platform")
 
     if not os.path.exists("gen/tnt"):
-        os.mkdir("gen/pig")
+        os.mkdir("gen/tnt")
     
 
 def main():

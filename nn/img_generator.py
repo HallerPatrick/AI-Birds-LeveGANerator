@@ -34,6 +34,7 @@ def generate_25_images(generator_model, folder_path):
     for _ in range(rows):
         for _ in range(columns):
             img = generated_images[image_count, :]
-            plt.imsave(folder_path + '/' + '{}.png'.format(image_count), img, cmap="binary")
+            print(len(img))
+            plt.imsave(folder_path + '/' + '{}.png'.format(image_count), img, cmap="spring")
             image_count += 1
 
