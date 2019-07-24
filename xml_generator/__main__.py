@@ -75,7 +75,7 @@ def get_tnt_centroids():
 
     counter = 1
     tnt_centroids = []
-    while len(tnt_centroids) != 15:
+    while len(tnt_centroids) != 20:
         print("TNT images generated: [%d]\r" % counter, end="")
         print("TNT images used: [%d]\r" % len(tnt_centroids), end="")
         generate_25_images(models["tnt"], TNT_IMG_PATH)
@@ -84,7 +84,7 @@ def get_tnt_centroids():
             if len(centroids) >= 0 and len(centroids) <= 6:
                 tnt_centroids.append(centroids)
 
-            if len(tnt_centroids) == 15:
+            if len(tnt_centroids) == 20:
                 return tnt_centroids
 
             counter += 1
@@ -98,7 +98,7 @@ def get_platform_centroids():
 
     counter = 1
     platform_centroids = []
-    while len(platform_centroids) != 15:
+    while len(platform_centroids) != 20:
         print("Platform images generated: [%d]\r" % counter, end="")
         print("Platform images used: [%d]\r" % len(platform_centroids), end="")
         generate_25_images(models["platform"], PLATFORM_IMG_PATH)
@@ -106,7 +106,7 @@ def get_platform_centroids():
             centroids = conture_detector(PLATFORM_IMG_PATH + "/" + image)
             platform_centroids.append(centroids)
 
-            if len(platform_centroids) == 15:
+            if len(platform_centroids) == 20:
                 return platform_centroids
 
             counter += 1
@@ -123,7 +123,7 @@ def get_pig_centroids(pig_count):
 
     counter = 1
     pig_centroids = []
-    while len(pig_centroids) != 15:
+    while len(pig_centroids) != 20:
         print("Pig images generated: [%d]\r" % counter, end="")
         print("Pig images used: [%d]\r" % len(pig_centroids), end="")
         generate_25_images(models["pig"], PIG_IMG_PATH)
@@ -133,7 +133,7 @@ def get_pig_centroids(pig_count):
             if len(centroids) >= pig_min and len(centroids) <= pig_max:
                 pig_centroids.append(centroids)
 
-            if len(pig_centroids) == 15:
+            if len(pig_centroids) == 20:
                 return pig_centroids
 
             counter += 1
@@ -147,7 +147,7 @@ def get_block_centroids():
 
     counter = 1
     block_centroids = []
-    while len(block_centroids) != 15:
+    while len(block_centroids) != 20:
         print("Block images generated: [%d]\r" % counter, end="")
         print("Block images used: [%d]\r" % len(block_centroids), end="")
         generate_25_images(models["pig"], BLOCK_IMG_PATH)
@@ -157,7 +157,7 @@ def get_block_centroids():
             print(len(block_centroids))
             block_centroids.append(centroids)
 
-            if len(block_centroids) == 15:
+            if len(block_centroids) == 20:
                 return block_centroids
 
             counter += 1
@@ -215,20 +215,21 @@ def main():
     pig_centroids = get_pig_centroids(parameters[0])
     block_centroids = get_block_centroids()
 
-    writer = xml_writer.XmlWriter("test.xml")
 
-    pig_objects = build_objects_from_centroids(pig_centroids[0], "pig")
-    platform_objects = build_objects_from_centroids(
-        platform_centroids[0], "platform")
-    block_objects = build_objects_from_centroids(block_centroids[0], "block")
-    tnt_objects = build_objects_from_centroids(tnt_centroids[0], "tnt")
+    for i in range(20):
+        writer = xml_writer.XmlWriter("../level/level_{}.xml".format(str(i+4).zfill(2)))
+        pig_objects = build_objects_from_centroids(pig_centroids[i], "pig")
+        platform_objects = build_objects_from_centroids(
+            platform_centroids[i], "platform")
+        block_objects = build_objects_from_centroids(block_centroids[i], "block")
+        tnt_objects = build_objects_from_centroids(tnt_centroids[i], "tnt")
 
-    writer.add_slingshot()
-    writer.add_pig_objects(pig_objects)
-    writer.add_platform_objects(platform_objects)
-    writer.add_block_objects(block_objects)
-    writer.add_tnt_objects(tnt_objects)
-    writer.write()
+        writer.add_slingshot()
+        writer.add_pig_objects(pig_objects)
+        writer.add_platform_objects(platform_objects)
+        writer.add_block_objects(block_objects)
+        writer.add_tnt_objects(tnt_objects)
+        writer.write()
 
 
 if __name__ == "__main__":
