@@ -9,5 +9,7 @@
         "--extension-pkg-whitelist=cv2"
     ],
     "liveshare.allowGuestDebugControl": true,
-    "liveshare.allowGuestTaskControl": true
+    "liveshare.allowGuestTaskControl": true,
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "python.globalModuleInstallation": true
 }

@@ -5,6 +5,7 @@ steps are written out the the README file"""
 
 import argparse
 import os
+import shutil
 import sys
 
 
@@ -41,6 +42,8 @@ PIG_IMG_PATH = "gen/pig"
 BLOCK_IMG_PATH = "gen/block"
 TNT_IMG_PATH = "gen/tnt"
 PLATFORM_IMG_PATH = "gen/platform"
+
+LEVEL_DIRECTORY = "../game/Science-Birds-Windows/ScienceBirds_Data/StreamingAssets/Levels"
 
 
 def get_object_centroids():
@@ -199,7 +202,6 @@ def build_objects_from_centroids(centroids, game_object):
 
 
 def main():
-
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--parameters_file", required=True,
                         help="Parameters file wiht constraints is passed", default="parameters.txt")
@@ -215,7 +217,6 @@ def main():
     pig_centroids = get_pig_centroids(parameters[0])
     block_centroids = get_block_centroids()
 
-
     for i in range(20):
         writer = xml_writer.XmlWriter("../level/level_{}.xml".format(str(i+4).zfill(2)))
         pig_objects = build_objects_from_centroids(pig_centroids[i], "pig")
@@ -230,6 +231,13 @@ def main():
         writer.add_block_objects(block_objects)
         writer.add_tnt_objects(tnt_objects)
         writer.write()
+
+    # After generating all images copy them into the game level directory
+
+    print("Moving generated levels into game directory")
+    
+    for level in os.listdir("../level"):
+        shutil.move("../level/" + level, LEVEL_DIRECTORY)
 
 
 if __name__ == "__main__":

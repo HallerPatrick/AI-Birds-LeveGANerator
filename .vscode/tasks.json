@@ -4,14 +4,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "exp nn",
-            "type": "shell",
-            "command": "python exp_nn.py",
-            "options": {
-                "cwd": "./nn"
-            }
-        },
-        {
             "label": "Xml Writer",
             "type": "shell",
             "options": {
@@ -86,8 +78,14 @@
             "options": {
                 "cwd": "./xml_generator"
             },
-            "command": "python __main__.py -f ../parameters.txt",
-            "problemMatcher": []
+            "command": "python",
+            "args": [
+                "__main__.py",
+                "-f",
+                "../parameters.txt"
+            ],
+            "problemMatcher": [],
+            
         },
         {
             "label": "Predict",
@@ -96,22 +94,6 @@
                 "cwd": "./nn"
             },
             "command": "python predict.py"
-        },
-        {
-            "label": "Gan TF",
-            "type": "shell",
-            "options": {
-                "cwd": "./nn/tf"
-            },
-            "command": "python run.py"
-        },
-        {
-            "label": "Gan 2",
-            "type": "shell",
-            "options": {
-                "cwd": "./nn/tf"
-            },
-            "command": "python gan2.py --mode=train --batch_size=32"
         }
     ]
 }
