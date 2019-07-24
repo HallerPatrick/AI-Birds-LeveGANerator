@@ -1,0 +1,3 @@
+[submodule "agent/agent/BamBird_2017"]
+	path = agent/agent/BamBird_2017
+	url = git@sme.uni-bamberg.de:diedrich/BamBird_2017.git
