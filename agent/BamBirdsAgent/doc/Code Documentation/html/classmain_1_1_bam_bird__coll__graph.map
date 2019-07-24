@@ -1,0 +1,11 @@
+<map id="main.BamBird" name="main.BamBird">
+<area shape="rect" id="node2" href="$classmeta_1_1_meta.html" title="meta.Meta" alt="" coords="672,241,756,266"/>
+<area shape="rect" id="node3" href="$interfaceshot_1_1_shot_executor_1_1_shot_executor_callback.html" title="shot.ShotExecutor.ShotExecutor\lCallback" alt="" coords="5,71,219,110"/>
+<area shape="rect" id="node9" href="$classshot_1_1_shot_executor.html" title="shot.ShotExecutor" alt="" coords="378,129,508,154"/>
+<area shape="rect" id="node4" href="$classplanner_1_1_target.html" title="planner.Target" alt="" coords="390,241,496,266"/>
+<area shape="rect" id="node5" href="$classab_1_1vision_1_1_game_state_extractor.html" title="ab.vision.GameStateExtractor" alt="" coords="344,290,542,315"/>
+<area shape="rect" id="node6" href="$classmeta_1_1_level.html" title="meta.Level" alt="" coords="69,150,155,175"/>
+<area shape="rect" id="node7" href="$classmain_1_1_s_w_i_connector.html" title="main.SWIConnector" alt="" coords="373,339,513,365"/>
+<area shape="rect" id="node8" href="$classmeta_1_1_level_selection.html" title="meta.LevelSelection" alt="" coords="372,402,514,427"/>
+<area shape="rect" id="node10" href="$classab_1_1demo_1_1other_1_1_shot.html" title="ab.demo.other.Shot" alt="" coords="374,7,512,33"/>
+</map>

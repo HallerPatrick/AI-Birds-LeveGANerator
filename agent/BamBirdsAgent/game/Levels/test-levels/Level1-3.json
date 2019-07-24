@@ -1,0 +1,153 @@
+{
+    "camera": [
+    {
+        "bottom": 14.338,
+        "id": "Slingshot",
+        "left": -39.913,
+        "right": 33.515,
+        "top": -40.733,
+        "x": 29.894,
+        "y": -13.198
+    },
+    {
+        "bottom": 11.728,
+        "id": "Castle",
+        "left": 13.039,
+        "right": 77.257,
+        "top": -36.435,
+        "x": 78.241,
+        "y": -12.354
+    }],
+    "counts":
+    {
+        "birds": 6,
+        "blocks": 11
+    },
+    "id": "pack1/Level6.lua",
+    "scoreEagle": 65900,
+    "scoreGold": 64000,
+    "scoreSilver": 51000,
+    "theme": "BACKGROUND_BLUE_GRASS",
+    "world":
+    {
+        "bird_1":
+        {
+            "angle": 0,
+            "x": 0,
+            "y": -1.142,
+            "id": "BIRD_RED"
+        },
+        "bird_2":
+        {
+            "angle": 0,
+            "x": -3,
+            "y": -1.142,
+            "id": "BIRD_RED"
+        },
+        "bird_3":
+        {
+            "angle": 0,
+            "x": -6,
+            "y": -1.142,
+            "id": "BIRD_RED"
+        },
+        "bird_4":
+        {
+            "angle": 0,
+            "x": -9,
+            "y": -1.142,
+            "id": "BIRD_RED"
+        },
+        "bird_5":
+        {
+            "angle": 0,
+            "x": -12,
+            "y": -1.142,
+            "id": "BIRD_RED"
+        },
+        "bird_6":
+        {
+            "angle": 0,
+            "x": -15,
+            "y": -1.142,
+            "id": "BIRD_RED"
+        },
+        "block_1":
+        {
+            "angle": 0.0,
+            "x": 43.05166666666666,
+            "y": -10.92,
+            "id": "TERRAIN_TEXTURED_HILLS_5X5"
+        },
+        "block_2":
+        {
+            "angle": 0.0,
+            "x": 43.05166666666666,
+            "y": -24.873333333333335,
+            "id": "TERRAIN_TEXTURED_HILLS_5X5"
+        },
+        "block_3":
+        {
+            "angle": 0.0,
+            "x": 42.9,
+            "y": -40.79833333333333,
+            "id": "TERRAIN_TEXTURED_HILLS_5X5"
+        },
+        "block_4":
+        {
+            "angle": 0.0,
+            "x": 42.9,
+            "y": -45.044999999999995,
+            "id": "PIG_BASIC_BIG"
+        },
+        "block_5":
+        {
+            "angle": 0.0,
+            "x": 43.05166666666666,
+            "y": -28.96833333333333,
+            "id": "PIG_BASIC_BIG"
+        },
+        "block_6":
+        {
+            "angle": 0.0,
+            "x": 43.05166666666666,
+            "y": -14.86333333333333,
+            "id": "PIG_BASIC_BIG"
+        },
+        "block_7":
+        {
+            "angle": 0.0,
+            "x": 42.9,
+            "y": -2.4266666666666645,
+            "id": "PIG_BASIC_BIG"
+        },
+        "block_8":
+        {
+            "angle": 0.0,
+            "x": 42.74833333333333,
+            "y": -59.14999999999999,
+            "id": "PIG_BASIC_BIG"
+        },
+        "block_9":
+        {
+            "angle": 0.0,
+            "x": 42.596666666666664,
+            "y": -54.90333333333333,
+            "id": "TERRAIN_TEXTURED_HILLS_5X5"
+        },
+        "block_10":
+        {
+            "angle": 0.0,
+            "x": 12.596666666666664,
+            "y": -2.5,
+            "id": "TERRAIN_TEXTURED_HILLS_5X5"
+        },
+        "block_11":
+        {
+            "angle": 0.0,
+            "x": 18,
+            "y": -2.4266666666666645,
+            "id": "PIG_BASIC_BIG"
+        }
+    }
+}

@@ -1,0 +1,125 @@
+
+
+To evaluate the agent, we performed a benchmark as described by the organizers of the AIBirds-competition\footnote{\url{http://aibirds.org/benchmarks.html}, accessed on 29. August 2017.}. This allowed us to compare the agent to the previous version of the BamBirds agent, as well as all previously submitted agents. The conditions of the benchmark stated, that agents had 63 minutes per stage, which means roughly three minutes per level, to do whatever operations it wanted to perform. The levels used were the first and second stage of the Poached Eggs levels, which equals to a total of 42 levels (21 per stage).
+
+The results of the benchmark can be found in Table \ref{tab:stage1} and \ref{tab:stage2} respectively. Blank cells represent unused attempts to solve a level, while 0 points mean the agent failed to solve the level. The agent was able to score a total of 798.560 points in all 42 test levels.\\
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{l | r r r r}
+			Level & First try & Second try & Third try & Max. points \\
+			\hline
+			\hline
+			Level 1-1   &  9.350  &  30.450 &         &   30.450 \\
+			\hline
+			Level  1-2  &  52.370 &         &         &   52.370 \\
+			\hline
+			Level  1-3  &  41.970 &  41.970 &         &   41.970 \\
+			\hline
+			Level  1-4  &  19.900 &         &         &   19.900 \\
+			\hline
+			Level  1-5  &  0      &  0      &  0      &   0      \\
+			\hline
+			Level  1-6  &  34.940 &         &         &   34.940 \\
+			\hline
+			Level  1-7  &  39.600 &         &         &   39.600 \\
+			\hline
+			Level  1-8  &  39.160 &  0      &  0      &   39.160 \\
+			\hline
+			Level  1-9  &  31.890 &         &         &   31.890 \\
+			\hline
+			Level  1-10 &  0      &         &         &   0      \\
+			\hline
+			Level  1-11 &  0      &         &         &   0      \\
+			\hline
+			Level  1-12 &  55.170 &         &         &   55.170 \\
+			\hline
+			Level  1-13 &  0      &         &         &   0      \\
+			\hline
+			Level  1-14 &  47.880 &         &         &   47.880 \\
+			\hline
+			Level  1-15 &  0      &         &         &   0      \\
+			\hline
+			Level  1-16 &  45.240 &         &         &   45.240 \\
+			\hline
+			Level  1-17 &  38.810 &         &         &   38.810 \\
+			\hline
+			Level  1-18 &  0      &  0      &  39.390 &   39.390 \\
+			\hline
+			Level  1-19 &  36.710 &         &         &   36.710 \\
+			\hline
+			Level  1-20 &  0      &  41.790 &         &   41.790 \\
+			\hline
+			Level 1-21  &  68.670 &         &         &   68.670 \\
+			\hline
+			\hline
+			SUM         & 561.660 & 114.210 &  39.390 &  663.940
+		\end{tabular}
+	\end{center}
+	\caption{Results of the benchmark for the first stage of Poached Eggs\label{tab:stage1}}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{l | r r r r}
+			Level & Firts try & Second try & Third try & Max points \\
+			\hline
+			\hline
+			Level 2-1  &  0       &         &         &       0 \\
+			\hline
+			Level 2-2  &          &         &         &         \\
+			\hline
+			Level 2-3  &          &         &         &         \\
+			\hline
+			Level 2-4  &  0       &         &         &       0 \\
+			\hline
+			Level 2-5  &  0       &         &         &       0 \\
+			\hline
+			Level 2-6  &  55.520  &         &         &  55.520 \\
+			\hline
+			Level 2-7  &  0       &         &         &       0 \\
+			\hline
+			Level 2-8  &          &         &         &         \\
+			\hline
+			Level 2-9  &          &         &         &         \\
+			\hline
+			Level 2-10 &          &         &         &         \\
+			\hline
+			Level 2-11 &          &         &         &         \\
+			\hline
+			Level 2-12 &  35.260  &         &         &  35.260 \\
+			\hline
+			Level 2-13 &  0       &         &         &       0 \\
+			\hline
+			Level 2-14 &  43.840  &         &         &  43.840 \\
+			\hline
+			Level 2-15 &  0       &         &         &       0 \\
+			\hline
+			Level 2-16 &  0       &         &         &       0 \\
+			\hline
+			Level 2-17 &  0       &         &         &       0 \\
+			\hline
+			Level 2-18 &  0       &         &         &       0 \\
+			\hline
+			Level 2-19 &  0       &         &         &       0 \\
+			\hline
+			Level 2-20 &  0       &         &         &       0 \\
+			\hline
+			Level 2-21 &  0       &         &         &         \\
+			\hline
+			\hline
+			SUM        & 134.620  &         &         & 134.629
+		\end{tabular}
+	\end{center}
+	\caption{Results of the benchmark for the second stage of Poached Eggs\label{tab:stage2}}
+\end{table}
+
+Comparing these values to those of the previous version, the agent did perform significantly worse. The BamBirds agent submitted to the competition in 2016 was able to score a total of 1.237.230 in all 42 levels. One significant reason for this is that the 2017 version of the agent crashed while benchmarking the second stage and tried to restart itself endlessly to no avail. Since it was not stated how the benchmarks performed by the organizers handled such a situation, we decided not to restart the benchmark for stage two, especially since we decided to take some leeway before. The agent was stuck on level 2-1, not shooting any more even though the agent gave the order to shoot. Since this could possibly be an issue on our test hardware or the server handling the commands given, we decided to fire the birds manually and score the level with 0 points. Regarding the crash, it has to be noted, however, that the agent performed worse on stage one as well, where no crashes occurred.
+
+The results of stage one further show that the agent was able to improve by over 100.000 points by playing certain levels again. Five levels were played at least twice, in three of which the agent scored more points than before.
+
+While evaluating the agent's performance, we noticed that it took the agent far longer to shoot the bird after deciding for a strategy in its second and third tries. This could be related to the computation time needed for the meta analysis, but it should be worth investigating. If this time could be cut short, the agent could repeat far more levels, which seems highly beneficial to its performance.
+
+As repeatedly playing levels improved our rating, it shows that our strategy component does not always award the most fitting plan possible with the highest confidence. So, either the time needed to solve a level needs to be reduced to factor in repetition of levels by design or the confidence rating needs to be overhauled.
+
+A big issue of our agents performance was also the inability to solve a lot of levels. The agent failed to solve 16 of 42 levels, or 16 of 35 respectively, factoring in the crash on stage two. With an average of roughly 29.500 points per level (using the overall points of the 2016 agent's benchmark) this equals 472.000 missed points, 678.500 when adding the unplayed levels due to the crash. As making the agent robust enough to solve all levels can potentially double the points achieved, this is an area that needs to improve.

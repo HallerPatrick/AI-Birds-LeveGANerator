@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{xcolor,listings}
+\usepackage{siunitx}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\sisetup{range-phrase=--}
+\sisetup{range-units=single}
+
+\usepackage{titling}
+\setlength{\droptitle}{-6em}
+
+
+% Used to reference java classes
+\newcommand{\class}[1]{{\color{green!50!black}\small\texttt{#1}}}
+% Used to reference files or folders in the git/project directory
+\newcommand{\source}[1]{{\color{blue!80!white}\texttt{\lstinline|#1|}}}
+
+
+
+\title{Project Report: BamBirds 2018\\
+{\small Creating an Intelligent Game Playing Agent for Angry Birds}}
+
+\author{
+David\\Hollinger
+\and Diedrich\\Wolter
+\and Felix\\Schweinfest
+\and Harshit\\Kumar Gupta
+\and Jan\\Martin
+\and Johanna\\Seibert
+\and Lara\\Aubele
+\and Oleg\\Geier
+}
+
+
+\def\maketitlehookb{
+\begin{center}
+\includegraphics[width=50mm]{img/logo.png}
+\end{center}
+}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\include{chapter/introduction}
+\include{chapter/leveleditor}
+\include{chapter/evaluation}
+\include{chapter/shot}
+\include{chapter/strategy}
+\include{chapter/misc}
+\include{chapter/todo}
+\end{document}

@@ -1,0 +1,18 @@
+The goal of the domino strategy is to produce a domino effect on multiple structures. The strategy first checks if the target belongs to a structure and if there are more than two structures that would be afftected by the shot. If there are at least three afftected structures, confidence is calculated. For the calculation, energy is first set to a basic value and then sequentially increased for each affected structure. Similar to the strategy for targeting a pig, an impact is integrated. This impact is generated considering the birdtype and the material of the target. The assigned impacts, which are distributed between 0 and 10, can be seen in table \ref{tab:dominoimpact}. \\
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{c|c|c}
+Birdtype & Material & Impact\\
+\hline
+Red Bird & - & 9.5\\
+Yellow Bird&Ice&3\\
+Yellow Bird&Wood&2\\
+Yellow Bird&Stone&1\\
+Blue Bird&Ice&2\\
+Blue Bird&Wood&8\\
+Blue Bird&Stone&8\\
+\end{tabular}
+\end{center}
+\caption{Impacts for the domino strategy.\label{tab:dominoimpact}}
+\end{table}

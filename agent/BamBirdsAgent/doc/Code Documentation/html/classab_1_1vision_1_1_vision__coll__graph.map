@@ -1,0 +1,6 @@
+<map id="ab.vision.Vision" name="ab.vision.Vision">
+<area shape="rect" id="node2" href="$classab_1_1vision_1_1_vision_m_b_r.html" title="ab.vision.VisionMBR" alt="" coords="657,324,801,349"/>
+<area shape="rect" id="node6" href="$classab_1_1vision_1_1_vision_real_shape.html" title="ab.vision.VisionRealShape" alt="" coords="639,181,819,207"/>
+<area shape="rect" id="node4" href="$classfeatures_1_1_vision_sling.html" title="features.VisionSling" alt="" coords="339,345,478,371"/>
+<area shape="rect" id="node7" href="$classab_1_1vision_1_1real_1_1_image_segmenter.html" title="ab.vision.real.ImageSegmenter" alt="" coords="306,243,512,268"/>
+</map>

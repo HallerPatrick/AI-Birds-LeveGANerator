@@ -1,0 +1,11 @@
+Many researchers have developed agents for Angry Birds before. For instance, Zhang and Renz used an approach that analyses a structure to identify strengths and weaknesses \cite{zhang2014qualitative}. They developed a calculus that evaluates structural properties and rules. For each building block, this calculus identifies which properties and rules are fulfilled. Then it decides which block should be shot.
+
+This so called ``Extended Rectangle Algebra'' (ERA) is based on Qualitative Spatial Reasoning. The challenge of Spatial Reasoning in AI is that humans posses some kind of common sense knowledge. If an object is falling, for example, any human can tell it is falling without any theoretical knowledge about physics. In \cite{forbus1991qualitative}, the authors state that Qualitative Spatial Reasoning in AI tries to formalize this implicit knowledge about the physical world. 
+
+As detailed in \cite{forbus2002qualitative}, Qualitative Spatial Reasoning can also be used to improve AIs in various video games, most notably path finding issues in strategy games.
+
+Another way Qualitative Spatial Reasoning can be used is shown in \cite{ge2016visual}. Ge et al. present a way to improve computer vision systems for video games by enabling those to infer unknown objects based on the calculated stability of a structure. The calculation of stability is done using the previously mentioned ERA. 
+
+Calimeri et al. introduce an agent in \cite{calimeri2016angry} that also participated in the 2013 and 2014 Angry Birds competition. They used HEX programs that are an enhancement of answer set programming programs. Furthermore, they integrated answer set programming, which is a paradigm of declarative programming for knowledge representation and reasoning.
+
+After our research for possible approaches, we decided to develop our own, because none of the ideas fit our aspirations. It slightly picks up on previous research, since we still had to face the issue of somehow modelling the implicit knowledge we posses when playing the game. For our approach, we tried to state why we, as human players, choose the shot we perform as formalized as possible. From this foundation we modelled our strategies and the conditions in which they shall be applicable.
