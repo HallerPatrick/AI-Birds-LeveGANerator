@@ -1,7 +1,15 @@
+import os
+
 from keras.models import load_model
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
+
+import tensorflow
+
+# Disable keras logging
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 
 def generate_single_image(model_path, image_save_path, random_noise_dimension=100):
     noise = np.random.normal(0, 1, (1, random_noise_dimension))
@@ -34,7 +42,6 @@ def generate_25_images(generator_model, folder_path):
     for _ in range(rows):
         for _ in range(columns):
             img = generated_images[image_count, :]
-            print(len(img))
             plt.imsave(folder_path + '/' + '{}.png'.format(image_count), img, cmap="spring")
             image_count += 1
 

@@ -41,8 +41,7 @@ def conture_detector(image_path):
 
     ret, threshold = cv2.threshold(gray, 90, 255, 0)
 
-    a, contours, _ = cv2.findContours(
-        threshold, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    contours, _ = cv2.findContours(threshold, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
     centroid_points = []
 

@@ -86,7 +86,7 @@
             "options": {
                 "cwd": "./xml_generator"
             },
-            "command": "python3 __main__.py -f ../parameters.txt",
+            "command": "python __main__.py -f ../parameters.txt",
             "problemMatcher": []
         },
         {

@@ -8,88 +8,49 @@ import xml.etree.ElementTree as ET
 class XmlWriter:
 
     def __init__(self, filename):
+        self.xml_file = [
+            '<?xml version="1.0" encoding="utf-16"?>',
+            '<Level width="2">',
+            '<Camera maxWidth="30" minWidth="20" x="0" y="2">'
+        ]
         self.filename = filename
-        self.root = ET.Element('Level')
-        self.root.set("width", "2")
-        self.game_objects = ET.SubElement(self.root, "GameObjects")
-
-    def add_header(self):
-        camera = ET.SubElement(self.root, "Camera")
-        camera.set("x", "0")
-        camera.set("y", "2")
-        camera.set("minWidth", "20")
-        camera.set("maxWidth", "30")
-
+        
     def add_birds(self, birds):
-        birds_eleme = ET.SubElement(self.root, "Birds")
+        self.xml_file.append('<Birds>')
         for bird in birds:
-            bird_elem = ET.SubElement(birds_eleme, "Bird")
-            bird_elem.set("type", bird)
+            self.xml_file.append('<Bird type="{}"/>'.format(bird))
+        self.xml_file.append('</Birds>')
 
     def add_slingshot(self):
-        slingshot = ET.SubElement(self.root, "Slingshot")
-        slingshot.set("x", "-8")
-        slingshot.set("y", "-2,5")
-
-    def add_blocks(self, blocks):
-        game_objects = ET.SubElement(self.root, "GameObjects")
-        for block in blocks:
-            blocks_eleme = ET.SubElement(game_objects, "Block")
-            blocks_eleme.set("type", block)
-        for material in blocks:
-            blocks_eleme.set("material", material)
-            blocks_eleme.set("x", block)
-            blocks_eleme.set("y", block)
-            blocks_eleme.set("rotation", block)
-
-    def add_pigs(self, pigs):
-        pigs_eleme = ET.SubElement(self.root, "GameObjects")
-        for pig in pigs:
-            pigs_eleme = ET.SubElement(pigs_eleme, "Pig")
-            pigs_eleme.set("type", pig)
-
-    def add_platforms(self, platforms):
-        platform_eleme = ET.SubElement(self.root, "GameObjects")
-        for platform in platforms:
-            platform_eleme = ET.SubElement(platform_eleme, "Platform")
-            platform_eleme.set("type", platform)
-
-    def add_game_objects(self):
-        self.game_objects = ET.SubElement(self.root, "GameObjects")
+        self.xml_file.append('<Slingshot x="-8" y="-2.5">')
+        self.xml_file.append('<GameObjects>')
 
     #### Add objects from class objects
     def add_platform_objects(self, platforms):
         for platform in platforms:
-            platform_object = ET.SubElement(self.game_objects, "Platform")
-            platform_object.set("type", platform.type)
-            platform_object.set("x", platform.x)
-            platform_object.set("y", platform.y)
+            platform_tag = '<Platform material="" type="Platform" x="{}" y="{}" />'.format(platform.x, platform.y)
+            self.xml_file.append(platform_tag)
+
 
     def add_pig_objects(self, pigs):
         for pig in pigs:
-            pig_object = ET.SubElement(self.game_objects, "Pig")
-            pig_object.set("type", pig.type)
-            pig_object.set("x", pig.x)
-            pig_object.set("y", pig.y)
+            pig_tag = '<Pig roation="0" type="{}" material="" x="{}" y="{}" />'.format(pig.type, pig.x, pig.y)
+            self.xml_file.append(pig_tag)
 
     def add_tnt_objects(self, tnts):
         for tnt in tnts:
-            tnt_object = ET.SubElement(self.game_objects, "TNT")
-            tnt_object.set("type", tnt.type)
-            tnt_object.set("x", tnt.x)
-            tnt_object.set("y", tnt.y)
+            tnt_tag = '<TNT material="" rotation="0" type="" x="{}" y="{}" />'.format(tnt.x, tnt.y)
+            self.xml_file.append(tnt_tag)
 
     def add_block_objects(self, blocks):
         for block in blocks:
-            block_object = ET.SubElement(self.game_objects, "Block")
-            block_object.set("type", block.type)
-            block_object.set("x", block.x)
-            block_object.set("y", block.y)
-
-    
-    
+            block_tag = '<Block material="{}" rotation="0" type="{}" x="{}" y="{}" />'.format(block.material, block.type, block.x, block.y)
+            self.xml_file.append(block_tag)
 
     def write(self):
-        data = ET.tostring(self.root, encoding="utf8", method="xml")
-        with open(self.filename, "wb") as f:
-            f.write(data)
+        self.xml_file.append('</GameObjects>')
+        self.xml_file.append('</Level>')
+
+        with open(self.filename, "w") as f:
+            f.write("\n".join(self.xml_file))
+    

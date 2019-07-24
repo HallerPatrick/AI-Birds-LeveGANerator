@@ -243,7 +243,7 @@ class FaceGenerator:
                     generated_images[image_count, :], cmap='spring')
                 axis[row, column].axis('off')
                 image_count += 1
-        figure.savefig("generated_images/generated_%d.png" % epoch)
+        figure.savefig("generated_images/" + self.game_object + "/generated_%d.png" % epoch)
         plt.close()
 
     def generate_single_image(self, model_path, image_save_path):
@@ -285,7 +285,7 @@ def save_images(generator_model, folder_path):
 
 def run_all():
     for game_object in ["pig", "platform", "block", "tnt"]:
-        epochs = 2000 if game_object == "tnt" else 4000
+        epochs = 2000 if game_object == "tnt" else 6000
         facegenerator = FaceGenerator(128, 128, 3, game_object)
         facegenerator.train(datafolder="samples/" + game_object, epochs=epochs,
                             batch_size=32, save_images_interval=100)

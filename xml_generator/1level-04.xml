@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf8'?>
+<Level width="2">
+    <GameObjects />
+    <Camera maxWidth="30" minWidth="20" x="0" y="2" />
+    <Slingshot x="-8" y="-2,5" />
+    <GameObjects>
+        <Pig roation="0" type="BasicSmall" x="5.390625" y="9.921875" />
+        <Pig roation="0" type="BasicSmall" x="8.59375" y="8.588169642857142" />
+        <Pig roation="0" type="BasicSmall" x="7.428385416666666" y="8.541666666666668" />
+        <Pig roation="0" type="BasicSmall" x="8.836805555555555" y="7.717013888888889" />
+        <Pig roation="0" type="BasicSmall" x="7.455357142857142" y="7.628348214285714" />
+        <Pig roation="0" type="BasicSmall" x="7.1875" y="6.77734375" />
+        <Pig roation="0" type="BasicSmall" x="7.109375" y="6.7578125" />
+        <Platform rotation="0" type="Platform" x="7.265625" y="9.453125" />
+        <Platform rotation="0" type="Platform" x="9.166666666666668" y="7.955729166666667" />
+        <Platform rotation="0" type="Platform" x="8.978794642857142" y="7.979910714285714" />
+        <Platform rotation="0" type="Platform" x="8.822544642857142" y="7.979910714285714" />
+        <Platform rotation="0" type="Platform" x="8.7109375" y="7.96875" />
+        <Block rotation="0" type="RectSmall" x="8.828125" y="9.921875" />
+        <Block rotation="0" type="RectSmall" x="7.109375" y="9.921875" />
+        <Block rotation="0" type="RectSmall" x="9.921875" y="9.4921875" />
+        <Block rotation="0" type="RectSmall" x="9.0625" y="8.75" />
+        <Block rotation="0" type="RectSmall" x="7.154017857142858" y="8.231026785714285" />
+        <Block rotation="0" type="RectSmall" x="9.4970703125" y="7.1630859375" />
+        <Block rotation="0" type="RectSmall" x="8.533854166666668" y="6.817708333333333" />
+        <Block rotation="0" type="RectSmall" x="8.4765625" y="6.8359375" />
+        <Block rotation="0" type="RectSmall" x="8.4765625" y="6.7578125" />
+        <Block rotation="0" type="RectSmall" x="8.046875" y="6.6796875" />
+        <TNT material="" rotation="0" type="" x="8.2109375" y="8.6640625" />
+        <TNT material="" rotation="0" type="" x="7.126116071428571" y="8.655133928571429" />
+        <TNT material="" rotation="0" type="" x="7.03125" y="7.109375" />
+        <TNT material="" rotation="0" type="" x="7.8359375" y="6.9921875" />
+        <TNT material="" rotation="0" type="" x="9.2578125" y="6.8359375" />
+    </GameObjects>
+</Level>

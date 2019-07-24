@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw
 import os
-from xml_parser import parse_xml
+from raw_level_generator.xml_parser import parse_xml
 
 # FROM: XML (-9.99999, -9.99999), (9.99999, 9.99999)
 # TO: PIL X: (0, 0) Y: (Pixel_max_x, Pixel_max_y)
