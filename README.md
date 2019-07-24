@@ -12,11 +12,15 @@ Please use the tasks provided in `.vscode/tasks.json`
 
 `/nn` Contains relevant data for the GAN algorithm
 
+`/game` This folder contains the unity game aswell as the agend and server to use 
+
 `/baseline` holds the base line procedual level generator provided by the AI Birds competition
 
 `/raw_level_builder` are the tools to generate images from the level XMLs
 
 `/conture_detector` detecting the contures of the object (shapes) in the generated img of the nn
+
+`/xml_generator` contains the code to produce the xmls from the nn 
 
 ## Project Flow
 

@@ -8,6 +8,8 @@ import os
 import shutil
 import sys
 
+from random import uniform
+from random import randint
 
 PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(
@@ -33,6 +35,27 @@ models = {
     "platform": "../nn/models/platform_generator.h5",
     "tnt": "../nn/models/tnt_generator.h5"
 }
+
+# bird types number and probability of being selected
+bird_probabilities = {'1': 0.35, '2': 0.2, '3': 0.2, '4': 0.15, '5': 0.1}
+
+# bird types number and name
+bird_names = {'1': "BirdRed", '2': "BirdBlue",
+              '3': "BirdYellow", '4': "BirdBlack", '5': "BirdWhite"}
+
+# blocks number and probability of being selected
+probability_table_blocks = {'1': 0.10, '2': 0.10, '3': 0.10, '4': 0.05,
+                            '5': 0.02, '6': 0.05, '7': 0.05, '8': 0.10,
+                            '9': 0.05, '10': 0.16, '11': 0.04,
+                            '12': 0.16, '13': 0.02}
+
+# blocks number and name
+# (blocks 3, 7, 9, 11 and 13) are their respective block names rotated 90 derees clockwise
+block_names = {'1': "SquareHole", '2': "RectFat", '3': "RectFat", '4': "SquareSmall",
+               '5': "SquareTiny", '6': "RectTiny", '7': "RectTiny", '8': "RectSmall",
+               '9': "RectSmall", '10': "RectMedium", '11': "RectMedium",
+               '12': "RectBig", '13': "RectBig"}
+
 
 # Build for every object 25 images
 IMG_BATCH_SIZE = 25
@@ -188,7 +211,8 @@ def build_objects_from_centroids(centroids, game_object):
 
         if game_object == Block.__name__.lower():
             x, y = convert_coord_back(*centroid)
-            block = Block("RectSmall", "wood", str(x), str(y), rotation="0")
+            block_type = block_names[str(choose_item(probability_table_blocks))]
+            block = Block(block_type, "wood", str(x), str(y), rotation="0")
             print(block)
             objects.append(block)
 
@@ -199,6 +223,22 @@ def build_objects_from_centroids(centroids, game_object):
             objects.append(tnt)
 
     return objects
+
+def get_birds():
+    birds = []
+    for _ in range(randint(3, 7)):
+        birds.append(bird_names[str(choose_item(bird_probabilities))])
+
+    return birds
+
+def choose_item(table):
+    ran_num = uniform(0.0, 1.0)
+    selected_num = 0
+    while ran_num > 0:
+        selected_num = selected_num + 1
+        ran_num = ran_num - table[str(selected_num)]
+    return selected_num
+
 
 
 def main():
@@ -224,7 +264,9 @@ def main():
             platform_centroids[i], "platform")
         block_objects = build_objects_from_centroids(block_centroids[i], "block")
         tnt_objects = build_objects_from_centroids(tnt_centroids[i], "tnt")
+        birds = get_birds()
 
+        writer.add_birds(birds)
         writer.add_slingshot()
         writer.add_pig_objects(pig_objects)
         writer.add_platform_objects(platform_objects)
@@ -232,10 +274,14 @@ def main():
         writer.add_tnt_objects(tnt_objects)
         writer.write()
 
-    # After generating all images copy them into the game level directory
 
+
+    # Clean up
+    for level in os.listdir(LEVEL_DIRECTORY):
+        os.remove(LEVEL_DIRECTORY + "/" + level)
+
+    # After generating all images copy them into the game level directory
     print("Moving generated levels into game directory")
-    
     for level in os.listdir("../level"):
         shutil.move("../level/" + level, LEVEL_DIRECTORY)
 
