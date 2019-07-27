@@ -56,19 +56,26 @@ def convert_coord(x, y):
 
     return x_value, y_value
 
+def map_value_range(value, in_min, in_max, out_min, out_max):
+
+    if (value - in_min) * (out_max - out_min) == 0:
+        return 0
+    
+    if (in_max - in_min) == 0:
+        return 10
+
+    return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+
 def convert_coord_back(x, y):
-    if x > 0:
-        #         MIDDLE POINT X-Axis + relational length * absolute length
-        x_value = (XML_DIM[0] / 2) + (x / IMG_DIM[0] * (XML_DIM[0] / 2))
-    else:
-        x_value = (XML_DIM[0] / 2) - ((abs(x) / IMG_DIM[0]) * (XML_DIM[0] / 2))
+    # MIDDLE POINT X-Axis + relational length * absolute length
+    # 0-128 -> -10 - 10
+    #128 / 20 
+    # x_value = (XML_DIM[0] / 2) + (x / IMG_DIM[0] * (XML_DIM[0] / 2))
+    
+    x_value = map_value_range(x, IMG_DIM[0], IMG_DIM[1], 0, 20)
+    y_value = map_value_range(y, IMG_DIM[0], IMG_DIM[1], 0, 20)
 
-    if y > 0:
-        y_value = (XML_DIM[1] / 2) + (y / IMG_DIM[1] * (XML_DIM[1] / 2))
-    else:
-        y_value = (XML_DIM[1] / 2) - ((abs(y) / IMG_DIM[1]) * (XML_DIM[1] / 2))
-
-    return x_value, y_value
+    return x_value-10, y_value-10
 
 
 def scale_to_size(x, y, scale_x, scale_y):
