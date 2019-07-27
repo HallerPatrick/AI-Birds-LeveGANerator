@@ -1134,6 +1134,8 @@ public class VisionMBR {
 		_nHeight = screenshot.getHeight();
 		_nWidth = screenshot.getWidth();
 		if ((_nHeight != 480) && (_nWidth != 840)) {
+			System.err.println(_nHeight);
+			System.err.println(_nWidth);
 			System.err.println("ERROR: expecting 840-by-480 image");
 			System.exit(1);
 		}

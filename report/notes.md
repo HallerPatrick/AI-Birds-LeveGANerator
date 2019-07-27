@@ -1,5 +1,7 @@
 # Notes: Level Generator
 
+ca. 30 Std.
+
 ## 14.Juni 2019
 
 ### Code reading and refactoring

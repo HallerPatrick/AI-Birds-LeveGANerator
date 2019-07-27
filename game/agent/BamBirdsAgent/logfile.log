@@ -1,0 +1,3 @@
+[2019-07-27 16:20:03] [INFO] helper.CustomLogger | -------- starting a new run, saving logs to logfile.log -------- 
+[2019-07-27 16:20:03] [INFO] helper.CustomLogger | Agent started in DEBUG mode. All logs will be output and saved to logfile.log. 
+[2019-07-27 16:20:03] [INFO] main.BamBird | Version 2018-07-16 

@@ -5,41 +5,44 @@
 <Bird type="BirdYellow"/>
 <Bird type="BirdYellow"/>
 <Bird type="BirdRed"/>
-<Bird type="BirdBlack"/>
+<Bird type="BirdRed"/>
 </Birds>
 <Slingshot x="-8" y="-2.5">
 <GameObjects>
-<Pig roation="0" type="BasicSmall" material="" x="9.140625" y="9.921875" />
-<Pig roation="0" type="BasicSmall" material="" x="6.3671875" y="9.921875" />
-<Pig roation="0" type="BasicSmall" material="" x="9.921875" y="9.4921875" />
-<Pig roation="0" type="BasicSmall" material="" x="8.5078125" y="8.7109375" />
-<Pig roation="0" type="BasicSmall" material="" x="7.8515625" y="8.06640625" />
-<Pig roation="0" type="BasicSmall" material="" x="9.0234375" y="7.114955357142858" />
-<Pig roation="0" type="BasicSmall" material="" x="9.140625" y="7.109375" />
-<Platform material="" type="Platform" x="7.23828125" y="8.0078125" />
-<Platform material="" type="Platform" x="9.3359375" y="7.9296875" />
-<Platform material="" type="Platform" x="8.0859375" y="7.578125" />
-<Platform material="" type="Platform" x="7.319078947368421" y="7.565789473684211" />
-<Block material="wood" rotation="0" type="RectSmall" x="7.9296875" y="9.921875" />
-<Block material="wood" rotation="0" type="RectSmall" x="7.109375" y="9.921875" />
-<Block material="wood" rotation="0" type="RectSmall" x="6.3671875" y="9.921875" />
-<Block material="wood" rotation="0" type="RectSmall" x="6.0546875" y="9.921875" />
-<Block material="wood" rotation="0" type="RectSmall" x="5.703125" y="9.921875" />
-<Block material="wood" rotation="0" type="RectSmall" x="5.546875" y="9.921875" />
-<Block material="wood" rotation="0" type="RectSmall" x="5.390625" y="9.921875" />
-<Block material="wood" rotation="0" type="RectSmall" x="8.6328125" y="8.4375" />
-<Block material="wood" rotation="0" type="RectSmall" x="7.747395833333333" y="8.326822916666668" />
-<Block material="wood" rotation="0" type="RectSmall" x="9.921875" y="8.0078125" />
-<Block material="wood" rotation="0" type="RectSmall" x="9.169921875" y="7.607421875" />
-<Block material="wood" rotation="0" type="RectSmall" x="9.599609375" y="7.5634765625" />
-<Block material="wood" rotation="0" type="RectSmall" x="8.8125" y="7.421875" />
-<Block material="wood" rotation="0" type="RectSmall" x="7.973090277777778" y="7.374131944444445" />
-<Block material="wood" rotation="0" type="RectSmall" x="9.703125" y="6.8203125" />
-<Block material="wood" rotation="0" type="RectSmall" x="9.921875" y="5.72265625" />
-<TNT material="" rotation="0" type="" x="7.236328125" y="8.84765625" />
-<TNT material="" rotation="0" type="" x="7.252604166666666" y="6.888020833333334" />
-<TNT material="" rotation="0" type="" x="7.4609375" y="6.875" />
-<TNT material="" rotation="0" type="" x="7.7421875" y="6.796875" />
-<TNT material="" rotation="0" type="" x="5.7421875" y="5.7421875" />
+<Pig roation="0" type="BasicSmall" material="" x="9.21875" y="9.921875" />
+<Pig roation="0" type="BasicSmall" material="" x="8.8671875" y="9.921875" />
+<Pig roation="0" type="BasicSmall" material="" x="6.953125" y="9.921875" />
+<Pig roation="0" type="BasicSmall" material="" x="6.8359375" y="9.921875" />
+<Pig roation="0" type="BasicSmall" material="" x="6.6796875" y="9.921875" />
+<Pig roation="0" type="BasicSmall" material="" x="7.936197916666667" y="8.880208333333332" />
+<Pig roation="0" type="BasicSmall" material="" x="7.03125" y="7.215909090909091" />
+<Pig roation="0" type="BasicSmall" material="" x="9.1171875" y="6.6640625" />
+<Platform material="" type="Platform" x="8.49609375" y="7.96875" />
+<Platform material="" type="Platform" x="7.9296875" y="7.96875" />
+<Platform material="" type="Platform" x="8.359375" y="7.94921875" />
+<Platform material="" type="Platform" x="8.203125" y="7.9609375" />
+<Platform material="" type="Platform" x="8.0546875" y="7.9609375" />
+<Block material="wood" rotation="0" type="RectMedium" x="9.140625" y="9.921875" />
+<Block material="wood" rotation="0" type="RectBig" x="8.4375" y="9.921875" />
+<Block material="wood" rotation="0" type="RectBig" x="6.953125" y="9.921875" />
+<Block material="wood" rotation="0" type="RectBig" x="6.6796875" y="9.921875" />
+<Block material="wood" rotation="0" type="RectBig" x="6.015625" y="9.921875" />
+<Block material="wood" rotation="0" type="RectBig" x="9.921875" y="8.90625" />
+<Block material="wood" rotation="0" type="RectFat" x="7.275390625" y="8.7939453125" />
+<Block material="wood" rotation="0" type="RectFat" x="6.981026785714286" y="8.816964285714285" />
+<Block material="wood" rotation="0" type="RectFat" x="8.900669642857142" y="8.744419642857142" />
+<Block material="wood" rotation="0" type="RectBig" x="9.47265625" y="7.317708333333334" />
+<Block material="wood" rotation="0" type="RectSmall" x="8.780048076923077" y="7.217548076923077" />
+<Block material="wood" rotation="0" type="RectFat" x="6.94140625" y="6.96484375" />
+<Block material="wood" rotation="0" type="RectSmall" x="6.9140625" y="7.03125" />
+<Block material="wood" rotation="0" type="RectSmall" x="7.8857421875" y="7.0068359375" />
+<Block material="wood" rotation="0" type="RectMedium" x="8.800223214285715" y="6.662946428571429" />
+<Block material="wood" rotation="0" type="RectBig" x="9.1796875" y="5.234375" />
+<Block material="wood" rotation="0" type="RectBig" x="8.57421875" y="5.234375" />
+<Block material="wood" rotation="0" type="RectMedium" x="7.6953125" y="5.234375" />
+<TNT material="" rotation="0" type="" x="8.37890625" y="8.6572265625" />
+<TNT material="" rotation="0" type="" x="5.729166666666667" y="8.528645833333332" />
+<TNT material="" rotation="0" type="" x="8.6328125" y="6.9921875" />
+<TNT material="" rotation="0" type="" x="9.21875" y="6.875" />
 </GameObjects>
 </Level>
