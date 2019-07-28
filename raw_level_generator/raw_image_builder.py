@@ -43,16 +43,13 @@ additional_object_sizes = {'1': 0.82, '2': 0.82, '3': 0.8, '4': 0.45}
 
 
 def convert_coord(x, y):
-    if x > 0:
-        #         MIDDLE POINT X-Axis + relational length * absolute length
-        x_value = (IMG_DIM[0] / 2) + (x / XML_DIM[0] * (IMG_DIM[0] / 2))
-    else:
-        x_value = (IMG_DIM[0] / 2) - ((abs(x) / XML_DIM[0]) * (IMG_DIM[0] / 2))
 
-    if y > 0:
-        y_value = (IMG_DIM[1] / 2) + (y / XML_DIM[1] * (IMG_DIM[1] / 2))
-    else:
-        y_value = (IMG_DIM[1] / 2) - ((abs(y) / XML_DIM[1]) * (IMG_DIM[1] / 2))
+    # Bring values from range -10,10 to range 0, 20
+    x += 10
+    y += 10
+
+    x_value = map_value_range(x, 0, 20, 0, IMG_DIM[1])
+    y_value = map_value_range(y, 0, 20, 0, IMG_DIM[1])
 
     return x_value, y_value
 
@@ -60,25 +57,18 @@ def map_value_range(value, in_min, in_max, out_min, out_max):
 
     if (value - in_min) * (out_max - out_min) == 0:
         return 0
-    
-    if (in_max - in_min) == 0:
-        return 10
 
     return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
 def convert_coord_back(x, y):
-    # MIDDLE POINT X-Axis + relational length * absolute length
-    # 0-128 -> -10 - 10
-    #128 / 20 
-    # x_value = (XML_DIM[0] / 2) + (x / IMG_DIM[0] * (XML_DIM[0] / 2))
-    
-    x_value = map_value_range(x, IMG_DIM[0], IMG_DIM[1], 0, 20)
-    y_value = map_value_range(y, IMG_DIM[0], IMG_DIM[1], 0, 20)
+    x_value = map_value_range(x, 0, IMG_DIM[1], 0, 20)
+    y_value = map_value_range(y, 0, IMG_DIM[1], 0, 20)
 
     return x_value-10, y_value-10
 
 
 def scale_to_size(x, y, scale_x, scale_y):
+
     if x > 0:
         x_0 = x - \
             (((scale_x / XML_DIM[0]) *

@@ -23,12 +23,24 @@ class Test_RawImageBuilder(unittest.TestCase):
 
 
     @parameterized.expand([
+        (-10, -10, (0, 0)),
+        (0, 0, (64, 64)),
+        (10, -10, (128, 0)),
+        (10, 10, (128, 128)),
+        (5, 5, (96, 96))
+    ])
+    def test_convert_coord_(self, x, y, expected):
+        self.assertEqual(rib.convert_coord(x, y), expected)
+
+
+    @parameterized.expand([
         (64, 64, (0, 0)),
         (128, 128, (10, 10)),
         (128, 0, (10, -10)),
         (0, 0, (-10, -10)),
+        (96, 96, (5, 5))
     ])
-    def test_convert_coord_back_to_middle_point(self, x, y, expected):
+    def test_convert_coord_back(self, x, y, expected):
         self.assertEqual(rib.convert_coord_back(x, y), expected)
     
 

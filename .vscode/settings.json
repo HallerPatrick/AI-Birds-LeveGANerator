@@ -10,6 +10,16 @@
     ],
     "liveshare.allowGuestDebugControl": true,
     "liveshare.allowGuestTaskControl": true,
-    "python.pythonPath": "venv\\Scripts\\python.exe",
-    "python.globalModuleInstallation": true
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.globalModuleInstallation": true,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": true
 }
