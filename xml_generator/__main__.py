@@ -108,6 +108,12 @@ def get_tnt_centroids():
         for image in os.listdir(TNT_IMG_PATH):
             centroids = conture_detector(TNT_IMG_PATH + "/" + image)
             if len(centroids) >= 0 and len(centroids) <= 6:
+                # Saving the image as metadata 
+                if not os.path.exists("../level/tnt"):
+                    os.makedirs("../metadata/tnt")
+
+                shutil.move(TNT_IMG_PATH + "/" + image, "../metadata/tnt/" + image)
+
                 tnt_centroids.append(centroids)
 
             if len(tnt_centroids) == 20:
@@ -130,6 +136,13 @@ def get_platform_centroids():
         generate_25_images(models["platform"], PLATFORM_IMG_PATH)
         for image in os.listdir(PLATFORM_IMG_PATH):
             centroids = conture_detector(PLATFORM_IMG_PATH + "/" + image)
+
+            # Saving the image as metadata 
+            if not os.path.exists("../metadata/platform"):
+                os.makedirs("../metadata/platform")
+                
+            shutil.move(PLATFORM_IMG_PATH + "/" + image, "../metadata/platform/" + image)
+            
             platform_centroids.append(centroids)
 
             if len(platform_centroids) == 20:
@@ -157,6 +170,13 @@ def get_pig_centroids(pig_count):
             centroids = conture_detector(PIG_IMG_PATH + "/" + image)
 
             if len(centroids) >= pig_min and len(centroids) <= pig_max:
+
+                # Saving the image as metadata 
+                if not os.path.exists("../metadata/pig"):
+                    os.makedirs("../metadata/pig")
+                    
+                shutil.move(PIG_IMG_PATH + "/" + image, "../metadata/pig/" + image)
+
                 pig_centroids.append(centroids)
 
             if len(pig_centroids) == 20:
@@ -181,6 +201,11 @@ def get_block_centroids():
             centroids = conture_detector(BLOCK_IMG_PATH + "/" + image)
 
             print(len(block_centroids))
+            # Saving the image as metadata 
+            if not os.path.exists("../metadata/block"):
+                os.makedirs("../metadata/block")
+                
+            shutil.move(BLOCK_IMG_PATH + "/" + image, "../metadata/block/" + image)
             block_centroids.append(centroids)
 
             if len(block_centroids) == 20:
@@ -239,7 +264,8 @@ def choose_item(table):
         ran_num = ran_num - table[str(selected_num)]
     return selected_num
 
-
+def save_level_metadata():
+    pass
 
 def main():
     parser = argparse.ArgumentParser()
