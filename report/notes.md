@@ -42,3 +42,14 @@ Another approach is to divide the image processing process into different images
 The new approach is to divide the raw level image into different images. For blocks, pigs, tnt and platforms. With 3 distinct subsets, we the generated images with GAN will be much more clear and precise (pixel wise).
 
 The downside is probably, that the objects are not alligned with each other. For this, a selection process what images "fit" together is needed.
+
+## 30. July 2019
+
+After succesfully geneating xml levels with GAn the next step is to filter those levels that are valid (in terms of gravity).
+
+The requirement of a valid level is, that its playable. Birds or strucctures are not colapsing or falling fro height. 
+
+Those "valid" levels are used to retrain the GAN in a reinforcment like fashion.
+
+By automating the task of generating levels, using a naive agent to play the levels and read out the results and feeding them into the GAN again, we can succesfully 
+can call this a manualy applied automated reinforcment learning approach.
