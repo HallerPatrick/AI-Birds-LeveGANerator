@@ -3,12 +3,179 @@
   <component name="ChangeListManager">
     <list default="true" id="a1e22e54-1e0a-4b77-85ca-f89eb3cf84c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../../Science-Birds-Windows/ScienceBirds_Data/output_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Science-Birds-Windows/ScienceBirds_Data/output_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ABSoftware.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ABSoftware.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abV1.32.iml" beforeDir="false" afterPath="$PROJECT_DIR$/abV1.32.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/new/ShotCandidatePlanner.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/database.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/database_source.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/functions.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/functionsTmp.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/helpyMcHelpface.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/bearingObject.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/collapseStructure.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/databaseHelpers.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/dijkstra.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/dijkstraTestLevel.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/graphGenerator.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/inferencialGrounding.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/quadrantSearch.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/shortestPath.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/shortestPathChooser.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/sort.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/totalHeight.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/search/wayfinder.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/depot.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/destroyStructure.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/destroyStructureLow.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/domino.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/dominoNew.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/heavyObject.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/penetrateStructure.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/pigContingency.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/pigSearch.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/roof.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/tnt.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/strategy/whiteBird.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/tactic/deepPenetration.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/tactic/maxPenetration.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/tactic/minPenetration.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Prolog/old/tactic/targetedCollapse.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/ClientNaiveAgent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/ClientNaiveAgent$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/ClientNaiveAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/ClientNaiveAgent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/MainEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/MainEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/NaiveAgent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/NaiveAgent$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/NaiveAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/NaiveAgent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/ShootingAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/ShootingAgent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/ActionRobot$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/ActionRobot$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/ActionRobot$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/ActionRobot$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/ActionRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/ActionRobot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/ClientActionRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/ClientActionRobot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/ClientActionRobotJava$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/ClientActionRobotJava$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/ClientActionRobotJava.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/ClientActionRobotJava.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/LoadLevelSchema.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/LoadLevelSchema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/RestartLevelSchema.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/RestartLevelSchema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/ShootingSchema$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/ShootingSchema$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/ShootingSchema.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/ShootingSchema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/demo/other/Shot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/demo/other/Shot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/planner/TrajectoryPlanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/planner/TrajectoryPlanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/planner/abTrajectory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/planner/abTrajectory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/planner/abTrajectory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/planner/abTrajectory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/server/Proxy$ProxyResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/server/Proxy$ProxyResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/server/Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/server/Proxy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/server/ProxyMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/server/ProxyMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/server/proxy/message/ProxyClickMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/server/proxy/message/ProxyClickMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/server/proxy/message/ProxyDragMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/server/proxy/message/ProxyDragMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/server/proxy/message/ProxyMouseWheelMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/server/proxy/message/ProxyMouseWheelMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/server/proxy/message/ProxyScreenshotMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/server/proxy/message/ProxyScreenshotMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/utils/ABUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/utils/ABUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/utils/GameImageRecorder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/utils/GameImageRecorder$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/utils/GameImageRecorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/utils/GameImageRecorder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/utils/ImageSegFrame$ImagePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/utils/ImageSegFrame$ImagePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/utils/ImageSegFrame$ImagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/utils/ImageSegFrame$ImagePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/utils/ImageSegFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/utils/ImageSegFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/utils/StateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/utils/StateUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/ABObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/ABObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/ABShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/ABShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/ABType.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/ABType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/GameStateExtractor$GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/GameStateExtractor$GameState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/GameStateExtractor$RectLeftOf.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/GameStateExtractor$RectLeftOf.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/GameStateExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/GameStateExtractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/ShowSeg$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/ShowSeg$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/ShowSeg$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/ShowSeg$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/ShowSeg.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/ShowSeg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/Vision.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/Vision.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/VisionMBR.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/VisionMBR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/VisionRealShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/VisionRealShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/VisionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/VisionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/real/ConnectedComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/real/ConnectedComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/real/ImageSegmenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/real/ImageSegmenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/real/LineSegment.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/real/LineSegment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/real/shape/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/real/shape/Body.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/real/shape/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/real/shape/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/real/shape/Poly.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/real/shape/Poly.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/ab/vision/real/shape/Rect.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/ab/vision/real/shape/Rect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/database/LevelStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/database/LevelStorage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/database/ScreenScale$CircleSize.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/database/ScreenScale$CircleSize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/database/ScreenScale$RectSize.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/database/ScreenScale$RectSize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/database/ScreenScale.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/database/ScreenScale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/database/Slingshot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/database/Slingshot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/external/ClientMessageEncoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/external/ClientMessageEncoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/external/ClientMessageTable$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/external/ClientMessageTable$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/external/ClientMessageTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/external/ClientMessageTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/features/Scene$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/features/Scene$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/features/Scene$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/features/Scene$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/features/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/features/Scene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/features/SceneInitialisationException$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/features/SceneInitialisationException$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/features/SceneInitialisationException$Reason.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/features/SceneInitialisationException$Reason.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/features/SceneInitialisationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/features/SceneInitialisationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/features/VisionSling$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/features/VisionSling$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/features/VisionSling.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/features/VisionSling.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/features/VisualDebugger.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/features/VisualDebugger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/CustomLogger$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/CustomLogger$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/CustomLogger$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/CustomLogger$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/CustomLogger$LogLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/CustomLogger$LogLevel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/CustomLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/CustomLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/ParabolaMath.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/ParabolaMath.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/SrcFileCopy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/SrcFileCopy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/VisionHelper$FillProcessing$FillStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/VisionHelper$FillProcessing$FillStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/VisionHelper$FillProcessing.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/VisionHelper$FillProcessing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/VisionHelper$HSVFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/VisionHelper$HSVFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/helper/VisionHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/helper/VisionHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/knowledge/Knowledge$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/knowledge/Knowledge$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/knowledge/Knowledge.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/knowledge/Knowledge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/knowledge/Relation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/knowledge/Relation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/knowledge/XComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/knowledge/XComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/knowledge/XRightComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/knowledge/XRightComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/knowledge/YBottomComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/knowledge/YBottomComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/knowledge/YComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/knowledge/YComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/knowledge/sortStructuresByX.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/knowledge/sortStructuresByX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/main/BamBird.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/main/BamBird.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/main/BamBirdModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/main/BamBirdModule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/main/BamBirdPaths.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/main/BamBirdPaths.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/main/SWIConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/main/SWIConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/ActionRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/ActionRobot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/Level$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/Level$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/Level$State.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/Level$State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/Level.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/LevelSelection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/LevelSelection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/Meta$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/Meta$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/Meta.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/Meta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/ShotSelection$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/ShotSelection$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/ShotSelection$ShotEvaluation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/ShotSelection$ShotEvaluation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/ShotSelection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/ShotSelection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/Strategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/Strategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/StrategyConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/StrategyConsumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/meta/Triplet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/meta/Triplet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/DecisionTree$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/DecisionTree$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/DecisionTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/DecisionTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/NewPrologPlanParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/NewPrologPlanParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/NewPrologPlanParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/NewPrologPlanParserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/OldPrologPlanParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/OldPrologPlanParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/OldPrologPlanParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/OldPrologPlanParserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/PrologPlanParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/PrologPlanParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/PrologPlanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/PrologPlanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/Target.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/Target.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/planner/ThinkerType.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/planner/ThinkerType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/SavedShot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/SavedShot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/ShotExecutor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/ShotExecutor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/ShotExecutor$PrologCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/ShotExecutor$PrologCallback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/ShotExecutor$SceneLoaded.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/ShotExecutor$SceneLoaded.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/ShotExecutor$ShotExecutorCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/ShotExecutor$ShotExecutorCallback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/ShotExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/ShotExecutor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/ShotHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/ShotHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/ShotParabola.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/ShotParabola.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/ShotPlanner$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/ShotPlanner$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/ShotPlanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/ShotPlanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/VisionTraj$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/VisionTraj$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/shot/VisionTraj.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/shot/VisionTraj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/tester/ParabolaTester$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/tester/ParabolaTester$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/tester/ParabolaTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/tester/ParabolaTester.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ab/demo/MainEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ab/demo/MainEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ab/vision/VisionMBR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ab/vision/VisionMBR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../report/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../report/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/Java/src/ab/demo/ClientNaiveAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Java/src/ab/demo/ClientNaiveAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/Java/src/ab/vision/VisionMBR.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Java/src/ab/vision/VisionMBR.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,30 +188,78 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ab/vision/VisionMBR.java">
+        <entry file="file://$PROJECT_DIR$/src/ab/demo/MainEntry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="1138" column="44" selection-start-line="1138" selection-start-column="44" selection-end-line="1138" selection-end-column="44" />
+            <state relative-caret-position="221">
+              <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ab/demo/MainEntry.java">
+        <entry file="file://$PROJECT_DIR$/src/ab/vision/Vision.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+            <state relative-caret-position="170">
+              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ab/vision/VisionMBR.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="211" column="26" lean-forward="true" selection-start-line="211" selection-start-column="26" selection-end-line="211" selection-end-column="26" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2349#2356#0" expanded="true" />
+                <element signature="e#2423#2430#0" expanded="true" />
+                <element signature="e#9386#9397#0" expanded="true" />
+                <element signature="e#11322#11333#0" expanded="true" />
+                <element signature="e#13068#13079#0" expanded="true" />
+                <element signature="e#15386#15397#0" expanded="true" />
+                <element signature="e#16772#16783#0" expanded="true" />
+                <element signature="e#18584#18594#0" expanded="true" />
+                <element signature="e#19179#19189#0" expanded="true" />
+                <element signature="e#19816#19826#0" expanded="true" />
+                <element signature="e#20392#20403#0" expanded="true" />
+                <element signature="e#21976#21987#0" expanded="true" />
+                <element signature="e#22519#22526#0" expanded="true" />
+                <element signature="e#24787#24798#0" expanded="true" />
+                <element signature="e#25331#25338#0" expanded="true" />
+                <element signature="e#27972#27983#0" expanded="true" />
+                <element signature="e#28571#28578#0" expanded="true" />
+                <element signature="e#28634#28641#0" expanded="true" />
+                <element signature="e#31740#31751#0" expanded="true" />
+                <element signature="e#33078#33108#0" expanded="true" />
+                <element signature="e#33204#33211#0" expanded="true" />
+                <element signature="e#33860#33867#0" expanded="true" />
+                <element signature="e#42848#42859#0" expanded="true" />
+                <element signature="e#43501#43510#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>expec</find>
+      <find>selectNex</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -54,6 +269,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ab/demo/MainEntry.java" />
+        <option value="$PROJECT_DIR$/src/ab/vision/VisionMBR.java" />
       </list>
     </option>
   </component>
@@ -65,8 +281,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="-29" />
+    <option name="x" value="85" />
+    <option name="y" value="25" />
     <option name="width" value="1750" />
     <option name="height" value="1030" />
   </component>
@@ -76,7 +292,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -84,40 +300,18 @@
               <item name="abV1.32" type="b2602c69:ProjectViewProjectNode" />
               <item name="abV1.32" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="abV1.32" type="b2602c69:ProjectViewProjectNode" />
-              <item name="abV1.32" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="abV1.32" type="b2602c69:ProjectViewProjectNode" />
-              <item name="abV1.32" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ab" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="abV1.32" type="b2602c69:ProjectViewProjectNode" />
-              <item name="abV1.32" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ab" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="abV1.32" type="b2602c69:ProjectViewProjectNode" />
-              <item name="abV1.32" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="external" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -165,45 +359,46 @@
       <option name="presentableId" value="Default" />
       <updated>1564239468880</updated>
       <workItem from="1564239470315" duration="1470000" />
+      <workItem from="1564660281066" duration="1792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1470000" />
+    <option name="totallyTimeSpent" value="3262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5857909" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5857909" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" visible="true" weight="0.3297587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,15 +407,53 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ab/vision/VisionMBR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="1138" column="44" selection-start-line="1138" selection-start-column="44" selection-end-line="1138" selection-end-column="44" />
+        <state relative-caret-position="149">
+          <caret line="211" column="26" lean-forward="true" selection-start-line="211" selection-start-column="26" selection-end-line="211" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2349#2356#0" expanded="true" />
+            <element signature="e#2423#2430#0" expanded="true" />
+            <element signature="e#9386#9397#0" expanded="true" />
+            <element signature="e#11322#11333#0" expanded="true" />
+            <element signature="e#13068#13079#0" expanded="true" />
+            <element signature="e#15386#15397#0" expanded="true" />
+            <element signature="e#16772#16783#0" expanded="true" />
+            <element signature="e#18584#18594#0" expanded="true" />
+            <element signature="e#19179#19189#0" expanded="true" />
+            <element signature="e#19816#19826#0" expanded="true" />
+            <element signature="e#20392#20403#0" expanded="true" />
+            <element signature="e#21976#21987#0" expanded="true" />
+            <element signature="e#22519#22526#0" expanded="true" />
+            <element signature="e#24787#24798#0" expanded="true" />
+            <element signature="e#25331#25338#0" expanded="true" />
+            <element signature="e#27972#27983#0" expanded="true" />
+            <element signature="e#28571#28578#0" expanded="true" />
+            <element signature="e#28634#28641#0" expanded="true" />
+            <element signature="e#31740#31751#0" expanded="true" />
+            <element signature="e#33078#33108#0" expanded="true" />
+            <element signature="e#33204#33211#0" expanded="true" />
+            <element signature="e#33860#33867#0" expanded="true" />
+            <element signature="e#42848#42859#0" expanded="true" />
+            <element signature="e#43501#43510#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ab/demo/MainEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ab/vision/Vision.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

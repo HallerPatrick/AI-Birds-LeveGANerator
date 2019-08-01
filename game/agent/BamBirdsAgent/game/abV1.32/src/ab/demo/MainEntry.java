@@ -46,7 +46,7 @@ public class MainEntry {
 						else 
 							if (args.length == 2 && command.equalsIgnoreCase("-nasc"))
 							{
-								ClieeAgent na = new ClientNaiveAgent(args[1]);
+								ClientNaiveAgent na = new ClientNaiveAgent(args[1]);
 								na.run();
 							}
 							else

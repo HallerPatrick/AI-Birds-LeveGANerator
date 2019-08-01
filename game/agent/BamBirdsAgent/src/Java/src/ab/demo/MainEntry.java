@@ -42,12 +42,15 @@ public class MainEntry {
 						if (args.length == 1 && command.equalsIgnoreCase("-nasc"))
 						{
 							ClientNaiveAgent na = new ClientNaiveAgent();
+
 							na.run();
 						} 
 						else 
 							if (args.length == 2 && command.equalsIgnoreCase("-nasc"))
 							{
-								ClientNaiveAgent na = new ClientNaiveAgent(args[1]);
+								int level = Integer.parseInt(args[1]);
+								ClientNaiveAgent na = new ClientNaiveAgent();
+								na.currentLevel = (byte) level;
 								na.run();
 							}
 							else

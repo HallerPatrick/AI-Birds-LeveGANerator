@@ -22,9 +22,13 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 //Naive agent (server/client version)
 
 public class ClientNaiveAgent implements Runnable {
@@ -34,12 +38,12 @@ public class ClientNaiveAgent implements Runnable {
 	public byte currentLevel = -1;
 	public int failedCounter = 0;
 	public int[] solved;
-	TrajectoryPlanner tp; 
+	private TrajectoryPlanner tp;
 	private int id = 28888;
 	private boolean firstShot;
 	private Point prevTarget;
 	private Random randomGenerator;
-	int counter = 0;
+	private int counter = 0;
 	/**
 	 * Constructor using the default IP
 	 * */
@@ -190,16 +194,43 @@ public class ClientNaiveAgent implements Runnable {
 	}
 
 	private boolean checkForInvalidLevel() {
-		if(counter >= 25) {
+		if(counter >= 10) {
 			File file = new File("level_result.txt");
+
+			try {
+				List<String> lines = Files.readAllLines(Paths.get("level_result.txt"));
+				List<Integer> linesInt = lines.stream().map(String::trim)
+						.map(Integer::parseInt)
+						.collect(Collectors.toList());
+
+
+				System.out.println(linesInt);
+				System.out.println(currentLevel);
+
+				for(Integer i : linesInt) {
+					if(i == currentLevel) {
+						System.out.println("Processed all levels.");
+						System.out.println("Exiting....");
+
+						// Save word
+						System.out.println("Quadrupole");
+						System.exit(1);
+					}
+				}
+			} catch (NoSuchFileException ignored) {
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
 			try(FileWriter fr = new FileWriter(file, true)) {
 				fr.write(currentLevel + "\n");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			return true;
-
 		}
+
 		return false;
 	}
 
@@ -208,12 +239,11 @@ public class ClientNaiveAgent implements Runnable {
 	   * Solve a particular level by shooting birds directly to pigs
 	   * @return GameState: the game state after shots.
      */
-	public GameState solve()
-
-	{
+	public GameState solve() {
 
 		System.out.println("Solving level");
 		counter++;
+		System.out.println(">>>>>");
 		System.out.println(counter);
 
 		if (checkForInvalidLevel()) return GameState.WON;

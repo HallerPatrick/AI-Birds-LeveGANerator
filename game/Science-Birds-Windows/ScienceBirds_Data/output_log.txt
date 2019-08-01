@@ -19,386 +19,53 @@ Platform assembly: C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science
 Loading C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
 Platform assembly: C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds_Data\Managed\websocket-sharp.dll (this message is harmless)
 Loading C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds_Data\Managed\websocket-sharp.dll into Unity Child Domain
-- Completed reload, in  0.034 seconds
+- Completed reload, in  0.032 seconds
 Platform assembly: C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initialized touch support.
-UnloadTime: 0.989200 ms
+UnloadTime: 1.280700 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
 Platform assembly: C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds_Data\Managed\Mono.Security.dll (this message is harmless)
-UnloadTime: 3.496100 ms
+UnloadTime: 3.094800 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 279.
-Total: 0.223100 ms (FindLiveObjects: 0.016700 ms CreateObjectMapping: 0.011400 ms MarkObjects: 0.190600 ms  DeleteObjects: 0.003900 ms)
+Total: 0.195500 ms (FindLiveObjects: 0.013700 ms CreateObjectMapping: 0.010800 ms MarkObjects: 0.167300 ms  DeleteObjects: 0.003500 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.206700 ms
+UnloadTime: 4.069500 ms
 
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 317.
-Total: 0.259400 ms (FindLiveObjects: 0.015300 ms CreateObjectMapping: 0.013500 ms MarkObjects: 0.220100 ms  DeleteObjects: 0.010000 ms)
+Total: 0.592300 ms (FindLiveObjects: 0.035000 ms CreateObjectMapping: 0.041900 ms MarkObjects: 0.492000 ms  DeleteObjects: 0.022300 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.919800 ms
+UnloadTime: 0.494500 ms
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 283.
-Total: 0.423000 ms (FindLiveObjects: 0.021000 ms CreateObjectMapping: 0.029400 ms MarkObjects: 0.353100 ms  DeleteObjects: 0.018700 ms)
+Total: 0.232900 ms (FindLiveObjects: 0.013800 ms CreateObjectMapping: 0.011200 ms MarkObjects: 0.197100 ms  DeleteObjects: 0.010300 ms)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.374400 ms
+UnloadTime: 0.404400 ms
 
 Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 330.
-Total: 0.413000 ms (FindLiveObjects: 0.022700 ms CreateObjectMapping: 0.026500 ms MarkObjects: 0.357300 ms  DeleteObjects: 0.005900 ms)
+Total: 0.676900 ms (FindLiveObjects: 0.058700 ms CreateObjectMapping: 0.038400 ms MarkObjects: 0.566200 ms  DeleteObjects: 0.011800 ms)
 
 Platform assembly: C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds_Data\Managed\System.Xml.dll (this message is harmless)
-Level index:1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.100500 ms
-
-Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 286.
-Total: 0.465300 ms (FindLiveObjects: 0.018900 ms CreateObjectMapping: 0.014300 ms MarkObjects: 0.411100 ms  DeleteObjects: 0.020400 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.363900 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 399.
-Total: 0.773100 ms (FindLiveObjects: 0.026700 ms CreateObjectMapping: 0.022100 ms MarkObjects: 0.717300 ms  DeleteObjects: 0.006400 ms)
-
-POS = (173.0, 203.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (-750.0, -57.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Level index:2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.267800 ms
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 869.
-Total: 1.040500 ms (FindLiveObjects: 0.060000 ms CreateObjectMapping: 0.051900 ms MarkObjects: 0.898100 ms  DeleteObjects: 0.029700 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.431500 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 976.
-Total: 1.190500 ms (FindLiveObjects: 0.056000 ms CreateObjectMapping: 0.052800 ms MarkObjects: 1.071500 ms  DeleteObjects: 0.009300 ms)
-
-POS = (139.0, 176.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (-99.0, -524.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (135.0, 178.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (-161.0, -478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (0.0, 478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (0.0, 478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (107.0, 182.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (-448.0, -210.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (0.0, 478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (0.0, 478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (124.0, 182.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (-230.0, -362.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (0.0, 478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (0.0, 478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (124.0, 182.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (-390.0, -215.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (0.0, 478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (0.0, 478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (124.0, 181.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (-486.0, -10.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Level index:3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.371500 ms
-
-Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 869.
-Total: 0.906100 ms (FindLiveObjects: 0.083000 ms CreateObjectMapping: 0.043800 ms MarkObjects: 0.743900 ms  DeleteObjects: 0.034300 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.403700 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 976.
-Total: 1.126000 ms (FindLiveObjects: 0.058000 ms CreateObjectMapping: 0.082800 ms MarkObjects: 0.976000 ms  DeleteObjects: 0.008600 ms)
-
-POS = (183.0, 179.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (-487.0, 16.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (180.0, 179.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (-402.0, -131.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-POS = (0.0, 478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DRAG = (0.0, 478.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
 Level index:4
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.949100 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.633800 ms
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 869.
-Total: 1.088200 ms (FindLiveObjects: 0.083400 ms CreateObjectMapping: 0.052200 ms MarkObjects: 0.923600 ms  DeleteObjects: 0.028400 ms)
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 286.
+Total: 0.257800 ms (FindLiveObjects: 0.014600 ms CreateObjectMapping: 0.011900 ms MarkObjects: 0.215500 ms  DeleteObjects: 0.015500 ms)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.400500 ms
+UnloadTime: 0.221000 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 976.
-Total: 1.158900 ms (FindLiveObjects: 0.044300 ms CreateObjectMapping: 0.051800 ms MarkObjects: 1.054200 ms  DeleteObjects: 0.008000 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 399.
+Total: 0.712700 ms (FindLiveObjects: 0.045100 ms CreateObjectMapping: 0.031400 ms MarkObjects: 0.626600 ms  DeleteObjects: 0.008500 ms)
 
-DynamicHeapAllocator allocation probe 1 failed - Could not get memory for large allocation 2140284.
-DynamicHeapAllocator allocation probe 2 failed - Could not get memory for large allocation 2140284.
-DynamicHeapAllocator allocation probe 1 failed - Could not get memory for large allocation 2140284.
-d3d: failed to create 2D texture id=1781 w=840 h=478 mips=10 d3dfmt=21 [out of memory]
-DynamicHeapAllocator allocation probe 2 failed - Could not get memory for large allocation 2140284.
-DynamicHeapAllocator allocation probe 1 failed - Could not get memory for large allocation 2140284.
-DynamicHeapAllocator allocation probe 1 failed - Could not get memory for large allocation 2140284.
-DynamicHeapAllocator allocation probe 1 failed - Could not get memory for large allocation 2140284.
-d3d: failed to create 2D texture id=1783 w=840 h=478 mips=10 d3dfmt=21 [out of memory]
-DynamicHeapAllocator allocation probe 2 failed - Could not get memory for large allocation 2140284.
-DynamicHeapAllocator allocation probe 3 failed - Could not get memory for large allocation 2140284.
-DynamicHeapAllocator allocation probe 4 failed - Could not get memory for large allocation 2140284.
-DynamicHeapAllocator out of memory - Could not get memory for large allocation 2140284!
-Could not allocate memory: System out of memory!
-Trying to allocate: 2140284B with 16 alignment. MemoryLabel: Texture
-Allocation happend at: Line:464 in 
-Memory overview
-
-[ ALLOC_DEFAULT ] used: 23530924B | peak: 0B | reserved: 31648720B 
-[ ALLOC_TEMP_JOB ] used: 0B | peak: 0B | reserved: 15728640B 
-[ ALLOC_GFX ] used: 1714441424B | peak: 0B | reserved: 1717470080B 
-[ ALLOC_CACHEOBJECTS ] used: 1280B | peak: 0B | reserved: 2097152B 
-[ ALLOC_TYPETREE ] used: 0B | peak: 0B | reserved: 0B 
-[ ALLOC_PROFILER ] used: 0B | peak: 0B | reserved: 0B 
-[ ALLOC_TEMP_THREAD ] used: 32768B | peak: 0B | reserved: 4423680B 
-Could not allocate memory: System out of memory!
-Trying to allocate: 2140284B with 16 alignment. MemoryLabel: Texture
-Allocation happend at: Line:464 in 
-Memory overview
-
-[ ALLOC_DEFAULT ] used: 23530924B | peak: 0B | reserved: 31648720B 
-[ ALLOC_TEMP_JOB ] used: 0B | peak: 0B | reserved: 15728640B 
-[ ALLOC_GFX ] used: 1714441424B | peak: 0B | reserved: 1717470080B 
-[ ALLOC_CACHEOBJECTS ] used: 1280B | peak: 0B | reserved: 2097152B 
-[ ALLOC_TYPETREE ] used: 0B | peak: 0B | reserved: 0B 
-[ ALLOC_PROFILER ] used: 0B | peak: 0B | reserved: 0B 
-[ ALLOC_TEMP_THREAD ] used: 32768B | peak: 0B | reserved: 4423680B 
-
- 
-(Filename:  Line: 996)
-
-Crash!!!
-SymInit: Symbol-SearchPath: '.;C:\Users\Patrick\Projects\AI-Birds-LeveGANerator;C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows;C:\Windows;C:\Windows\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 530, UserName: 'Patrick'
-OS-Version: 10.0.17763 () 0x300-0x1
-C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds.exe:ScienceBirds.exe (00B10000), size: 19083264 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds.exe', fileVersion: 5.5.2.10711
-C:\Windows\SYSTEM32\ntdll.dll:ntdll.dll (778D0000), size: 1687552 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\ntdll.dll', fileVersion: 10.0.17763.404
-C:\Windows\System32\KERNEL32.DLL:KERNEL32.DLL (76D00000), size: 917504 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\KERNEL32.DLL', fileVersion: 10.0.17763.437
-C:\Windows\System32\KERNELBASE.dll:KERNELBASE.dll (76B00000), size: 2072576 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\KERNELBASE.dll', fileVersion: 10.0.17763.404
-C:\Windows\System32\USER32.dll:USER32.dll (77720000), size: 1675264 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\USER32.dll', fileVersion: 10.0.17763.168
-C:\Windows\System32\win32u.dll:win32u.dll (76970000), size: 94208 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\win32u.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\HID.DLL:HID.DLL (68AE0000), size: 45056 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\HID.DLL', fileVersion: 10.0.17763.1
-C:\Windows\System32\msvcrt.dll:msvcrt.dll (750A0000), size: 786432 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\msvcrt.dll', fileVersion: 7.0.17763.1
-C:\Windows\System32\GDI32.dll:GDI32.dll (76990000), size: 143360 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\GDI32.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\gdi32full.dll:gdi32full.dll (75750000), size: 1470464 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\gdi32full.dll', fileVersion: 10.0.17763.437
-C:\Windows\System32\msvcp_win.dll:msvcp_win.dll (752E0000), size: 524288 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\msvcp_win.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\ucrtbase.dll:ucrtbase.dll (75B80000), size: 1187840 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\ucrtbase.dll', fileVersion: 10.0.17763.404
-C:\Windows\System32\ole32.dll:ole32.dll (75160000), size: 1032192 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\ole32.dll', fileVersion: 10.0.17763.404
-C:\Windows\System32\combase.dll:combase.dll (75370000), size: 2588672 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\combase.dll', fileVersion: 10.0.17763.404
-C:\Windows\SYSTEM32\VERSION.dll:VERSION.dll (735C0000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\VERSION.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\RPCRT4.dll:RPCRT4.dll (76DE0000), size: 782336 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\RPCRT4.dll', fileVersion: 10.0.17763.379
-C:\Windows\System32\SspiCli.dll:SspiCli.dll (74F40000), size: 131072 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\SspiCli.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\CRYPTBASE.dll:CRYPTBASE.dll (74F30000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\CRYPTBASE.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (77650000), size: 401408 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\bcryptPrimitives.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\sechost.dll:sechost.dll (75B00000), size: 495616 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\sechost.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\advapi32.dll:advapi32.dll (75260000), size: 516096 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\advapi32.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\SHLWAPI.dll:SHLWAPI.dll (76AB0000), size: 278528 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\SHLWAPI.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\SHELL32.dll:SHELL32.dll (761E0000), size: 5562368 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\SHELL32.dll', fileVersion: 10.0.17763.348
-C:\Windows\System32\cfgmgr32.dll:cfgmgr32.dll (758C0000), size: 241664 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\cfgmgr32.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\shcore.dll:shcore.dll (76A20000), size: 561152 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\shcore.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\windows.storage.dll:windows.storage.dll (76F30000), size: 6275072 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\windows.storage.dll', fileVersion: 10.0.17763.404
-C:\Windows\System32\profapi.dll:profapi.dll (775D0000), size: 114688 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Windows\System32\profapi.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\powrprof.dll:powrprof.dll (769C0000), size: 344064 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\powrprof.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\kernel.appcore.dll:kernel.appcore.dll (77630000), size: 61440 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\kernel.appcore.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\cryptsp.dll:cryptsp.dll (76150000), size: 73728 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\cryptsp.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\WS2_32.dll:WS2_32.dll (75900000), size: 389120 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\WS2_32.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\OLEAUT32.dll:OLEAUT32.dll (77530000), size: 614400 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\OLEAUT32.dll', fileVersion: 10.0.17763.437
-C:\Windows\SYSTEM32\OPENGL32.dll:OPENGL32.dll (67540000), size: 888832 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\OPENGL32.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\IMM32.dll:IMM32.dll (775F0000), size: 151552 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\IMM32.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\GLU32.dll:GLU32.dll (6DF50000), size: 258048 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\GLU32.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (741B0000), size: 208896 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\IPHLPAPI.DLL', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\WINHTTP.dll:WINHTTP.dll (703D0000), size: 774144 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\WINHTTP.dll', fileVersion: 10.0.17763.404
-C:\Windows\SYSTEM32\WINMM.dll:WINMM.dll (73AF0000), size: 147456 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\WINMM.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\DNSAPI.dll:DNSAPI.dll (741F0000), size: 589824 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\DNSAPI.dll', fileVersion: 10.0.17763.404
-C:\Windows\System32\NSI.dll:NSI.dll (76170000), size: 28672 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\NSI.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\WINMMBASE.dll:WINMMBASE.dll (73400000), size: 143360 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\WINMMBASE.dll', fileVersion: 10.0.17763.1
-C:\Windows\system32\uxtheme.dll:uxtheme.dll (73B70000), size: 503808 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\uxtheme.dll', fileVersion: 10.0.17763.1
-C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds_Data\Mono\mono.dll:mono.dll (10000000), size: 2297856 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Patrick\Projects\AI-Birds-LeveGANerator\game\Science-Birds-Windows\ScienceBirds_Data\Mono\mono.dll', fileVersion: 1.0.0.1
-C:\Windows\System32\PSAPI.DLL:PSAPI.DLL (77620000), size: 24576 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\PSAPI.DLL', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\MSWSOCK.dll:MSWSOCK.dll (72BB0000), size: 335872 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\MSWSOCK.dll', fileVersion: 10.0.17763.292
-C:\Windows\System32\MSCTF.dll:MSCTF.dll (74F60000), size: 1298432 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\MSCTF.dll', fileVersion: 10.0.17763.348
-C:\Windows\system32\dwmapi.dll:dwmapi.dll (73B40000), size: 155648 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\dwmapi.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\CRYPT32.dll:CRYPT32.dll (75960000), size: 1675264 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\CRYPT32.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\MSASN1.dll:MSASN1.dll (75360000), size: 57344 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\MSASN1.dll', fileVersion: 10.0.17763.1
-C:\Program Files (x86)\AutoSizer\AutoSizer.dll:AutoSizer.dll (06C20000), size: 90112 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\AutoSizer\AutoSizer.dll', fileVersion: 1.7.1.0
-C:\Windows\SYSTEM32\d3d9.dll:d3d9.dll (6FBB0000), size: 1511424 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\d3d9.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\WINTRUST.DLL:WINTRUST.DLL (76100000), size: 282624 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\WINTRUST.DLL', fileVersion: 10.0.17763.348
-C:\Windows\System32\imagehlp.dll:imagehlp.dll (76730000), size: 102400 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\imagehlp.dll', fileVersion: 10.0.17763.1
-C:\Windows\system32\rsaenh.dll:rsaenh.dll (735D0000), size: 192512 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\rsaenh.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\bcrypt.dll:bcrypt.dll (767E0000), size: 102400 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\bcrypt.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\DriverStore\FileRepository\nvivui.inf_amd64_9cf02dfb7ac166c1\nvldumd.dll:nvldumd.dll (67470000), size: 811008 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\DriverStore\FileRepository\nvivui.inf_amd64_9cf02dfb7ac166c1\nvldumd.dll', fileVersion: 25.21.14.2525
-C:\Windows\System32\DriverStore\FileRepository\nvivui.inf_amd64_9cf02dfb7ac166c1\nvd3dum.dll:nvd3dum.dll (64730000), size: 17158144 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\DriverStore\FileRepository\nvivui.inf_amd64_9cf02dfb7ac166c1\nvd3dum.dll', fileVersion: 25.21.14.2525
-C:\Windows\system32\nvspcap.dll:nvspcap.dll (67250000), size: 2183168 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\nvspcap.dll', fileVersion: 3.19.0.107
-C:\Windows\SYSTEM32\ntmarta.dll:ntmarta.dll (70980000), size: 167936 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\ntmarta.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\gpapi.dll:gpapi.dll (70960000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\gpapi.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\cryptnet.dll:cryptnet.dll (6A340000), size: 155648 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\cryptnet.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_24de78387e6208e4\igdumdim32.dll:igdumdim32.dll (65C90000), size: 2236416 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_24de78387e6208e4\igdumdim32.dll', fileVersion: 25.20.100.6373
-C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_24de78387e6208e4\igd9dxva32.dll:igd9dxva32.dll (613E0000), size: 53764096 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_24de78387e6208e4\igd9dxva32.dll', fileVersion: 25.20.100.6373
-C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_24de78387e6208e4\igdinfo32.dll:igdinfo32.dll (6D760000), size: 114688 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_24de78387e6208e4\igdinfo32.dll'
-C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_24de78387e6208e4\igc32.dll:igc32.dll (5F800000), size: 29224960 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_24de78387e6208e4\igc32.dll', fileVersion: 25.20.100.6373
-C:\Windows\System32\clbcatq.dll:clbcatq.dll (76750000), size: 528384 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\clbcatq.dll', fileVersion: 2001.12.10941.16384
-C:\Windows\System32\MMDevApi.dll:MMDevApi.dll (67690000), size: 385024 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\MMDevApi.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\PROPSYS.dll:PROPSYS.dll (71660000), size: 1564672 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\PROPSYS.dll', fileVersion: 7.0.17763.348
-C:\Windows\System32\DEVOBJ.dll:DEVOBJ.dll (709C0000), size: 143360 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\DEVOBJ.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\wdmaud.drv:wdmaud.drv (6D670000), size: 237568 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\wdmaud.drv', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\ksuser.dll:ksuser.dll (6C930000), size: 28672 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\ksuser.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\AVRT.dll:AVRT.dll (68CB0000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\AVRT.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\AUDIOSES.DLL:AUDIOSES.DLL (5E590000), size: 1114112 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\AUDIOSES.DLL', fileVersion: 10.0.17763.348
-C:\Windows\SYSTEM32\wintypes.dll:wintypes.dll (6D810000), size: 897024 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\wintypes.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\msacm32.drv:msacm32.drv (6DF40000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\msacm32.drv', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\MSACM32.dll:MSACM32.dll (6D740000), size: 102400 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\MSACM32.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\midimap.dll:midimap.dll (6D730000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\midimap.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\resourcepolicyclient.dll:resourcepolicyclient.dll (6C810000), size: 57344 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\resourcepolicyclient.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\xinput1_3.dll:xinput1_3.dll (00400000), size: 90112 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\xinput1_3.dll', fileVersion: 9.18.944.0
-C:\Windows\System32\SETUPAPI.dll:SETUPAPI.dll (75CB0000), size: 4501504 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Windows\System32\SETUPAPI.dll', fileVersion: 10.0.17763.404
-C:\Windows\SYSTEM32\TextInputFramework.dll:TextInputFramework.dll (68EB0000), size: 548864 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\TextInputFramework.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\CoreUIComponents.dll:CoreUIComponents.dll (68780000), size: 2531328 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\CoreUIComponents.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\CoreMessaging.dll:CoreMessaging.dll (686F0000), size: 585728 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\CoreMessaging.dll', fileVersion: 10.0.17763.194
-C:\Windows\system32\wbem\wbemprox.dll:wbemprox.dll (70910000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\wbem\wbemprox.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\wbemcomn.dll:wbemcomn.dll (708A0000), size: 434176 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Windows\SYSTEM32\wbemcomn.dll', fileVersion: 10.0.17763.1
-C:\Windows\system32\wbem\wbemsvc.dll:wbemsvc.dll (70890000), size: 65536 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\wbem\wbemsvc.dll', fileVersion: 10.0.17763.1
-C:\Windows\system32\wbem\fastprox.dll:fastprox.dll (707C0000), size: 806912 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Windows\system32\wbem\fastprox.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (70920000), size: 77824 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\dhcpcsvc6.DLL', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (70940000), size: 81920 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Windows\SYSTEM32\dhcpcsvc.DLL', fileVersion: 10.0.17763.1
-C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (70B70000), size: 32768 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Windows\System32\rasadhlp.dll', fileVersion: 10.0.17763.1
-C:\Windows\System32\fwpuclnt.dll:fwpuclnt.dll (70B10000), size: 331776 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Windows\System32\fwpuclnt.dll', fileVersion: 10.0.17763.1
-C:\Windows\system32\Ninput.dll:Ninput.dll (68D30000), size: 339968 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Windows\system32\Ninput.dll', fileVersion: 10.0.17763.1
-C:\Windows\SYSTEM32\dbghelp.dll:dbghelp.dll (68AF0000), size: 1634304 (result: 0), SymType: '-nosymbols-', PDB: 'C:\Windows\SYSTEM32\dbghelp.dll', fileVersion: 10.0.17763.1
-
-========== OUTPUTING STACK TRACE ==================
-
-0x012A5290 (ScienceBirds) physx::shdfnd::ErrorHandler::getErrorCallback
-  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00C2087B)
-0x00C2087B (ScienceBirds) 
-  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00C20B7B)
-0x00C20B7B (ScienceBirds) 
-  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00C21016)
-0x00C21016 (ScienceBirds) 
-0x00DFACA9 (ScienceBirds) physx::shdfnd::Foundation::getPAUtils
-0x05CAC7E5 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.Texture2D:INTERNAL_CALL_ReadPixels (UnityEngine.Texture2D,UnityEngine.Rect&,int,int,bool)
-0x05CAC798 (Mono JIT Code) UnityEngine.Texture2D:ReadPixels (UnityEngine.Rect,int,int,bool)
-0x05CAC4F5 (Mono JIT Code) AIBirdsConnection/<Screenshot>c__Iterator3:MoveNext ()
-0x05C41E27 (Mono JIT Code) UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
-0x05C41ECC (Mono JIT Code) (wrapper runtime-invoke) <Module>:runtime_invoke_void_object_intptr (object,intptr,intptr,intptr)
-0x100F172A (mono) mono_set_defaults
-0x1005D839 (mono) mono_runtime_invoke
-0x00D7F41E (ScienceBirds) physx::shdfnd::Foundation::getPAUtils
-0x00DA6CAA (ScienceBirds) physx::shdfnd::Foundation::getPAUtils
-0x00D9BE4D (ScienceBirds) physx::shdfnd::Foundation::getPAUtils
-0x00D9C053 (ScienceBirds) physx::shdfnd::Foundation::getPAUtils
-0x00D9C118 (ScienceBirds) physx::shdfnd::Foundation::getPAUtils
-  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00BCBFE7)
-0x00BCBFE7 (ScienceBirds) 
-0x00CC20D9 (ScienceBirds) physx::shdfnd::TempAllocator::`default constructor closure'
-0x011CB3B7 (ScienceBirds) physx::shdfnd::Foundation::getPAUtils
-0x0126AB38 (ScienceBirds) physx::shdfnd::ErrorHandler::getErrorCallback
-0x012A33F8 (ScienceBirds) physx::shdfnd::ErrorHandler::getErrorCallback
-0x76D20419 (KERNEL32) BaseThreadInitThunk
-0x7793662D (ntdll) RtlGetAppContainerNamedObjectPath
-0x779365FD (ntdll) RtlGetAppContainerNamedObjectPath
-
-========== END OF STACKTRACE ===========
-
-**** Crash! ****
