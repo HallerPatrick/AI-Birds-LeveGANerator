@@ -12,6 +12,8 @@ package ab.vision;
 import Jama.Matrix;
 import features.VisionSling;
 import helper.CustomLogger;
+import meta.ActionRobot;
+import meta.LevelSelection;
 
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -32,6 +34,8 @@ public class VisionMBR {
 	private Rectangle _boxes[]; // bounding box for each segment
 	private int _regionThreshold = 10; // minimal pixels in a region
 	private VisionSling hsv = null;
+	private LevelSelection levelSelector;
+	private int counter = 0;
 
 	// create a vision object for processing a given screenshot
 	public VisionMBR(BufferedImage screenshot) {
@@ -41,6 +45,7 @@ public class VisionMBR {
 		}
 		ABObject.resetCounter();
 		processScreenShot(screenshot);
+		readScreenshot();
 	}
 
 	//find slingshot
@@ -1169,6 +1174,16 @@ public class VisionMBR {
 
 		// find bounding boxes and segment colours
 		_boxes = VisionUtils.findBoundingBoxes(_segments);
+		counter++;
+	}
+
+	private void readScreenshot() {
+		if(counter > 25) {
+			int lvl = levelSelector.selectNextLevel();
+			CustomLogger.severe("Limit of screenshots reached. Continuing with next level.");
+			ActionRobot.get().loadLevel((byte) lvl);
+		}
+		
 	}
 
 
