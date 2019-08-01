@@ -4,26 +4,33 @@
 steps are written out the the README file"""
 
 import argparse
+import logging
+
 import os
 import shutil
 import sys
 
-from random import uniform
-from random import randint
+from random import (
+    uniform,
+    randint,
+    randrange
+)
 
+# Disable warning infos from tf/keras
+logging.getLogger('tensorflow').disabled = True
 PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(
     os.path.join(os.getcwd(), os.path.expanduser(__file__))))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 
 
-from raw_level_generator.raw_image_builder import convert_coord_back
-from raw_level_generator.xml_parser import Platform, Pig, Block, TNT
 from baseline import xml_writer
-from conture_detector.conture_detector import conture_detector
-from nn.img_generator import generate_single_image, generate_25_images
 from utils import Parameters
 
+from conture_detector.conture_detector import conture_detector
+from nn.img_generator import generate_single_image, generate_25_images, image_generator
+from raw_level_generator.raw_image_builder import convert_coord_back
+from raw_level_generator.xml_parser import Platform, Pig, Block, TNT
 
 # Amount of image that shall be generated for each game object (4)
 IMG_BATCH_SIZE = 30
@@ -66,15 +73,47 @@ BLOCK_IMG_PATH = "gen/block"
 TNT_IMG_PATH = "gen/tnt"
 PLATFORM_IMG_PATH = "gen/platform"
 
+object_to_path = {
+   "pig": PIG_IMG_PATH,
+   "block": BLOCK_IMG_PATH,
+   "tnt": TNT_IMG_PATH,
+   "platform": PLATFORM_IMG_PATH 
+}
+
 LEVEL_DIRECTORY = "../game/Science-Birds-Windows/ScienceBirds_Data/StreamingAssets/Levels"
 
 
-def get_object_centroids():
+def get_object_centroids(game_object, generator_model, level_count, path, is_pig=False):
+    """
+    Function that generates the amount of centroids given by level_amount
 
-    generate_25_images(models["pig"], PIG_IMG_PATH)
-    generate_25_images(models["block"], BLOCK_IMG_PATH)
-    generate_25_images(models["tnt"], TNT_IMG_PATH)
-    generate_25_images(models["platform"], PLATFORM_IMG_PATH)
+    The images from which the centroids are extracted are saved in a folder and the folder path
+    is returned
+
+    :param game_object type of object as string
+    :param generator_model, path to saved model and weights
+    :param level_count amount of levels that have to be generated, there amount of centroids
+    :param path to wich the images should be moved to     
+    """
+
+    centroids = []
+    
+    img_ generator = image_generator(generator_model, object_to_path[game_object])
+
+    if not os.path.exists("../metadata/" + game_object):
+        os.makedirs("../metadata/" + game_object)
+
+
+    for i in range(level_count):
+
+        gen_img_path = next(img_generator)
+
+        centroids = conture_detector(image_path)
+
+        if is_pig:
+            while len(centroids)
+
+        shutil.move(gen_image_path, "../metadata/" + gen_img_path)
 
 
 def setup_path():
@@ -95,42 +134,62 @@ def setup_path():
         os.mkdir("gen/tnt")
 
 
-def get_tnt_centroids():
+def get_tnt_centroids(level_count):
 
     print("Generating TNT images")
 
+    generator = image_generator(models["tnt"], TNT_IMG_PATH)
+
     counter = 1
     tnt_centroids = []
-    while len(tnt_centroids) != 20:
-        print("TNT images generated: [%d]\r" % counter, end="")
-        print("TNT images used: [%d]\r" % len(tnt_centroids), end="")
+    while len(tnt_centroids) != level_count:
+
         generate_25_images(models["tnt"], TNT_IMG_PATH)
+
+        image_path = next(generator)
+
+        centroids = conture_detector(image_path)
+
+        if len(centroids) >= 0 and len(centroids) <= 6:
+            if not os.path.exists("../metadata/tnt"):
+                os.makedirs("../metadata/tnt")
+
+            shutil.move(image_path, "../metadata/tnt/" + str(int(image_path.split("/")[-1].replace(".png", "")) + 4) + ".png")
+
+            tnt_centroids.append(centroids)
+            counter += 1
+
+        if len(tnt_centroids) == level_count:
+            return tnt_centroids
+
+        """
         for image in os.listdir(TNT_IMG_PATH):
             centroids = conture_detector(TNT_IMG_PATH + "/" + image)
             if len(centroids) >= 0 and len(centroids) <= 6:
                 # Saving the image as metadata 
-                if not os.path.exists("../level/tnt"):
+                if not os.path.exists("../metadata/tnt"):
                     os.makedirs("../metadata/tnt")
 
-                shutil.move(TNT_IMG_PATH + "/" + image, "../metadata/tnt/" + image)
+                shutil.move(TNT_IMG_PATH + "/" + image, "../metadata/tnt/" + str(int(image.replace(".png", "")) + 4) + ".png")
 
                 tnt_centroids.append(centroids)
 
-            if len(tnt_centroids) == 20:
-                return tnt_centroids
+                counter += 1
 
-            counter += 1
+            if len(tnt_centroids) == level_count:
+                return tnt_centroids
+        """
 
     return tnt_centroids
 
 
-def get_platform_centroids():
+def get_platform_centroids(level_count):
 
     print("Generating Platform images")
 
     counter = 1
     platform_centroids = []
-    while len(platform_centroids) != 20:
+    while len(platform_centroids) != level_count:
         print("Platform images generated: [%d]\r" % counter, end="")
         print("Platform images used: [%d]\r" % len(platform_centroids), end="")
         generate_25_images(models["platform"], PLATFORM_IMG_PATH)
@@ -141,59 +200,77 @@ def get_platform_centroids():
             if not os.path.exists("../metadata/platform"):
                 os.makedirs("../metadata/platform")
                 
-            shutil.move(PLATFORM_IMG_PATH + "/" + image, "../metadata/platform/" + image)
+            shutil.move(PLATFORM_IMG_PATH + "/" + image, "../metadata/platform/" + str(int(image.replace(".png", "")) + 4) + ".png")
             
             platform_centroids.append(centroids)
+            counter += 1
 
-            if len(platform_centroids) == 20:
+            if len(platform_centroids) == level_count:
                 return platform_centroids
 
-            counter += 1
 
     return platform_centroids
 
 
-def get_pig_centroids(pig_count):
+def get_pig_centroids(level_count, parameters):
 
-    pig_min = 4
-    pig_max = 8
+    retry_flag = 5
+    retries = 0
 
     print("Generating Pig images")
 
+    ranges = []
+    for parameter in parameters:
+        for _ in range(parameter.level_count):
+            ranges.append(parameter.pig_count)
+
     counter = 1
     pig_centroids = []
-    while len(pig_centroids) != 20:
+
+    reduce_centroids = 1
+    while len(pig_centroids) != level_count:
+
         print("Pig images generated: [%d]\r" % counter, end="")
         print("Pig images used: [%d]\r" % len(pig_centroids), end="")
         generate_25_images(models["pig"], PIG_IMG_PATH)
         for image in os.listdir(PIG_IMG_PATH):
             centroids = conture_detector(PIG_IMG_PATH + "/" + image)
+            
+            pig_min, pig_max = ranges[counter-1]
 
-            if len(centroids) >= pig_min and len(centroids) <= pig_max:
+            
+            if retries % retry_flag == 0:
+                for _ in range(len(centroids) - int(pig_max)):
+                    centroids.pop(randrange(len(centroids)))
+                reduce_centroids += 1
 
-                # Saving the image as metadata 
+            if len(centroids) >= int(pig_min) and len(centroids) <= int(pig_max):
+
+                # Saving the image as metadata
                 if not os.path.exists("../metadata/pig"):
                     os.makedirs("../metadata/pig")
-                    
-                shutil.move(PIG_IMG_PATH + "/" + image, "../metadata/pig/" + image)
+               
+                shutil.move(PIG_IMG_PATH + "/" + image, "../metadata/pig/" + str(counter + 3) + ".png")
 
                 pig_centroids.append(centroids)
+                counter += 1
+            else:
+                retries += 1
 
-            if len(pig_centroids) == 20:
+            if len(pig_centroids) == level_count:
                 return pig_centroids
 
-            counter += 1
 
     return pig_centroids
 
 
-def get_block_centroids():
+def get_block_centroids(level_count):
 
     print("Generating Block images")
 
     counter = 1
     block_centroids = []
-    while len(block_centroids) != 20:
+    while len(block_centroids) != level_count:
         print("Block images generated: [%d]\r" % counter, end="")
         print("Block images used: [%d]\r" % len(block_centroids), end="")
         generate_25_images(models["pig"], BLOCK_IMG_PATH)
@@ -205,13 +282,13 @@ def get_block_centroids():
             if not os.path.exists("../metadata/block"):
                 os.makedirs("../metadata/block")
                 
-            shutil.move(BLOCK_IMG_PATH + "/" + image, "../metadata/block/" + image)
+            shutil.move(BLOCK_IMG_PATH + "/" + image, "../metadata/block/" + str(int(image.replace(".png", "")) + 4) + ".png")
             block_centroids.append(centroids)
 
-            if len(block_centroids) == 20:
+            counter += 1
+            if len(block_centroids) == level_count:
                 return block_centroids
 
-            counter += 1
 
     return block_centroids
 
@@ -264,9 +341,6 @@ def choose_item(table):
         ran_num = ran_num - table[str(selected_num)]
     return selected_num
 
-def save_level_metadata():
-    pass
-
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--parameters_file", required=True,
@@ -275,36 +349,51 @@ def main():
 
     setup_path()
 
+    try:
+        shutil.rmtree("../metadata")
+    except FileNotFoundError:
+        pass
+
     print("Reading parameters file")
     parameters = Parameters.parameters_from_file(args.parameters_file)
 
-    tnt_centroids = get_tnt_centroids()
-    platform_centroids = get_platform_centroids()
-    pig_centroids = get_pig_centroids(parameters[0])
-    block_centroids = get_block_centroids()
+    level_count = sum([p.level_count for p in parameters])
 
-    for i in range(20):
-        writer = xml_writer.XmlWriter("../level/level_{}.xml".format(str(i+4).zfill(2)))
-        pig_objects = build_objects_from_centroids(pig_centroids[i], "pig")
-        platform_objects = build_objects_from_centroids(
-            platform_centroids[i], "platform")
-        block_objects = build_objects_from_centroids(block_centroids[i], "block")
-        tnt_objects = build_objects_from_centroids(tnt_centroids[i], "tnt")
-        birds = get_birds()
+    print("Generating {} level...".format(level_count))
 
-        writer.add_birds(birds)
-        writer.add_slingshot()
-        writer.add_pig_objects(pig_objects)
-        writer.add_platform_objects(platform_objects)
-        writer.add_block_objects(block_objects)
-        writer.add_tnt_objects(tnt_objects)
-        writer.write()
+    tnt_centroids = get_tnt_centroids(level_count)
+    platform_centroids = get_platform_centroids(level_count)
+    pig_centroids = get_pig_centroids(level_count, parameters)
+    block_centroids = get_block_centroids(level_count)
+
+    i = 0
+    for parameter in parameters:
+        for _ in range(parameter.level_count):
+
+            get_object_centroids()
 
 
+            writer = xml_writer.XmlWriter("../level/level_{}.xml".format(str(i+4)).zfill(2))
+            pig_objects = build_objects_from_centroids(pig_centroids[i], "pig")
+            platform_objects = build_objects_from_centroids(
+                platform_centroids[i], "platform")
+            block_objects = build_objects_from_centroids(block_centroids[i], "block")
+            tnt_objects = build_objects_from_centroids(tnt_centroids[i], "tnt")
+            birds = get_birds()
+
+            writer.add_birds(birds)
+            writer.add_slingshot()
+            writer.add_pig_objects(pig_objects)
+            writer.add_platform_objects(platform_objects)
+            writer.add_block_objects(block_objects)
+            writer.add_tnt_objects(tnt_objects)
+            writer.write()
+            i += 1
 
     # Clean up
     for level in os.listdir(LEVEL_DIRECTORY):
         os.remove(LEVEL_DIRECTORY + "/" + level)
+
 
     # After generating all images copy them into the game level directory
     print("Moving generated levels into game directory")

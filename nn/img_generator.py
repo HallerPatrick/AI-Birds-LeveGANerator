@@ -45,3 +45,39 @@ def generate_25_images(generator_model, folder_path):
             plt.imsave(folder_path + '/' + '{}.png'.format(image_count), img, cmap="spring")
             image_count += 1
 
+def image_generator(generator_model, folder_path):
+
+    yield_count = 0
+    rows, columns = 5, 5
+    noise = np.random.normal(
+        0, 1, (rows * columns, 100))
+
+    generator = load_model(generator_model)
+    generator.compile(loss="binary_crossentropy", optimizer="SGD")
+
+    images = []
+
+    # Generate a batch of 50 images
+    for _ in range(1):
+        generated_images = generator.predict(noise)
+
+        generated_images = 0.5 * generated_images + 0.5
+
+        image_count = 0
+            
+        for _ in range(rows):
+            for _ in range(columns):
+                img = generated_images[image_count, :]
+                images.append(img)
+                image_count += 1
+
+    for image in images:
+        yield_count += 1
+        path = folder_path + '/' + '{}.png'.format(yield_count)
+        plt.imsave(path, image, cmap="spring")
+        yield path
+
+
+
+
+
