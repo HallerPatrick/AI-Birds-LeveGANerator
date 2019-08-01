@@ -1175,6 +1175,8 @@ public class VisionMBR {
 		// find bounding boxes and segment colours
 		_boxes = VisionUtils.findBoundingBoxes(_segments);
 		counter++;
+		System.out.println(counter);
+		readScreenshot();
 	}
 
 	private void readScreenshot() {

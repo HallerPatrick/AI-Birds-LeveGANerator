@@ -19,6 +19,9 @@ import helper.CustomLogger;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -36,6 +39,7 @@ public class ClientNaiveAgent implements Runnable {
 	private boolean firstShot;
 	private Point prevTarget;
 	private Random randomGenerator;
+	int counter = 0;
 	/**
 	 * Constructor using the default IP
 	 * */
@@ -146,6 +150,7 @@ public class ClientNaiveAgent implements Runnable {
 
 				// first shot on this level, try high shot first
 				firstShot = true;
+				counter = 0;
 				
 			} else 
 				//If lost, then restart the level
@@ -184,6 +189,20 @@ public class ClientNaiveAgent implements Runnable {
 
 	}
 
+	private boolean checkForInvalidLevel() {
+		if(counter >= 25) {
+			File file = new File("level_result.txt");
+			try(FileWriter fr = new FileWriter(file, true)) {
+				fr.write(currentLevel + "\n");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return true;
+
+		}
+		return false;
+	}
+
 
 	  /** 
 	   * Solve a particular level by shooting birds directly to pigs
@@ -192,6 +211,12 @@ public class ClientNaiveAgent implements Runnable {
 	public GameState solve()
 
 	{
+
+		System.out.println("Solving level");
+		counter++;
+		System.out.println(counter);
+
+		if (checkForInvalidLevel()) return GameState.WON;
 
 		// capture Image
 		BufferedImage screenshot = ar.doScreenShot();

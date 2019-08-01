@@ -19,6 +19,13 @@ public class ClientMessageEncoder {
 		return message;
 
 	}
+
+	public static byte[] getLevelAmount() {
+		byte[] message = {
+
+		};
+		return message;
+	}
   
 	//encode configure message
 	public static byte[] configure(byte[] id) {
