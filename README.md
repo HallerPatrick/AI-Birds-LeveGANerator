@@ -4,6 +4,16 @@ This repo contains all work done by Samet & Patrick for the bachelor projeckt SM
 
 The general approach is, to use generate new levels for the game "Angry Birds" based on the algorithm GAN, instead of a more precedual approach.
 
+## Setup 
+
+This repo requires a lot of setup up and is not properly tested on any OS
+
+### Clone
+
+Repo contains submodules
+
+`git clone --recursive https://github.com/HallerPatrick/AI-Birds-LeveGANerator.git`
+
 ## Usage
 
 Please use the tasks provided in `.vscode/tasks.json`
