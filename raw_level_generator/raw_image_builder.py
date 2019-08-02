@@ -1,5 +1,8 @@
-from PIL import Image, ImageDraw
 import os
+
+import click
+
+from PIL import Image, ImageDraw
 from raw_level_generator.xml_parser import parse_xml
 
 # FROM: XML (-9.99999, -9.99999), (9.99999, 9.99999)
@@ -150,10 +153,9 @@ def build_platform_image(data, path):
 
     img.save("out/platform/" + path + ".png")
 
-
-def main():
-
-    sample_folder = "../baseline/samples/"
+@click.command()
+@click.option("--folder", default="../baseline/samples", help="Folder which holds xml level files")
+def main(folder):
 
     if not os.path.exists("out"):
         os.makedirs("out")
@@ -170,8 +172,8 @@ def main():
     if not os.path.exists("out/block"):
         os.makedirs("out/block")
 
-    for path in os.listdir(sample_folder):
-        data = parse_xml(sample_folder + path)
+    for path in os.listdir(folder):
+        data = parse_xml(folder + path)
 
         # Build four different images
         build_pig_image(data, path)

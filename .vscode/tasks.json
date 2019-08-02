@@ -50,7 +50,7 @@
             "options": {
                 "cwd": "./raw_level_generator"
             },
-            "command": "python raw_image_builder.py",
+            "command": "python3 raw_image_builder.py",
             "problemMatcher": [
                 "$vsls"
             ]
