@@ -1,0 +1,3 @@
+[submodule "game"]
+	path = game
+	url = https://github.com/HallerPatrick/AI_Birds_Game_and_Agent.git

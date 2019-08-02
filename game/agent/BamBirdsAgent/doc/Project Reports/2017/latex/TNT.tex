@@ -1,3 +1,0 @@
-The strategy \code{tnt} focuses on finding a TNT block and aiming for this object. It is assumed that the designer placed this object in that position on purpose and it has an important effect when shooting it.
-
-The plan checks, if there is an object, which is both hittable and of the material TNT. It furthermore examines, if the TNT belongs to a structure. This is essential, as it has to be excluded to shoot a TNT that has no effect at all. Szenarios for this could be that either the designer might want to confuse the player or that a previous shot changed the szene so much that the TNT has no impact anymore. Once detected this kind of TNT, the object is shot directly.

@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classab_1_1vision_1_1_a_b_object.html" title="ab.vision.ABObject" alt="" coords="135,55,269,80"/>
-<area shape="rect" id="node3" href="$classab_1_1vision_1_1real_1_1shape_1_1_body.html" title="ab.vision.real.shape.Body" alt="" coords="317,55,491,80"/>
-<area shape="rect" id="node4" href="$classab_1_1vision_1_1real_1_1shape_1_1_circle.html" title="ab.vision.real.shape.Circle" alt="" coords="539,5,716,31"/>
-<area shape="rect" id="node5" href="$classab_1_1vision_1_1real_1_1shape_1_1_poly.html" title="ab.vision.real.shape.Poly" alt="" coords="543,55,712,80"/>
-<area shape="rect" id="node6" href="$classab_1_1vision_1_1real_1_1shape_1_1_rect.html" title="ab.vision.real.shape.Rect" alt="" coords="542,104,713,129"/>
-</map>

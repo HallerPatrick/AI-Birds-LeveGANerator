@@ -1,6 +1,0 @@
-<map id="planner.Node" name="planner.Node">
-<area shape="rect" id="node3" href="$classplanner_1_1_target.html" title="planner.Target" alt="" coords="256,150,362,175"/>
-<area shape="rect" id="node7" href="$classab_1_1demo_1_1other_1_1_shot.html" title="ab.demo.other.Shot" alt="" coords="240,79,378,105"/>
-<area shape="rect" id="node4" href="$enumplanner_1_1_thinker_type.html" title="planner.ThinkerType" alt="" coords="5,150,147,175"/>
-<area shape="rect" id="node5" href="$classshot_1_1_saved_shot.html" title="shot.SavedShot" alt="" coords="526,41,641,66"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="meta.ShotSelection" name="meta.ShotSelection">
-<area shape="rect" id="node2" href="$classplanner_1_1_target.html" title="planner.Target" alt="" coords="254,380,360,405"/>
-<area shape="rect" id="node6" href="$classmeta_1_1_level.html" title="meta.Level" alt="" coords="919,195,1006,220"/>
-<area shape="rect" id="node7" href="$classplanner_1_1_decision_tree.html" title="planner.DecisionTree" alt="" coords="398,227,545,252"/>
-<area shape="rect" id="node8" href="$classfeatures_1_1_scene.html" title="features.Scene" alt="" coords="604,168,715,193"/>
-<area shape="rect" id="node9" href="$classdatabase_1_1_slingshot.html" title="database.Slingshot" alt="" coords="239,133,374,159"/>
-<area shape="rect" id="node4" href="$enumplanner_1_1_thinker_type.html" title="planner.ThinkerType" alt="" coords="5,380,147,405"/>
-<area shape="rect" id="node11" href="$enummeta_1_1_level_1_1_state.html" title="meta.Level.State" alt="" coords="599,356,720,381"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="ab.vision.ABObject" name="ab.vision.ABObject">
-<area shape="rect" id="node3" href="$classab_1_1vision_1_1real_1_1shape_1_1_body.html" title="ab.vision.real.shape.Body" alt="" coords="205,152,379,177"/>
-<area shape="rect" id="node4" href="$classab_1_1vision_1_1real_1_1shape_1_1_circle.html" title="ab.vision.real.shape.Circle" alt="" coords="5,225,183,251"/>
-<area shape="rect" id="node5" href="$classab_1_1vision_1_1real_1_1shape_1_1_poly.html" title="ab.vision.real.shape.Poly" alt="" coords="207,225,376,251"/>
-<area shape="rect" id="node6" href="$classab_1_1vision_1_1real_1_1shape_1_1_rect.html" title="ab.vision.real.shape.Rect" alt="" coords="401,225,572,251"/>
-</map>

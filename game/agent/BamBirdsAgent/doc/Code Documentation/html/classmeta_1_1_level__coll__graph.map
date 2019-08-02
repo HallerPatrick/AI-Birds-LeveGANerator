@@ -1,8 +1,0 @@
-<map id="meta.Level" name="meta.Level">
-<area shape="rect" id="node3" href="$classplanner_1_1_decision_tree.html" title="planner.DecisionTree" alt="" coords="465,106,612,131"/>
-<area shape="rect" id="node4" href="$classplanner_1_1_node.html" title="planner.Node" alt="" coords="183,73,284,98"/>
-<area shape="rect" id="node5" href="$classfeatures_1_1_scene.html" title="features.Scene" alt="" coords="483,226,594,251"/>
-<area shape="rect" id="node7" href="$classdatabase_1_1_slingshot.html" title="database.Slingshot" alt="" coords="166,174,301,199"/>
-<area shape="rect" id="node6" href="$classfeatures_1_1_visual_debugger.html" title="features.VisualDebugger" alt="" coords="150,229,318,254"/>
-<area shape="rect" id="node11" href="$enummeta_1_1_level_1_1_state.html" title="meta.Level.State" alt="" coords="478,351,599,377"/>
-</map>
