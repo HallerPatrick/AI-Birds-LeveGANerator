@@ -1,4 +1,10 @@
 import os
+import sys
+
+PACKAGE_PARENT = '..'
+SCRIPT_DIR = os.path.dirname(os.path.realpath(
+    os.path.join(os.getcwd(), os.path.expanduser(__file__))))
+sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 
 import click
 
@@ -109,7 +115,7 @@ def build_block_image(data, path):
 
         d.rectangle([co1, co2], fill=PLATFORM_COLOR)
 
-    img.save("out/block/" + path + ".png")
+    img.save("nn/samples/block/" + path + ".png")
 
 
 def build_pig_image(data, path):
@@ -123,7 +129,7 @@ def build_pig_image(data, path):
         # co2 = scale_to_size(co[0], co[1], PIG_SIZE, PIG_SIZE)
         d.rectangle([co1, co2], fill=PLATFORM_COLOR)
 
-    img.save("out/pig/" + path + ".png")
+    img.save("nn/samples/pig/" + path + ".png")
 
 
 def build_tnt_image(data, path):
@@ -138,7 +144,7 @@ def build_tnt_image(data, path):
                             float(tnt.y) - (PIG_SIZE * 0.3))
         d.rectangle([co1, co2], fill=PLATFORM_COLOR)
 
-    img.save("out/tnt/" + path + ".png")
+    img.save("nn/samples/tnt/" + path + ".png")
 
 
 def build_platform_image(data, path):
@@ -151,29 +157,29 @@ def build_platform_image(data, path):
             platform.x) - (PLATFORM_SIZE * 0.3), float(platform.y) - (PLATFORM_SIZE * 0.3))
         d.rectangle([co1, co2], fill=PLATFORM_COLOR)
 
-    img.save("out/platform/" + path + ".png")
+    img.save("nn/samples/platform/" + path + ".png")
 
 @click.command()
 @click.option("--folder", default="../baseline/samples", help="Folder which holds xml level files")
 def main(folder):
 
-    if not os.path.exists("out"):
-        os.makedirs("out")
+    if not os.path.exists("nn/samples"):
+        os.makedirs("nn/samples")
 
-    if not os.path.exists("out/pig"):
-        os.makedirs("out/pig")
+    if not os.path.exists("nn/samples/pig"):
+        os.makedirs("nn/samples/pig")
 
-    if not os.path.exists("out/platform"):
-        os.makedirs("out/platform")
+    if not os.path.exists("nn/samples/platform"):
+        os.makedirs("nn/samples/platform")
 
-    if not os.path.exists("out/tnt"):
-        os.makedirs("out/tnt")
+    if not os.path.exists("nn/samples/tnt"):
+        os.makedirs("nn/samples/tnt")
 
-    if not os.path.exists("out/block"):
-        os.makedirs("out/block")
+    if not os.path.exists("nn/samples/block"):
+        os.makedirs("nn/samples/block")
 
     for path in os.listdir(folder):
-        data = parse_xml(folder + path)
+        data = parse_xml(folder + "/" + path)
 
         # Build four different images
         build_pig_image(data, path)

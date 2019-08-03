@@ -5,13 +5,17 @@
 $env:Path += ";C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.0\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.0\\extras\\CUPTI\\libx64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.0\\include;C:\\tools\\cuda\\bin;C:\\Program Files\\cudnn-10.0\\cuda\\bin"
 
 Set-Location .\xml_generator
-#python.exe __main__.py -f ..\parameters.txt
+python.exe __main__.py -f ..\parameters.txt
 Set-Location ..
 
 # Move them into unity ressources folder
 # Move-Item .\xml_generator\gen\* 
 
+$testResultsPath = ".\level_result.txt"
 
+if([System.IO.File]::Exists($testResultsPath)){
+    #Remove-Item -Path $testResultsPath
+}
 
 # Start Game
 #
@@ -62,7 +66,8 @@ Stop-Process $serverId
 
 Write-Output "Finished"
 
-#$levelResultPath = ".\game\agent\BamBirdsAgent\level_result.txt";
 
-#Start-Process cmd -Argument ('/c python automator/prepare_samples.py ' + $levelResultPath) -RedirectStandardOutput log.txt
+python automator/prepare_samples.py
+
+python .\raw_level_generator\raw_image_builder.py --folder .\raw_level_generator\won_levels
 

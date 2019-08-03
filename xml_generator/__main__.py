@@ -98,22 +98,12 @@ def get_object_centroids(game_object, generator_model, level_count, path, is_pig
 
     centroids = []
     
-    img_ generator = image_generator(generator_model, object_to_path[game_object])
+    img_generator = image_generator(generator_model, object_to_path[game_object])
 
     if not os.path.exists("../metadata/" + game_object):
         os.makedirs("../metadata/" + game_object)
 
 
-    for i in range(level_count):
-
-        gen_img_path = next(img_generator)
-
-        centroids = conture_detector(image_path)
-
-        if is_pig:
-            while len(centroids)
-
-        shutil.move(gen_image_path, "../metadata/" + gen_img_path)
 
 
 def setup_path():
