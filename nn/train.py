@@ -283,9 +283,9 @@ def save_images(generator_model, folder_path):
             image_count += 1
 
 
-def run_all():
+def run_all(epoch=2000):
     for game_object in ["pig", "platform", "block", "tnt"]:
-        epochs = 2000 if game_object == "tnt" else 6000
+        epochs = epoch if game_object == "tnt" else epoch*3 
         facegenerator = FaceGenerator(128, 128, 3, game_object)
         facegenerator.train(datafolder="samples/" + game_object, epochs=epochs,
                             batch_size=32, save_images_interval=100)

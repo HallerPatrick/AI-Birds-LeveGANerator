@@ -5,7 +5,7 @@ import os
 import subprocess
 import sys
 
-DOCTOR_REQUIREMENTS = "requirements_doctor.txt"
+DOCTOR_REQUIREMENTS = "other/doctor/requirements_doctor.txt"
 
 CHECKED_SYMBOL = '✓'
 WARNING_SYMBOL = '!'
@@ -16,7 +16,7 @@ BOLD_END = '\033[0m'
 
 
 REQUIRED_PY = (3, 7)
-REQUIREMENTS = "requirements.txt"
+REQUIREMENTS = "other/doctor/requirments/requirements.txt"
 
 # Nome packges have other names when getting imported 
 PACKAGE_NAMES = {

@@ -22,26 +22,12 @@
             "problemMatcher": []
         },
         {
-            "label": "gen",
-            "type": "shell",
-            "command": "python3 xml_writer.py"
-        },
-        {
             "label": "train",
             "type": "shell",
             "options": {
                 "cwd": "./nn"
             },
             "command": "python3 train.py",
-            "problemMatcher": []
-        },
-        {
-            "label": "train win",
-            "type": "shell",
-            "options": {
-                "cwd": "./nn"
-            },
-            "command": "python train.py",
             "problemMatcher": []
         },
         {
@@ -76,7 +62,7 @@
             "label": "Xml Generator",
             "type": "shell",
             "options": {
-                "cwd": "./xml_generator"
+                "cwd": "./xml_generajtor"
             },
             "command": "python",
             "args": [
