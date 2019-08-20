@@ -16,7 +16,7 @@ BOLD_END = '\033[0m'
 
 
 REQUIRED_PY = (3, 7)
-REQUIREMENTS = "other/doctor/requirments/requirements.txt"
+REQUIREMENTS = "other/doctor/requirements.txt"
 
 # Nome packges have other names when getting imported 
 PACKAGE_NAMES = {
@@ -155,6 +155,7 @@ def run_doctor():
 
     puts("Checking Python site-packages...")
     all_installed = True 
+    print(REQUIREMENTS)
     with open(REQUIREMENTS) as f:
         requirements = f.readlines()
     requirements_name = [req.strip().split("==")[0] for req in requirements if not req.startswith("#")]

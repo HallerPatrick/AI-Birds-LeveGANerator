@@ -7,7 +7,7 @@ import click
 from clint.textui import puts, colored, prompt, validators
 from pyfiglet import Figlet
 
-from automator import start_automator
+
 
 CHECKED_SYMBOL = '✓'
 FAILED_SYMBOL  = 'x'
@@ -16,10 +16,10 @@ BOLD_START = '\033[1m'
 BOLD_END = '\033[0m'
 
 json_template = {
-    "client_path": "Not set yet",
-    "server_path": "Not set yet",
-    "unity_path": "Not set yet",
-    "autosizer_path": "Not set yet"
+    "client_path": "None",
+    "server_path": "None",
+    "unity_path": "None",
+    "autosizer_path": "None"
 }
 
 config_data = {}
@@ -68,12 +68,14 @@ def print_check():
     puts(BOLD_START + "(3) Unity Game path (mandatory)" + BOLD_END + ": " + unity_path_string)
     puts(BOLD_START + "(4) Autosizer path (mandatory)" + BOLD_END + ": " + autosizer_path_string)
 
-    if client_checked and server_checked and unity_checked and autosizer_checked:
+    if client_checked and server_checked and unity_checked:
         puts(colored.green("ALL SET!"))
         val = prompt.query("Start automator? [(y)es/n(o)/s(et path)]")
         
         if val == "y":
-            start_automator()
+            from automator import start_automator
+
+            start_automator(config_data)
             return
         elif val == "n":
             sys.exit(1)
@@ -125,7 +127,6 @@ def main(config_file):
         puts("Reading config from file")
         with open(config_file, "r+") as f:
             config_data = json.load(f)
-
 
     main_loop()
     

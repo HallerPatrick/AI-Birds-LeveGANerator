@@ -1,1 +1,6 @@
-{"client_path": "/Users/patrickhaller/Projects/AI_Birds_Desktop/pubspec.yaml", "server_path": "/Users/patrickhaller/Projects/AI_Birds_Desktop/pubspec.yaml", "unity_path": "/Users/patrickhaller/Projects/AI_Birds_Desktop/pubspec.yaml", "autosizer_path": "/Users/patrickhaller/Projects/AI_Birds_Desktop/pubspec.yaml"}
+{
+    "client_path": "/Users/patrickhaller/Projects/AI-Birds-LeveGANerator/game/agent/NaiveAgent.jar",
+    "server_path": "/Users/patrickhaller/Projects/AI-Birds-LeveGANerator/game/agent/ScienceBirds-server.jar",
+    "unity_path": "/Users/patrickhaller/Downloads/Science-Birds-OSX/Science-Birds-OSX.app/Contents/MacOS/Science-Birds-OSX",
+    "autosizer_path": "None"
+}

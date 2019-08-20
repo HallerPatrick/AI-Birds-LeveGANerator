@@ -25,7 +25,7 @@ sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 
 
 from baseline import xml_writer
-from utils import Parameters
+from xml_generator.utils import Parameters
 
 from conture_detector.conture_detector import conture_detector
 from nn.img_generator import generate_single_image, generate_25_images, image_generator
@@ -331,6 +331,7 @@ def choose_item(table):
         ran_num = ran_num - table[str(selected_num)]
     return selected_num
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--parameters_file", required=True,
@@ -360,8 +361,7 @@ def main():
     for parameter in parameters:
         for _ in range(parameter.level_count):
 
-            get_object_centroids()
-
+            #get_object_centroids()
 
             writer = xml_writer.XmlWriter("../level/level_{}.xml".format(str(i+4)).zfill(2))
             pig_objects = build_objects_from_centroids(pig_centroids[i], "pig")

@@ -25,7 +25,6 @@ Start-Process -FilePath C:\"Program Files (x86)"\AutoSizer\AutoSizer
 $autoSizerShell = New-Object -ComObject wscript.shell;
 $autoSizerShell.AppActivate("AutoSizer")
 
-
 Start-Sleep 2
 $autoSizerShell.SendKeys("%9")
 
@@ -60,7 +59,6 @@ while(-not $clientFinished) {
 }
 
 Stop-Process $unityId
-
 Stop-Process $serverId
 
 

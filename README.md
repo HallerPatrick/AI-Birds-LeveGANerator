@@ -12,7 +12,8 @@ This repo requires a lot of setup up and is not properly tested on any OS
 
 Repo contains submodules
 
-`git clone --recursive https://github.com/HallerPatrick/AI-Birds-LeveGANerator.git`
+`git clone https://github.com/HallerPatrick/AI-Birds-LeveGANerator.git`
+`git submodule update --init --recursive`
 
 ## Usage
 
