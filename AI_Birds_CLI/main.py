@@ -74,7 +74,6 @@ def print_check():
         
         if val == "y":
             from automator import start_automator
-
             start_automator(config_data)
             return
         elif val == "n":
@@ -103,11 +102,9 @@ def print_check():
 
     
     with open(config_file_path, "r+") as f:
-        json.dump(config_data, f)
+        json.dump(config_data, f, indent=4)
 
-    
 
-    
 @click.command()
 @click.option("--config-file", default="cfg.json", help="Json config holding all config values for starting automator")
 def main(config_file):
@@ -133,7 +130,10 @@ def main(config_file):
 
 def main_loop():
     while True:
-        os.system('clear')
+        if sys.platform == "win32":
+            os.system("cls")
+        else:
+            os.system('clear')
         print_header()
         print_check()
 

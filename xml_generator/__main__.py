@@ -15,6 +15,7 @@ from random import (
     randint,
     randrange
 )
+from pathlib import Path
 
 # Disable warning infos from tf/keras
 logging.getLogger('tensorflow').disabled = True
@@ -127,14 +128,23 @@ def setup_path():
 def get_tnt_centroids(level_count):
 
     print("Generating TNT images")
+    print("Amount of levels: {}".format(level_count))
 
     generator = image_generator(models["tnt"], TNT_IMG_PATH)
 
     counter = 1
     tnt_centroids = []
     while len(tnt_centroids) != level_count:
+        print("No. TNT centroids: {}".format(len(tnt_centroids)))
 
+        
         generate_25_images(models["tnt"], TNT_IMG_PATH)
+        
+
+        try:
+            image_path = next(generator)
+        except StopIteration:
+            generator = image_generator(models["tnt"], TNT_IMG_PATH)
 
         image_path = next(generator)
 
@@ -332,11 +342,10 @@ def choose_item(table):
     return selected_num
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-f", "--parameters_file", required=True,
-                        help="Parameters file wiht constraints is passed", default="parameters.txt")
-    args = parser.parse_args()
+def main(parameters_file, root):
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("-f", "--parameters_file", help="Parameters file wiht constraints is passed", default="parameters.txt")
+    # args = parser.parse_args()
 
     setup_path()
 
@@ -346,7 +355,7 @@ def main():
         pass
 
     print("Reading parameters file")
-    parameters = Parameters.parameters_from_file(args.parameters_file)
+    parameters = Parameters.parameters_from_file(parameters_file)
 
     level_count = sum([p.level_count for p in parameters])
 
@@ -363,7 +372,19 @@ def main():
 
             #get_object_centroids()
 
-            writer = xml_writer.XmlWriter("../level/level_{}.xml".format(str(i+4)).zfill(2))
+            print(root)
+
+            path = Path(root)
+
+            print(str(path))
+
+
+            xml_path = path / "level/level_{}.xml".format(str(i+4)).zfill(2)
+
+            print("Wrote xml...")
+            print(xml_path)
+
+            writer = xml_writer.XmlWriter(str(xml_path))
             pig_objects = build_objects_from_centroids(pig_centroids[i], "pig")
             platform_objects = build_objects_from_centroids(
                 platform_centroids[i], "platform")

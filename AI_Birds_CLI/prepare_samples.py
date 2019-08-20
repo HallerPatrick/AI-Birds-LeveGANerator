@@ -2,6 +2,7 @@ import os
 import sys
 import time
 import shutil
+import pathlib
 
 PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(
@@ -10,15 +11,14 @@ sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 
 from xml_generator.utils import Parameters
 
-game_levels_dir = "./game/Science-Birds-Windows/ScienceBirds_Data/StreamingAssets/Levels/"
-
-parameters_file = "./parameters.txt"
-
-won_levels_dir = "./raw_level_generator/won_levels/"
 
 
 
-def main(level_result_file="./level_result.txt"):
+
+def main(root, level_result_file="./level_result.txt"):
+
+    game_levels_dir = pathlib.Path(root + "/game/Science-Birds-Windows/ScienceBirds_Data/StreamingAssets/Levels/")
+    won_levels_dir = pathlib.Path(root + "/raw_level_generator/won_levels/")
 
     with open(level_result_file) as f:
         levels = f.readlines()
@@ -30,7 +30,7 @@ def main(level_result_file="./level_result.txt"):
             if level.startswith("0"):
                 level = level[1:]
             if lost_level != level:
-                shutil.copyfile(game_levels_dir + level_file, won_levels_dir + str(len(os.listdir(won_levels_dir))) + ".xml")
+                shutil.copyfile(game_levels_dir / level_file, won_levels_dir / (str(len(os.listdir(won_levels_dir))) + ".xml"))
 
 
 if __name__ == "__main__":

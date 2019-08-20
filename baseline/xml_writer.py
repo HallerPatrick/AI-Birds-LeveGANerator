@@ -51,6 +51,8 @@ class XmlWriter:
         self.xml_file.append('</GameObjects>')
         self.xml_file.append('</Level>')
 
+        
+
         with open(self.filename, "w") as f:
             f.write("\n".join(self.xml_file))
     

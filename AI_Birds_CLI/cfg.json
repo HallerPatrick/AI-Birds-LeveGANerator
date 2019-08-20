@@ -1,6 +1,9 @@
 {
-    "client_path": "/Users/patrickhaller/Projects/AI-Birds-LeveGANerator/game/agent/NaiveAgent.jar",
-    "server_path": "/Users/patrickhaller/Projects/AI-Birds-LeveGANerator/game/agent/ScienceBirds-server.jar",
-    "unity_path": "/Users/patrickhaller/Downloads/Science-Birds-OSX/Science-Birds-OSX.app/Contents/MacOS/Science-Birds-OSX",
-    "autosizer_path": "None"
+    "client_path": "C:\\Python37\\python.exe",
+    "server_path": "C:\\Users\\Patrick\\Projects\\AI-Birds-LeveGANerator\\game\\agent\\ScienceBirds-server.jar",
+    "unity_path": "C:\\Users\\Patrick\\Projects\\AI-Birds-LeveGANerator\\game\\Science-Birds-Windows\\ScienceBirds.exe",
+    "autosizer_path": "C:\\Users\\Patrick\\Desktop\\AutoSizer\\AutoSizer.exe",
+    "cuda": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.0\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.0\\extras\\CUPTI\\libx64;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.0\\include;C:\\tools\\cuda\\bin;C:\\Program Files\\cudnn-10.0\\cuda\\bin",
+    "parameters_file": "C:\\Users\\Patrick\\Projects\\AI-Birds-LeveGANerator\\parameters.txt",
+    "root": "C:\\Users\\Patrick\\Projects\\AI-Birds-LeveGANerator"
 }

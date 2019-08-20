@@ -58,7 +58,7 @@ def image_generator(generator_model, folder_path):
     images = []
 
     # Generate a batch of 50 images
-    for _ in range(1):
+    for _ in range(4):
         generated_images = generator.predict(noise)
 
         generated_images = 0.5 * generated_images + 0.5

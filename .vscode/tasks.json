@@ -4,6 +4,15 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "CLI",
+            "type": "shell",
+            "options": {
+                "cwd": "./AI_Birds_CLI"
+            },
+            "command": "python main.py",
+            "problemMatcher": [],
+        },
+        {
             "label": "Xml Writer",
             "type": "shell",
             "options": {
@@ -70,8 +79,7 @@
                 "-f",
                 "../parameters.txt"
             ],
-            "problemMatcher": [],
-            
+            "problemMatcher": []
         },
         {
             "label": "Predict",
