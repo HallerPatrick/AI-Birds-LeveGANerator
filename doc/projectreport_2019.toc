@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Aufgabenstellung des Smart Environment Projekts}{3}{section.1}% 
+\contentsline {section}{\numberline {2}GAN als m\IeC {\"o}glicher Levelgenerator}{3}{section.2}% 
+\contentsline {section}{\numberline {3}GAN im Vergleich zu Alternativen}{4}{section.3}% 
+\contentsline {section}{\numberline {4}Vorgehensweise}{4}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Erkennen von Konturen der Zentroide}{4}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Parsen von und in XML bzw. JSON}{4}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}Automatisierung der Abl\IeC {\"a}ufe mithilfe einer GUI und Powershell unter Windows}{4}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}Konvertierung von Pythons Pillow Koordinaten in ein kartesisches XML-Koordinatensystem}{4}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}Verdeutlichen der Konturen der erzeugten RAW-Bilder zur besseren Erkennung vor Training}{4}{subsection.4.5}% 
+\contentsline {subsection}{\numberline {4.6}Aufsetzen eines Re-Evaluierungssystems}{4}{subsection.4.6}% 
+\contentsline {section}{\numberline {5}Ergebnisse}{4}{section.5}% 
+\contentsline {section}{\numberline {6}Fazit}{4}{section.6}% 
+\contentsline {section}{\numberline {7}Ausblick}{4}{section.7}% 
