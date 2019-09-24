@@ -9,7 +9,12 @@
 \usepackage{graphicx}
 \usepackage{xcolor,listings}
 \usepackage{mathtools}
-
+\hypersetup{
+	colorlinks,
+	linkcolor={black!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+}
 
 % Used to reference java classes
 \newcommand{\class}[1]{{\color{green!50!black}\small\texttt{#1}}}
@@ -17,16 +22,15 @@
 \newcommand{\source}[1]{{\color{blue!80!white}\texttt{\lstinline|#1|}}}
 
 \begin{document}
-	\begin{titlepage}
-		\begin{center}
-			\title{Project Report: BamBirds 2019\\
-				{\small Creating  an Intelligent Game Playing Agent for Angry Birds}}
-			%\includegraphics[width=3cm,height=3cm]{img/logo.png}
-			\author{Samet\\Akcabay\and
-			Patrick\\Haller}
-		\end{center}
-	\end{titlepage}
+\title{Project Report: BamBirds 2019\\
+	{\small Creating  an Intelligent Game Playing Agent for Angry Birds}}
+\author{Samet\\Akcabay\and
+	Patrick\\Haller}
 \maketitle
+\begin{figure}
+	\centering
+	\includegraphics[width=3cm,height=3cm]{img/logo.png}
+\end{figure}
 \newpage
 \tableofcontents
 \newpage
