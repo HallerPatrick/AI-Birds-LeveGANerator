@@ -11,17 +11,35 @@ Im Folgenden wird die allgemeine Vorgehensweise beschrieben. Zur besseren Strukt
 \subsection{Parsen von XML in JSON}
 Zur Generierung der Level war es notwendig, vorhandene Level, welche im JSON-Format codiert wurden, in äquivalente XML-Formate umzuwandeln. Dazu entwickelten wir einen XmlWriter sowie JsonToXmlParser in Python. \\ Der XmlWriter schreibt zunächst den standardisierten Kopf der XML-Dateien, welche die Codierung, die Breite des Levels (hier: 2) sowie die Minimum-/Maximum-Weite der Kamera beinhaltet. Der Parser liest nun die JSON-Datei und schreibt für jeden Block mithilfe der "add"-Methoden des XmlWriters die XML-Datei. Jeder eingelesene Vogel, Block, Schwein etc. wird dabei in seine eigene Liste eingeschrieben (inklusive der Attribute, z.B. "id", "rotation"...). Nach dem Erreichen des Endes der JSON-Datei erfolgt letztendlich der Abschluss des XML-Dokuments, bei welchem das Tag der GameObjects und vom Level geschlossen werden.
 \subsection{Automatisierung der Abläufe mithilfe von Powershell unter Windows}
-Um zu vermeiden, dass alle Komponenten einzeln und umständlich gestartet werden müssen, haben wir es uns außerdem zur Aufgabe gemacht, ein Automatisierungsskript aufzusetzen, welcher diesen Schritt für uns übernimmt. Als Skriptsprache erschien uns PowerShell am sinnvollsten, da dieses ein fester Bestandteil von Windows 10 (dem gängigsten Betriebssystem) ist und aufgrund dessen keine extra Tools installiert und erläutert werden müssen. \\Das Skript startet zunächst ScienceBirds und skaliert diesen mithilfe von Window-Resizer (Tool zur nutzerbasierten Steuerung der Standardgröße eines Fensters, hier: ScienceBirds) auf einen bestimmten Wert, da der Agent sonst mit der Größe des ScienceBirds-Fensters nicht einverstanden ist. Im Anschluss wird der Agent und der Server automatisch in der Eingabeaufforderung gestartet. Wir konnten beobachten, dass durch den Startklick des Skripts alle benötigten Fenster ordnungsgemäß gestartet wurden und der Agent das Spiel wie erwartet, selbstständig gespielt hat.
-
+Um zu vermeiden, dass alle Komponenten einzeln und umständlich gestartet werden müssen, haben wir es uns außerdem zur Aufgabe gemacht, ein Automatisierungsskript aufzusetzen, welcher diesen Schritt für uns übernimmt. Als Skriptsprache erschien uns PowerShell am sinnvollsten, da dieses ein fester Bestandteil von Windows 10 (dem gängigsten Betriebssystem) ist und aufgrund dessen keine extra Tools installiert und erläutert werden müssen. \\Das Skript startet zunächst ScienceBirds und skaliert diesen mithilfe von Window-Resizer (Tool zur nutzerbasierten Steuerung der Standardgröße eines Fensters, hier: ScienceBirds) auf einen bestimmten Wert, da der Agent sonst mit der Größe des ScienceBirds-Fensters nicht einverstanden ist. Im Anschluss wird der Agent und der Server automatisch in der Eingabeaufforderung gestartet. Wir konnten beobachten, dass durch den Startklick des Skripts alle benötigten Fenster ordnungsgemäß gestartet wurden und der Agent das Spiel wie erwartet, selbstständig gespielt hat.\\ \\
+\underline{Erläuterung der Fenster des Automators (vgl. Abb. 1: Vorläufige GUI der Automatisierung):}
+\begin{itemize}
+	\item[1)] Shell des Automators \\
+	Aus diesem Fenster wird der Automator gestartet. Dazu wird zunächst überprüft, ob alle Umgebungsvariablen vorhanden und passend eingestellt sind, um volle Funktionalität gewährleisten zu können. Findet der Automator alle benötigten Tools, so wird der Nutzer gefragt, ob er diesen starten, den Vorgang abbrechen oder Umgebungsvariablen einstellen möchte.
+	\item[2)] ScienceBirds-Fenster \\
+	In diesem Fenster läuft das eigentliche Spiel. Da die Größe dieses Fensters für unseren Agenten nicht gepasst hat, musste ein Window-Resizer eingeschaltet werden, um ScienceBirds auf die benötigte Fenstergröße zu skalieren.
+	\item[3)] AutoSizer-Fenster \\
+	Hier befindet sich unser Window-Resizer. Dabei haben wir uns für den AutoSizer als Tool entschieden, da dieser wenig Speicherplatz einnimmt, kostenlos und ohne Bloatware zu installieren ist. Damit die Größe eines spezifischen Fensters auf einen immer gleichbleibenden Wert angepasst werden muss, haben wir im AutoSizer selbst einen Hotkey festgelegt, welcher beim Betätigen einer bestimmten Tastenkombination (hier: "\%9") die Größe von einem Fenster mit dem Namen "ScienceBirds" auf die benötigte Auflösung ändert. Diese Methode ist stark auf unser persönliches System abgestimmt, kann aber durch wenige Änderungen im Skriptcode auf die eigenen Parameter angepasst werden.
+	\item[4)] Agent-Fenster \\ 
+	Hieraus wird der Agent gestartet. Dazu wird zuerst der Agent gestartet und im Anschluss darauf der Server. Hier lässt sich beobachten, dass sich der Status von "Waiting" auf "Pending" ändert. Startet man nun den Agenten mit dem Klick auf "Start", so wechselt der Agent in den Status "Running".
+	\item[5)] Server-Fenster
+	Der Server muss gestartet werden um gewährleisten zu können, dass der Agent ordnungsgemäß läuft. Hier kann man die verschiedenen Aktionen beobachten, welche gerade stattgefunden haben (hier: "Go to Level Selection Page").
+\end{itemize}
 \begin{figure}
 	\centering
-	\includegraphics[height=9cm, width=16cm]{img/automator_screen.png}
+	\includegraphics[height=9cm, width=16cm, clip]{img/automator_screen.png}
 	\caption{Vorläufige GUI der Automatisierung}
 \end{figure}
 \subsection{Konvertierung von Pythons Pillow Koordinaten in ein kartesisches XML-Koordinatensystem}
 [Patrick]
 \subsection{Verdeutlichen der Konturen der erzeugten RAW-Bilder zur besseren Erkennung vor Training}
-Der Konturen-Erkenner hatte in unserem Durchlauf Probleme, die Umrisse der erzeugten Zentroide zu erkennen. Aufgrund dessen mussten wir die Konturen, welche erzeugt werden, vor dem Beginn des Trainings verstärken, damit diese eindeutig von unserem Erkenner gefasst werden können. \\
+Der Konturen-Erkenner hatte in unserem Durchlauf Probleme, die Umrisse der erzeugten Zentroide zu erkennen. Aufgrund dessen mussten wir die Konturen, welche erzeugt werden, vor dem Beginn des Trainings verstärken, damit diese eindeutig von unserem Erkenner gefasst werden können. Im Folgenden möchten wir die Python-Klasse "conture\_detector.py" näher erläutern. \\
+Um das generierte Bild verarbeiten zu können, bedarf es eines Imports der cv2-Klasse, welches zuvor installiert werden muss (unter OS X und Python3: \textit{"pip3 install opencv-python"}). In der Klasse wird nun das Bild ausgelesen und alle x- sowie y-Koordinaten in eine Liste \textit{*points} geschrieben. Das eingelesene Bild im HSV-Farbraum ("\textbf{h}ue": Farbwert, "\textbf{s}aturation": Farbsättigung, "\textbf{v}alue": Hellwert) wird in Graustufen umgewandelt, um Konturen innerhalb des Bildes zu ermöglichen (dieser Schritt kann allerdings auch übersprungen werden, da die Objekte verschiedene Farben aufweisen). \\ Zur Ermittlung der Zentroiden wird nun die Formel \[centrX = \sum XCoord / Length\] wobei folgende Zuweisungen gelten:
+\begin{itemize}
+	\item \(centrX\) entspricht den zu ermittelnden Zentroiden der X-Koordinaten (gilt analog für Y-Koordinaten mit \(centrY\))
+	\item  \(\sum XCoord\) entspricht der Summe aller X-Koordinaten (gilt analog für Y-Koordinaten mit \(\sum YCoord\))
+	\item  \(Length\) entspricht der Länge aller Punkte
+\end{itemize}
 \begin{figure}
 	\centering
 	\includegraphics[height=10cm, width=10cm]{img/blurry_attempts.png}
