@@ -2,9 +2,54 @@
 Im Folgenden wird die allgemeine Vorgehensweise beschrieben. Zur besseren Strukturierung, Dokumentierung und klaren Aufgabenverteilung, haben wir uns ein eigenes GitHub-Repository \footnote{https://github.com/HallerPatrick/AI-Birds-LeveGANerator} aufgesetzt, in welchem ebenfalls die Arbeitszeiten an den bestimmten Issues festgehalten wurden. Die wichtigsten Aufgaben werden in den nachfolgenden Unterkapiteln näher erläutert. [Graphen, allgemeine Struktur]
 \begin{figure}
     \centering
-    \includegraphics[height=12cm, width=10cm]{img/project_structure.png}
+	\includegraphics[height=12cm, width=10cm]{img/project_structure.png}
+	\caption{Projektstruktur dem Sourcecode entsprechend}
 \end{figure}
+
+
+
+\subsection{Projektstruktur}
+
+\subsubsection{Baseline Generator}
+
+Der Baseline Generator beschreibt, den XML Levelgenerator der vom Wettbewerb zur Verfügung gestellt. Dabei wurden minimale Änderungen vorgenommen um ihn automatisiert zu verwenden.
+
+\subsubsection{Raw Level Generator}
+\label{section:raw}
+
+Der Raw Level Generator generiert anhand von XML Dateien, die vom Baseline Generator kommen, Bilder die einzelnen Spieleobjekte darstellen. Für jede Art von Spielobjekt, heißt \textit{Schweine}, \textit{Platformen}, \textit{TNT} und \textit{Blöcke}
+
+\begin{figure}
+	\centering
+	\includegraphics[height=5cm, width=5cm]{img/raw_level.png}
+	\caption{Schweine Spieleobjekte als Schemadarstellung}
+\end{figure}
+
+Der Grund ist, dass die Darstellung von mehreren Spieleobjekten in einem Bild "überfüllen" würde. Der Grund wird in der Sektion \ref{section:gan} weiter ausgeführt.
+
+\subsubsection{Neural Network (GAN)}
+\label{section:gan}
+Dem GAN Model, mit der \textit{Keras} \footnote{https://keras.io/} Library gebaut, nimmt die "Raw Level", wie in \textit{Abbildung 2}, und wird anhand dieser trainiert. Dabei werden wird mit dem gleichen Model 4 verschieden Generatoren trainiert, für jedes Spielobjekt einer. Das ist notwending, da wie schon in \ref{section:raw} erwähnt, das Bild sonst zu überfüllt wäre. Das würde zu Ergebnisses führen, wie in \textit{Abbildung 3}.
+
+\begin{figure}
+	\centering
+	\includegraphics[height=10cm, width=10cm]{img/blurry_attempts.png}
+	\caption{Verschwommene Konturen führen zu Problemen bei der Erkennung}
+\end{figure}
+
+\subsubsection{Conture Detector}
+Der \textit{Conture Detector} liest aus den generierten Bilder der trainierten GAN Modelle die einzelnen Konturen aus. Die genaue Beschreibung der Ermittlung der Koordinaten wird in Sektion \ref{section:centroid} beschrieben. Von Diesen werden dann die Koordinaten ermittelt und an den XML Generator übergeben werden. (siehe \ref{section:xmlgen})
+
+
+\subsubsection{XML Generator}
+\label{section:xmlgen}
+Der XML Generator konstruiert aus den gelabelten Koordinaten valide Level XML Dateien, die von der Unity Version von Angry Birds eingelesen werden kann.
+
+\subsubsection{Physics and Naive Agent Test}
+Das Testsystem, wird im Genauren in Sektion \ref{section:reeval} beschriebene. Es dient hauptsächlich um "Sanity Checks" an den generieten Level durch zuführen. Um so gefiltert, "gute" Level erneut in das GAN Model zu füttern.
+
 \subsection{Erkennen der  Konturen von Zentroiden}
+\label{section:centroid}
 Um generell mit den generierten Bildern arbeiten zu können war es wichtig, diese erst durch die Erzeugung und Verstärkung der Konturen besser auf den Konturenerkenner abzustimmen. Nachfolgend möchten wir die Klasse \textit{conture\_detector.py} näher erläutern. \\
 Zur allgemeinen Verarbeitung der Bilder bedarf es eines Imports der cv2-Klasse, welches zuvor installiert werden muss (unter OS X und Python3: \textit{"pip3 install opencv-python"}). In der Klasse wird nun das Bild ausgelesen und alle x- sowie y-Koordinaten in eine Liste \textit{*points} geschrieben. Das eingelesene Bild im HSV-Farbraum ("\textbf{h}ue": Farbwert, "\textbf{s}aturation": Farbsättigung, "\textbf{v}alue": Hell-/Dunkelwert)\footnote{https://de.wikipedia.org/wiki/HSV-Farbraum} wird in Graustufen umgewandelt, um Konturen innerhalb des Bildes zu ermöglichen (dieser Schritt kann allerdings auch übersprungen werden, da die Objekte verschiedene Farben aufweisen). \\ Zur Ermittlung der Zentroiden wird nun die Formel \[centrX = \sum XCoord / Length\] wobei folgende Zuweisungen gelten:
 \begin{itemize}
@@ -12,11 +57,7 @@ Zur allgemeinen Verarbeitung der Bilder bedarf es eines Imports der cv2-Klasse, 
 	\item  \(\sum XCoord\) entspricht der Summe aller X-Koordinaten (gilt analog für Y-Koordinaten mit \(\sum YCoord\))
 	\item  \(Length\) entspricht der Länge aller Punkte
 \end{itemize}
-\begin{figure}
-	\centering
-	\includegraphics[height=10cm, width=10cm]{img/blurry_attempts.png}
-	\caption{Verschwommene Konturen führen zu Problemen bei der Erkennung}
-\end{figure}
+
 \subsection{Automatisierung der Abläufe mithilfe von Powershell unter Windows}
 Um zu vermeiden, dass alle Komponenten einzeln und umständlich gestartet werden müssen, haben wir es uns außerdem zur Aufgabe gemacht, ein Automatisierungsskript aufzusetzen, welcher diesen Schritt für uns übernimmt. Als Skriptsprache erschien uns PowerShell am sinnvollsten, da dieses ein fester Bestandteil von Windows 10 (dem gängigsten Betriebssystem) ist und aufgrund dessen keine extra Tools installiert und erläutert werden müssen. \\Das Skript startet zunächst ScienceBirds und skaliert diesen mithilfe von Window-Resizer (Tool zur nutzerbasierten Steuerung der Standardgröße eines Fensters, hier: ScienceBirds) auf einen bestimmten Wert, da der Agent sonst mit der Größe des ScienceBirds-Fensters nicht einverstanden ist. Im Anschluss wird der Agent und der Server automatisch in der Eingabeaufforderung gestartet. Wir konnten beobachten, dass durch den Startklick des Skripts alle benötigten Fenster ordnungsgemäß gestartet wurden und der Agent das Spiel wie erwartet, selbstständig gespielt hat.\\ In den folgenden Stichpunkten werden die einzelnen Fenster der Automatisierung näher erläutert (vgl. Abb.1).
 \begin{itemize}
@@ -36,9 +77,16 @@ Um zu vermeiden, dass alle Komponenten einzeln und umständlich gestartet werden
 	\includegraphics[height=9cm, width=16cm, clip]{img/automator_screen.png}
 	\caption{Vorläufige GUI der Automatisierung}
 \end{figure}
-\subsection{Konvertierung von Pillow-Koordinaten in ein kartesisches XML-Koordinatensystem}
-[Patrick]
+
 \subsection{Verdeutlichen der Konturen der erzeugten RAW-Bilder zur besseren Erkennung vor Training}
 Der Konturen-Erkenner hatte in unserem Durchlauf Probleme, die Umrisse der erzeugten Zentroide zu erkennen. Aufgrund dessen mussten wir die Konturen, welche erzeugt werden, vor dem Beginn des Trainings verstärken, damit diese eindeutig von unserem Erkenner gefasst werden können. 
+
 \subsection{Aufsetzen eines Re-Evaluierungssystems}
-[Patrick]
+\label{section:reeval}
+Das Re-Evaluierungssystems dient hauptsächlich als manuel implementiertes rückgekoppeltes Neural Network System. 
+Die neuronale Netzwerk geneiert neue Bilder anhand bereits
+bekannten Bildern auf die das Model trainiert wurde, als auch auf einem zufälligen initialisiertem Vektor, der für die Varianz in dem Bildern sorgt. Dies führt dazu das auch Level geniert werden die nicht sinnvoll physikalisch sind. Das Ziel ist es dem Model rückgekoppelt Bilder einzuspeißen, dass sich die Varianz in sofern verändert, dass die Level grundlegenden Test, wie physikalischen Tests standhält. \\
+Dafür werden neu generierte Level in die Unity-Version des Spiel reingeladen und von dem BamBird Naive Agent gespielt. Fällt nun das Level direkt nach dem Start in sich zusammen, kann der Agent seinen ersten/nächsten Zug nicht evaluieren und versuch neue Screenshots des Levels zu machen um eine erneute Evaluation durchzuführen. Nach einer gewissen Anzahl an Iteration schreibt der modifizierte Agent die ID des Levels in eine externe Datei, die nun ausgelesen werden kann. Die Selektion der Level die "spielbar" waren, werden nun gesammelt und wiederverwertet. \\
+Ein weiterführender Test wäre der Naive Agent Test, der das Level auf seine Spielbarkeit prüft. Dies konnte jedoch nicht mehr implementiert werden.
+
+

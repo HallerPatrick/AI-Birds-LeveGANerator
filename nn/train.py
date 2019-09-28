@@ -1,3 +1,11 @@
+
+"""
+This work is mainly taken from https://github.com/platonovsimeon/dcgan-facegenerator 
+and modified to own use
+
+@credit https://github.com/platonovsimeon
+"""
+
 # Import everything that is needed from Keras library.
 from keras.layers import Input, Reshape, Dropout, Dense, Flatten, BatchNormalization, Activation, ZeroPadding2D
 from keras.layers.advanced_activations import LeakyReLU
@@ -18,7 +26,7 @@ from tqdm import tqdm
 import os
 
 
-class FaceGenerator:
+class GanLevelGenerator:
     # RGB-images: 3-channels, grayscale: 1-channel, RGBA-images: 4-channels
     def __init__(self, image_width, image_height, channels, game_object):
         self.image_width = image_width
@@ -286,7 +294,7 @@ def save_images(generator_model, folder_path):
 def run_all(epoch=2000):
     for game_object in ["pig", "platform", "block", "tnt"]:
         epochs = epoch if game_object == "tnt" else epoch*3 
-        facegenerator = FaceGenerator(128, 128, 3, game_object)
+        facegenerator = GanLevelGenerator(128, 128, 3, game_object)
         facegenerator.train(datafolder="samples/" + game_object, epochs=epochs,
                             batch_size=32, save_images_interval=100)
         facegenerator.generate_single_image(
